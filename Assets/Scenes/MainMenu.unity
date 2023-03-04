@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -388,14 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &253112092
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +423,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &253112094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,27 +666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1001 &449814039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1354,9 +1325,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color=red>O</color>ver<color=green>C</color>ook
+  m_text: '<color=#0085C7>O</color><color=#F4C300>L</color><color=#000000>Y</color><color=#009F3D>M</color><color=red>P</color><color=purple>I</color><color=white>C</color>
 
-    <size=80%>  -<color=orange>G</color>ame<color=yellow>B</color>uilderStudio<size=100%>'
+    <size=70>Smashdown</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1559,9 +1530,17 @@ PrefabInstance:
       value: Assets/Scenes/MainScene.unity
       objectReference: {fileID: 0}
     - target: {fileID: 1829363004776218621, guid: f1fd9ec2b3a732a4ea4a2ad7c395a7fa, type: 3}
+      propertyPath: _sceneToLoad.scenePath
+      value: Assets/Scenes/SampleScene.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1829363004776218621, guid: f1fd9ec2b3a732a4ea4a2ad7c395a7fa, type: 3}
       propertyPath: sceneToLoad.sceneAsset
       value: 
       objectReference: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+    - target: {fileID: 1829363004776218621, guid: f1fd9ec2b3a732a4ea4a2ad7c395a7fa, type: 3}
+      propertyPath: _sceneToLoad.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
     - target: {fileID: 4982950511548851660, guid: f1fd9ec2b3a732a4ea4a2ad7c395a7fa, type: 3}
       propertyPath: m_RootOrder
       value: 7
