@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
 
     public float distance;
     public float time;
-    public Rigidbody RB
+    public Rigidbody2D RB
     {
         get
         {
@@ -76,7 +76,7 @@ public class Projectile : MonoBehaviour
     }
 
     public List<Entity> triggerEntities;
-    [SerializeField] public Rigidbody rb;
+    [SerializeField] public Rigidbody2D rb;
     [HideInInspector] public float originalHeight = 0.0f;
     [HideInInspector] public float totalDistanceToTarget = 0.0f;
     [HideInInspector] public Vector3 targetPosition;
@@ -131,7 +131,7 @@ public class Projectile : MonoBehaviour
     void Awake()
     {
         gameObject.tag = "Projectile";
-        RB = GetComponent<Rigidbody>();
+        RB = GetComponent<Rigidbody2D>();
     }
 
     //Be Called Each time when spawn by PoolManger
@@ -149,7 +149,8 @@ public class Projectile : MonoBehaviour
         switch (args.Data.trackType)
         {
             case ProjectileTrackType.straight:
-                track = new ProjectileTrackStraight(this);
+                rb.velocity = args.direction * args.Data.speedMultipler;
+                // track = new ProjectileTrackStraight(this);
                 break;
             case ProjectileTrackType.homing:
                 if (args.target is null)
@@ -157,7 +158,7 @@ public class Projectile : MonoBehaviour
                     Debug.LogWarning("Homing Projectile while target is null");
                     return;
                 }
-                //! track = new ProjectileTrackHoming(this);
+                track = new ProjectileTrackHoming(this);
                 break;
             case ProjectileTrackType.arc:
                 /* //!
@@ -216,7 +217,7 @@ public class Projectile : MonoBehaviour
         }
         if (!isTriggered)
         {
-            track.FixedUpdate();
+            //! track.FixedUpdate();
         }
     }
 

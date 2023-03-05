@@ -149,7 +149,7 @@ MonoBehaviour:
   distance: 0
   time: 0
   triggerEntities: []
-  rb: {fileID: 0}
+  rb: {fileID: 7069734107908870346}
   originalHeight: 0
   totalDistanceToTarget: 0
   targetPosition: {x: 0, y: 0, z: 0}

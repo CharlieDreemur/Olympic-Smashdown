@@ -27,7 +27,7 @@ public class ProjectileData : ScriptableObject
     public AnimationCurve scaleCurve = new AnimationCurve(new Keyframe(1, 1), new Keyframe(1, 1));
     public float speedMultipler = 1;
     public AnimationCurve speedCurve = new AnimationCurve(new Keyframe(1, 1), new Keyframe(1, 1));
-    public AnimationCurve heightCurve = new AnimationCurve(new Keyframe(1, 1), new Keyframe(1, 1));
+    //! public AnimationCurve heightCurve = new AnimationCurve(new Keyframe(1, 1), new Keyframe(1, 1));
     public float maxArcHeight = 5f;
     //The final speed will be the speed*speedCurve
 
