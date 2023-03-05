@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterController2D: MonoBehaviour
+public class CharacterController2D: Entity
 {
     [Header("Movement Settings")]
     private Rigidbody2D rb;

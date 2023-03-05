@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1149666769688729530}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,12 +136,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e4777dc952c5947876d3161bcb6603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  projectileInfo:
-    speedStart: 5
-    speedIncreasePerSecond: 0
-    speedIncreaseOnCollision: 0
-    size: 0
-    damageMultiplier: 0
-    despawnTime: 0
-    isHoming: 0
+  isInit: 0
+  isTriggered: 0
+  args:
+    isInit: 0
+    spawnPos: {x: 0, y: 0, z: 0}
+    DamageInfo: 1
+    direction: {x: 1, y: 0, z: 0}
+    target: {fileID: 0}
+    ignoredCollisionList: []
+    _data: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}
+  distance: 0
+  time: 0
+  triggerEntities: []
+  rb: {fileID: 0}
+  originalHeight: 0
+  totalDistanceToTarget: 0
+  targetPosition: {x: 0, y: 0, z: 0}
