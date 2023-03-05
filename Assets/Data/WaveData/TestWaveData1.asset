@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d12127c31086743bb54246a37b68c1, type: 3}
+  m_Name: TestWaveData1
+  m_EditorClassIdentifier: 
+  SpawnInfos:
+  - EnemyPrefab: {fileID: 2388160119063236490, guid: fc942aeb5d58a314cb27fec5b420b794, type: 3}
+    Count: 3
+    Weight: 1
+    IsGrouped: 1
+  - EnemyPrefab: {fileID: 6542517825441053435, guid: 0d7affe8c906f9e479097c5d4153f1d8, type: 3}
+    Count: 5
+    Weight: 1
+    IsGrouped: 0
+  SpawnInterval: 3
+  Duration: 20
