@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7069734107908870346}
   - component: {fileID: 1149666769688729530}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: BallArc
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
     direction: {x: 1, y: 0, z: 0}
     target: {fileID: 0}
     ignoredCollisionList: []
-    _data: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}
+    _data: {fileID: 11400000, guid: da1cd330ffe55bc4da5bc901a83d566f, type: 2}
   distance: 0
   time: 0
   triggerEntities: []
