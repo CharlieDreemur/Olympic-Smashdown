@@ -33,7 +33,7 @@ public class CreateProjectileAction : ProjectileAction
         Projectile.InstantiateProjectile(
             args.projectileData,
             projectile.transform.position,
-            null,  //!
+            projectile.args.DamageInfo.Instigator,
             direction,
             projectile.args.target,
             ignoredCollision);

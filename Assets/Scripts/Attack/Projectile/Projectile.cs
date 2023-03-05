@@ -13,12 +13,12 @@ public struct ProjectileArgs
 {
     public bool isInit;
     public Vector3 spawnPos;
-    public float DamageInfo;
+    public DamageInfo DamageInfo;
 
     public ProjectileArgs(
         ProjectileData data, 
         Vector3 spawnPos, 
-        float calculateDamageInfo, 
+        DamageInfo calculateDamageInfo, 
         Vector3 direction, 
         Entity target = null, 
         List<Entity> ignoredCollisionList = null)
@@ -91,14 +91,14 @@ public class Projectile : MonoBehaviour
         Entity target = null, 
         List<Entity> ignoredCollisionList = null)
     {
-        float damageInfo = data.damage;
+        DamageInfo damageInfo = new DamageInfo(data.damage, instigator, data.knockback);
         return InstantiateProjectile(data, spawnPos, damageInfo, attackDirection, target, ignoredCollisionList);
     }
 
     public static GameObject InstantiateProjectile(
         ProjectileData data, 
         Vector3 spawnPos, 
-        float damageInfo, 
+        DamageInfo damageInfo, 
         Vector3 attackDirection, 
         Entity target = null, 
         List<Entity> ignoredCollisionList = null)
@@ -233,13 +233,15 @@ public class Projectile : MonoBehaviour
             return;
         }
 
-        /* //!
+        Debug.Log(entity);
         if (entity == args.DamageInfo.Instigator)
         {
+            Debug.Log($"ignored {entity}");
             Physics.IgnoreCollision(args.DamageInfo.Instigator.GetComponent<Collider>(), collider);
             return;
         }
 
+        /* //!
         if (!AreaAttack.IsAttackable(args.Data.attackObjectType, collider.tag))
         {
             return;
