@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+[InfoBox("**NOT READY** This script does not have Enemy script integration", InfoMessageType.Warning)]
 public class WaveManager : MonoBehaviour
 {
+
+
     [Header("Wave Data")]
     [Tooltip("The wave data to use for this wave")]
     [SerializeField] List<WaveData> _waveData;
@@ -30,6 +33,8 @@ public class WaveManager : MonoBehaviour
 
 
     private List<WaveData>.Enumerator _currentWaveEnumerator;
+    private List<MockEnemyAI> _enemies = new List<MockEnemyAI>(); // TODO: Replace with Enemy script
+
     private WaveData _currentWaveData;
     private float _spawnCooldown = 0f;
     private float _currentWaveTime = 0f;
@@ -119,7 +124,18 @@ public class WaveManager : MonoBehaviour
 
     private void EndWave()
     {
+        StopAllCoroutines(); // Stop any running waves and enemy spawn coroutines
+
+
+
+        // Clean up any remaining enemies
         Debug.Log("Wave ended");
+        List<MockEnemyAI> enemiesToKill = new List<MockEnemyAI>(_enemies);
+        foreach (MockEnemyAI enemy in enemiesToKill)
+        {
+            enemy.Kill();
+        }
+        _enemies.Clear();
         StartNextWave(); // start the next wave in the list
     }
 
@@ -148,7 +164,7 @@ public class WaveManager : MonoBehaviour
             for (int i = 0; i < spawnInfo.Count; i++)
             {
                 Vector2 randomPosition = groupCenterPosition + Random.insideUnitCircle * 2;
-                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
+                Coroutine spawnCoroutine = StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
             }
         }
         else
@@ -157,7 +173,7 @@ public class WaveManager : MonoBehaviour
             {
                 Vector2 randomDirection = Random.insideUnitCircle.normalized;
                 Vector2 randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
-                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
+                Coroutine spawnCoroutine = StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
             }
         }
     }
@@ -177,11 +193,13 @@ public class WaveManager : MonoBehaviour
         Destroy(warning);
         GameObject enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
         MockEnemyAI enemyAI = enemy.GetComponent<MockEnemyAI>();
-        enemyAI.died.AddListener(() => OnEnemyDied(isElite));
+        enemyAI.died.AddListener(() => OnEnemyDied(enemyAI, isElite));
+        _enemies.Add(enemyAI);
     }
 
-    private void OnEnemyDied(bool isElite)
+    private void OnEnemyDied(MockEnemyAI enemyAI, bool isElite)
     {
+        _enemies.Remove(_enemies.Find(x => x == enemyAI));
         _totalMobsAlive--;
         if (isElite)
         {
