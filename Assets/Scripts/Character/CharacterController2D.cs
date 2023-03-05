@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController2D: Entity
@@ -9,6 +11,9 @@ public class CharacterController2D: Entity
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
     public CharacterData data;
+
+    
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,27 +31,20 @@ public class CharacterController2D: Entity
             spriteRenderer.flipX = false;
         else if (horizontalInput < 0)
             spriteRenderer.flipX = true;
-
+        
         // Calculate the movement vector
         movement = new Vector2(horizontalInput, verticalInput).normalized * data.moveSpeed;
         if (horizontalInput!=0 || verticalInput!=0)
         {
             animator.SetBool("isMove", true);
             animator.SetFloat("speed", movement.x+ movement.y);
-
         }
         else
         {
             animator.SetBool("isMove", false);
-
         }
-
-
     }
-
-
-
-
+    
     private void FixedUpdate()
     {
         // Apply the movement vector to the character's Rigidbody2D component
