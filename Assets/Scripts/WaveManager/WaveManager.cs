@@ -34,7 +34,7 @@ public class WaveManager : MonoBehaviour
 
     private List<WaveData>.Enumerator _currentWaveEnumerator;
     private List<MockEnemyAI> _enemies = new List<MockEnemyAI>(); // TODO: Replace with Enemy script
-
+    private List<GameObject> _warningObjects = new List<GameObject>(); // Keep track of all the warning objects so we can destroy them when the wave ends
     private WaveData _currentWaveData;
     private float _spawnCooldown = 0f;
     private float _currentWaveTime = 0f;
@@ -126,7 +126,12 @@ public class WaveManager : MonoBehaviour
     {
         StopAllCoroutines(); // Stop any running waves and enemy spawn coroutines
 
-
+        // Destroy all the warning objects
+        foreach (GameObject warningObject in _warningObjects)
+        {
+            Destroy(warningObject);
+        }
+        _warningObjects.Clear();
 
         // Clean up any remaining enemies
         Debug.Log("Wave ended");
@@ -180,7 +185,7 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator EnemySpawnCoroutine(Vector3 position, GameObject enemyPrefab, bool isElite = false)
     {
-        GameObject warning;
+        GameObject warning; // Create a warning object to show where the enemy will spawn
         if (isElite)
         {
             warning = Instantiate(_eliteWarningPrefab, position, Quaternion.identity);
@@ -189,8 +194,13 @@ public class WaveManager : MonoBehaviour
         {
             warning = Instantiate(_warningPrefab, position, Quaternion.identity);
         }
+        _warningObjects.Add(warning); // Add the warning object to the list of warning objects so we can destroy it when the wave ends
+
         yield return new WaitForSeconds(_spawnDelay);
+
+        _warningObjects.Remove(warning);
         Destroy(warning);
+
         GameObject enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
         MockEnemyAI enemyAI = enemy.GetComponent<MockEnemyAI>();
         enemyAI.died.AddListener(() => OnEnemyDied(enemyAI, isElite));
@@ -199,7 +209,7 @@ public class WaveManager : MonoBehaviour
 
     private void OnEnemyDied(MockEnemyAI enemyAI, bool isElite)
     {
-        _enemies.Remove(_enemies.Find(x => x == enemyAI));
+        _enemies.Remove(enemyAI);
         _totalMobsAlive--;
         if (isElite)
         {
