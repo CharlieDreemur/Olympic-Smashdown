@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 391992899}
   - component: {fileID: 391992898}
   m_Layer: 0
-  m_Name: PaddleTest
+  m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867257052
 GameObject:
@@ -783,7 +783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7069734107908870349, guid: 438d5c8c67b3c974eaa94a29cfe206c6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7069734107908870349, guid: 438d5c8c67b3c974eaa94a29cfe206c6, type: 3}
       propertyPath: m_LocalPosition.x

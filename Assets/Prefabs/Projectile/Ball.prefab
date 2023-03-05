@@ -138,10 +138,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
   projectileInfo:
-    size: 0
     speedStart: 5
     speedIncreasePerSecond: 0
     speedIncreaseOnCollision: 0
+    size: 0
     damageMultiplier: 0
     despawnTime: 0
     isHoming: 0
