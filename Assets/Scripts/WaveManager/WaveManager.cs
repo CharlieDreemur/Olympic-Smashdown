@@ -176,8 +176,19 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(_spawnDelay);
         Destroy(warning);
         GameObject enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
-        // enemy.OnDeath += isElite ? OnEliteEnemyDeath : OnNormalEnemyDeath; // TODO: Add this back in when the enemy class is ready
+        MockEnemyAI enemyAI = enemy.GetComponent<MockEnemyAI>();
+        enemyAI.died.AddListener(() => OnEnemyDied(isElite));
     }
+
+    private void OnEnemyDied(bool isElite)
+    {
+        _totalMobsAlive--;
+        if (isElite)
+        {
+            _eliteMobsAlive--;
+        }
+    }
+
 
     private bool IsWaveOver()
     {
