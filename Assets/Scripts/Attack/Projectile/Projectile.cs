@@ -161,15 +161,13 @@ public class Projectile : MonoBehaviour
                 track = new ProjectileTrackHoming(this);
                 break;
             case ProjectileTrackType.arc:
-                /* //!
                 targetPosition = args.target.transform.position;
                 originalHeight = transform.position.y;
                 totalDistanceToTarget = transform.position.Distance2D(targetPosition);
-                areaIndicator = PoolManager.SpawnByName("AttackIndicator", targetPosition, Quaternion.identity);
-                areaIndicator.GetComponent<AttackCircleIndicator>().SetSize(args.Data.indicatorRadius);
+                //! areaIndicator = PoolManager.SpawnByName("AttackIndicator", targetPosition, Quaternion.identity);
+                //! areaIndicator.GetComponent<AttackCircleIndicator>().SetSize(args.Data.indicatorRadius);
                 Debug.DrawRay(targetPosition.Flatten(), Vector3.up, Color.blue, 2f);
                 track = new ProjectileTrackArc(this);
-                */
                 break;
         }
     }
