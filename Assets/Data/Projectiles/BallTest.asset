@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: BallTest
   prefab: {fileID: 7069734107908870345, guid: 438d5c8c67b3c974eaa94a29cfe206c6, type: 3}
   lifeCycle: 15
-  maxDistance: 134.92
+  maxDistance: 40
   damage: 1
   knockback: 0
   trackType: 0

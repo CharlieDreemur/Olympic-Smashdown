@@ -149,7 +149,7 @@ public class Projectile : MonoBehaviour
         switch (args.Data.trackType)
         {
             case ProjectileTrackType.straight:
-                rb.velocity = args.direction * args.Data.speedMultipler;
+                rb.velocity = new Vector2(args.direction.x, args.direction.y)* args.Data.speedMultipler;
                 // track = new ProjectileTrackStraight(this);
                 break;
             case ProjectileTrackType.homing:

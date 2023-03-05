@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using Sirenix.OdinInspector;
 
 public class JsonEvent :  UnityEvent<string>{}
-
+//Notes: Set the execution order of EventManager to -20 before everything starts.
 public class EventManager : Singleton<EventManager>
 {
     [ShowInInspector]
