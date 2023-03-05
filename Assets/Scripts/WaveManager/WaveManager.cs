@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
 {
     [Header("Wave Data")]
     [Tooltip("The wave data to use for this wave")]
-    [SerializeField] WaveData _waveData;
+    [SerializeField] List<WaveData> _waveData;
 
     [Header("Object References")]
     [Tooltip("Used for locating the player's position")]
@@ -28,6 +28,9 @@ public class WaveManager : MonoBehaviour
     [Range(0f, 3f)]
     [SerializeField] private float _spawnDelay;
 
+
+    private List<WaveData>.Enumerator _currentWaveEnumerator;
+    private WaveData _currentWaveData;
     private float _spawnCooldown = 0f;
     private float _currentWaveTime = 0f;
     private bool _eliteMobsSpawned = false;
@@ -36,70 +39,116 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         // For testing purposes
-        StartWave();
-    }
-    private void EndWave()
-    {
-        Debug.Log("Wave ended");
+        StartStage(); // TODO: Remove this
     }
 
-    public void StartWave()
+    public void StartStage()
     {
-        StartCoroutine(WaveCouroutine());
+        StartNextWave();
     }
 
-    private IEnumerator WaveCouroutine()
+    private void EndStage()
+    {
+        Debug.Log("Stage ended");
+    }
+
+    private void StartNextWave()
+    {
+        if (_currentWaveData == null) // First wave
+        {
+            _currentWaveEnumerator = _waveData.GetEnumerator();
+            _currentWaveData = _currentWaveEnumerator.MoveNext() ? _currentWaveEnumerator.Current : null; // Get the first wave data
+            if (_currentWaveData == null)
+            {
+                Debug.LogError("No wave data found");
+                return;
+            }
+            StartCoroutine(WaveCoroutine());
+        }
+        else
+        {
+            if (_currentWaveEnumerator.MoveNext()) // More waves
+            {
+                _currentWaveData = _currentWaveEnumerator.Current;
+                StartCoroutine(WaveCoroutine());
+            }
+            else // No more waves
+            {
+                _currentWaveData = null;
+                EndStage();
+                return;
+            }
+        }
+
+    }
+
+    private IEnumerator WaveCoroutine()
     {
         Debug.Log("Wave started");
-        _spawnCooldown = _waveData.SpawnInterval;
+        _spawnCooldown = _currentWaveData.SpawnInterval;
         _currentWaveTime = 0f;
 
         while (!IsWaveOver())
         {
-            if (_totalMobsAlive >= _waveData.MaxUnitsAlive) // Wait for some units to die before spawning more
+            // Wait for some units to die before spawning more
+            if (_totalMobsAlive >= _currentWaveData.MaxUnitsAlive)
             {
                 yield return null;
                 continue;
             }
-            // Spawn elite mobs after the wave duration has passed if they haven't already been spawned
-            if (_spawnCooldown <= 0 && _currentWaveTime >= _waveData.EliteSpawnTime && !_eliteMobsSpawned)
-            {
-                SpawnInfo spawnInfo = _waveData.GetRandomEliteSpawnInfo();
-                _eliteMobsSpawned = true;
-                _eliteMobsAlive += spawnInfo.Count;
-                _totalMobsAlive += spawnInfo.Count;
-                SpawnEnemies(spawnInfo);
-                _spawnCooldown = _waveData.SpawnInterval;
-            }
 
-            if (_spawnCooldown <= 0)
+            // Spawn elite mobs after time is more than eliteSpawnTime has passed if they haven't already been spawned
+            if (_spawnCooldown <= 0 && _currentWaveTime >= _currentWaveData.EliteSpawnTime && !_eliteMobsSpawned)
             {
-                SpawnInfo spawnInfo = _waveData.GetRandomSpawnInfo();
-                _totalMobsAlive += (uint)spawnInfo.Count;
-                SpawnEnemies(spawnInfo);
-                _spawnCooldown = _waveData.SpawnInterval;
+                SpawnEliteMobs();
+                _spawnCooldown = _currentWaveData.SpawnInterval;
+            }
+            else if (_spawnCooldown <= 0) // Spawn normal mobs if the cooldown is up, and elite mobs aren't spawning in this loop iteration
+            {
+                SpawnNormalMobs();
+                _spawnCooldown = _currentWaveData.SpawnInterval;
             }
 
             _spawnCooldown -= Time.deltaTime;
             _currentWaveTime += Time.deltaTime;
-
 
             yield return null;
         }
         EndWave();
     }
 
+    private void EndWave()
+    {
+        Debug.Log("Wave ended");
+        StartNextWave(); // start the next wave in the list
+    }
+
+    private void SpawnEliteMobs()
+    {
+        SpawnInfo spawnInfo = _currentWaveData.GetRandomEliteSpawnInfo();
+        _eliteMobsSpawned = true;
+        _eliteMobsAlive += spawnInfo.Count;
+        _totalMobsAlive += spawnInfo.Count;
+        SpawnEnemies(spawnInfo);
+    }
+
+    void SpawnNormalMobs()
+    {
+        SpawnInfo spawnInfo = _currentWaveData.GetRandomSpawnInfo();
+        _totalMobsAlive += spawnInfo.Count;
+        SpawnEnemies(spawnInfo);
+    }
 
     private void SpawnEnemies(SpawnInfo spawnInfo)
     {
         Vector3 playerPosition = _player.transform.position;
-        if (spawnInfo.IsGrouped)
+        if (spawnInfo.IsGrouped) // Spawn enemies close by a random center point
         {
             Vector2 groupCenterPosition = new Vector2(playerPosition.x, playerPosition.y) + Random.insideUnitCircle * 10;
             for (int i = 0; i < spawnInfo.Count; i++)
             {
                 Vector2 randomPosition = groupCenterPosition + Random.insideUnitCircle * 2;
-                StartCoroutine(SpawnEnemy(randomPosition, spawnInfo.EnemyPrefab));
+                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
             }
         }
         else
@@ -108,12 +157,12 @@ public class WaveManager : MonoBehaviour
             {
                 Vector2 randomDirection = Random.insideUnitCircle.normalized;
                 Vector2 randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
-                StartCoroutine(SpawnEnemy(randomPosition, spawnInfo.EnemyPrefab, true));
+                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
             }
         }
     }
 
-    IEnumerator SpawnEnemy(Vector3 position, GameObject enemyPrefab, bool isElite = false)
+    IEnumerator EnemySpawnCoroutine(Vector3 position, GameObject enemyPrefab, bool isElite = false)
     {
         GameObject warning;
         if (isElite)
