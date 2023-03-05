@@ -125,23 +125,28 @@ public class WaveManager : MonoBehaviour
     private void EndWave()
     {
         StopAllCoroutines(); // Stop any running waves and enemy spawn coroutines
+        CleanUpWarningSigns();
+        CleanUpEnemies();
+        StartNextWave(); // start the next wave in the list
+    }
 
-        // Destroy all the warning objects
-        foreach (GameObject warningObject in _warningObjects)
-        {
-            Destroy(warningObject);
-        }
-        _warningObjects.Clear();
-
-        // Clean up any remaining enemies
-        Debug.Log("Wave ended");
+    private void CleanUpEnemies()
+    {
         List<MockEnemyAI> enemiesToKill = new List<MockEnemyAI>(_enemies);
         foreach (MockEnemyAI enemy in enemiesToKill)
         {
             enemy.Kill();
         }
         _enemies.Clear();
-        StartNextWave(); // start the next wave in the list
+    }
+
+    private void CleanUpWarningSigns()
+    {
+        foreach (GameObject warningObject in _warningObjects)
+        {
+            Destroy(warningObject);
+        }
+        _warningObjects.Clear();
     }
 
     private void SpawnEliteMobs()
