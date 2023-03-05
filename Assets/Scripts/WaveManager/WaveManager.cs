@@ -174,7 +174,7 @@ public class WaveManager : MonoBehaviour
             for (int i = 0; i < spawnInfo.Count; i++)
             {
                 Vector2 randomPosition = groupCenterPosition + Random.insideUnitCircle * 2;
-                Coroutine spawnCoroutine = StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
+                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
             }
         }
         else
@@ -183,7 +183,7 @@ public class WaveManager : MonoBehaviour
             {
                 Vector2 randomDirection = Random.insideUnitCircle.normalized;
                 Vector2 randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
-                Coroutine spawnCoroutine = StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
+                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
             }
         }
     }
