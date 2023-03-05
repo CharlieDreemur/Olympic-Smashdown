@@ -6,18 +6,33 @@ using UnityEngine;
 public class WaveData : ScriptableObject
 {
     public List<SpawnInfo> SpawnInfos;
+    public List<SpawnInfo> EliteSpawnInfos;
+    [Range(0, 10f)]
     public float SpawnInterval;
-    public float Duration;
+    [Range(0, 100f)]
+    public float EliteSpawnTime;
+    [Range(0, 100)]
+    public uint MaxUnitsAlive;
     public SpawnInfo GetRandomSpawnInfo()
     {
+        return GetRandomSpawnInfo(SpawnInfos);
+    }
+
+    public SpawnInfo GetRandomEliteSpawnInfo()
+    {
+        return GetRandomSpawnInfo(EliteSpawnInfos);
+    }
+
+    private SpawnInfo GetRandomSpawnInfo(List<SpawnInfo> spawnInfos)
+    {
         float totalWeight = 0;
-        foreach (var spawnInfo in SpawnInfos)
+        foreach (var spawnInfo in spawnInfos)
         {
             totalWeight += spawnInfo.Weight;
         }
 
         float randomValue = Random.value * totalWeight;
-        foreach (var spawnInfo in SpawnInfos)
+        foreach (var spawnInfo in spawnInfos)
         {
             if (randomValue < spawnInfo.Weight)
             {
@@ -27,7 +42,7 @@ public class WaveData : ScriptableObject
             randomValue -= spawnInfo.Weight;
         }
 
-        return SpawnInfos[SpawnInfos.Count - 1];
+        return spawnInfos[^1];
     }
 }
 
@@ -35,7 +50,8 @@ public class WaveData : ScriptableObject
 public struct SpawnInfo
 {
     public GameObject EnemyPrefab;
-    public int Count;
+    [Range(0, 30)]
+    public uint Count;
     public float Weight;
     public bool IsGrouped;
 }

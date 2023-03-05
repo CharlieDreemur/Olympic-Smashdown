@@ -386,10 +386,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1181776156}
-    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
-      propertyPath: _spawnDelay
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7104016583801039743, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: m_RootOrder
       value: 1
