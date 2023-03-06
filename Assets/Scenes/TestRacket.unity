@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 160470259}
   - component: {fileID: 160470261}
   - component: {fileID: 160470260}
+  - component: {fileID: 160470262}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
@@ -234,6 +235,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &160470262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160470258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07670767d791083439f7f7a7c87bdd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +399,7 @@ GameObject:
   - component: {fileID: 1701350536}
   - component: {fileID: 1701350538}
   - component: {fileID: 1701350537}
+  - component: {fileID: 1701350539}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -486,6 +500,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1701350539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701350535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07670767d791083439f7f7a7c87bdd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1887277190
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +523,7 @@ GameObject:
   - component: {fileID: 1887277191}
   - component: {fileID: 1887277193}
   - component: {fileID: 1887277192}
+  - component: {fileID: 1887277194}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -597,6 +624,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1887277194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887277190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07670767d791083439f7f7a7c87bdd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2066186093
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +647,7 @@ GameObject:
   - component: {fileID: 2066186094}
   - component: {fileID: 2066186096}
   - component: {fileID: 2066186095}
+  - component: {fileID: 2066186097}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -708,6 +748,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2066186097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066186093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07670767d791083439f7f7a7c87bdd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2080155059
 GameObject:
   m_ObjectHideFlags: 0

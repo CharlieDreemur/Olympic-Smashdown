@@ -62,8 +62,9 @@ public class Racket : MonoBehaviour
            // 0.707 is like 45 deg
            if (Vector2.Dot(direction.normalized, projDir2) > 0.707f)
            {
-               var projRb = proj.GetComponent<Rigidbody2D>();
-               projRb.velocity = direction.normalized * projRb.velocity.magnitude;
+               proj.args.direction = direction.normalized;
+               // var projRb = proj.GetComponent<Rigidbody2D>();
+               // projRb.velocity = direction.normalized * projRb.velocity.magnitude;
            }
         }
     }

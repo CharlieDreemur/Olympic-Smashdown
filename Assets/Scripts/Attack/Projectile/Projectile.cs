@@ -149,8 +149,8 @@ public class Projectile : MonoBehaviour
         switch (args.Data.trackType)
         {
             case ProjectileTrackType.straight:
-                rb.velocity = new Vector2(args.direction.x, args.direction.y) * args.Data.speedMultipler;
-                // track = new ProjectileTrackStraight(this);
+                // rb.velocity = new Vector2(args.direction.x, args.direction.y) * args.Data.speedMultipler;
+                track = new ProjectileTrackStraight(this);
                 break;
             case ProjectileTrackType.homing:
                 if (args.target is null)
@@ -215,7 +215,14 @@ public class Projectile : MonoBehaviour
         }
         if (!isTriggered)
         {
-            //! track.FixedUpdate();
+            track.FixedUpdate();
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.TryGetComponent<Reflector>(out Reflector reflector)) {
+            args.direction = Vector3.Reflect(args.direction, other.contacts[0].normal);
+            track = new ProjectileTrackStraight(this);
         }
     }
 
@@ -274,6 +281,7 @@ public class Projectile : MonoBehaviour
     //Release the projectile
     void Release()
     {
+        Destroy(gameObject);
         /* //!
         if (areaIndicator != null)
         {
