@@ -17,3 +17,9 @@ MonoBehaviour:
     name: 
     description: 
     upgradeType: 0
+    sentence: 
+  - icon: {fileID: 0}
+    name: 
+    description: 
+    upgradeType: 0
+    sentence: 

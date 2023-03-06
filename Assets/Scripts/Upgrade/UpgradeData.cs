@@ -30,5 +30,7 @@ public class UpgradeData : ScriptableObject
         public string description;
         [VerticalGroup] [LabelText("Type")]
         public UpgradeType upgradeType;
+
+        public string sentence; // one fun sentence illutrate this powerup
     }
 }
