@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: UpgradeTest
   m_EditorClassIdentifier: 
   upgradeData:
+  - icon: {fileID: 21300000, guid: ab4465ab72ca5544da8e8dd1110b6973, type: 3}
+    name: Demo Name
+    description: -50% Moving Speed
+    upgradeType: 0
+    funFact: ice skating may be beteer
   - icon: {fileID: 0}
     name: 
     description: 
     upgradeType: 0
-    sentence: 
-  - icon: {fileID: 0}
-    name: 
-    description: 
-    upgradeType: 0
-    sentence: 
+    funFact: 
