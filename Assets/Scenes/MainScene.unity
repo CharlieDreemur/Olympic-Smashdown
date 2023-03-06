@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &408252540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408252542}
+  - component: {fileID: 408252541}
+  m_Layer: 0
+  m_Name: ItemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &408252541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408252540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2b63ef7eec8584280e5b1fdb9ef83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemPoolData: {fileID: 11400000, guid: b51c39399c2e82f4eb0e27a54f85eac8, type: 2}
+  _spawnAnchorsPrefab: {fileID: 1150569575569914902, guid: 9ad12344a988fea4eabfd24cad623862, type: 3}
+--- !u!4 &408252542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408252540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9405644, y: -3.1055684, z: -0.10185608}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +424,9 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: fb7f16b572215ff47a5bd74ed1949388, type: 2}
   target: {fileID: 913642850}
   behaviorTree: {fileID: 1284048412}
+  died:
+    m_PersistentCalls:
+      m_Calls: []
   health: 0
 --- !u!212 &8517570411835012276
 SpriteRenderer:

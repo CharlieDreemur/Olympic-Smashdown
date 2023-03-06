@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 [InfoBox("**NOT READY** This script does not have Enemy script integration", InfoMessageType.Warning)]
 public class WaveManager : MonoBehaviour
 {
-
-
     [Header("Wave Data")]
     [Tooltip("The wave data to use for this wave")]
     [SerializeField] List<WaveData> _waveData;
@@ -31,6 +30,7 @@ public class WaveManager : MonoBehaviour
     [Range(0f, 3f)]
     [SerializeField] private float _spawnDelay;
 
+    public UnityEvent<GameObject> eliteEnemySpawned;
 
     private List<WaveData>.Enumerator _currentWaveEnumerator;
     private List<MockEnemyAI> _enemies = new List<MockEnemyAI>(); // TODO: Replace with Enemy script
@@ -227,4 +227,5 @@ public class WaveManager : MonoBehaviour
     {
         return _eliteMobsSpawned && _eliteMobsAlive == 0;
     }
+
 }

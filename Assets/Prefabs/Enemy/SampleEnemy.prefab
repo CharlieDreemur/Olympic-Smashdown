@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4254956238224807452}
   - component: {fileID: 7185232760710481563}
   - component: {fileID: 736174770}
+  - component: {fileID: 70576162}
   m_Layer: 0
   m_Name: SampleEnemy
   m_TagString: Untagged
@@ -140,6 +141,9 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: fb7f16b572215ff47a5bd74ed1949388, type: 2}
   target: {fileID: 0}
   behaviorTree: {fileID: 736174770}
+  died:
+    m_PersistentCalls:
+      m_Calls: []
   health: 0
 --- !u!114 &736174770
 MonoBehaviour:
@@ -183,3 +187,20 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &70576162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2355879992007875020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2b63ef7eec8584280e5b1fdb9ef83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemPoolData: {fileID: 11400000, guid: b51c39399c2e82f4eb0e27a54f85eac8, type: 2}
+  _spawnOffsets:
+  - {x: -1.5, y: 0}
+  - {x: 0, y: 0}
+  - {x: 1.5, y: 0}
