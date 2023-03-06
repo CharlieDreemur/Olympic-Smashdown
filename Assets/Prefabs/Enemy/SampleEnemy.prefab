@@ -199,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2b63ef7eec8584280e5b1fdb9ef83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemPoolData: {fileID: 11400000, guid: b51c39399c2e82f4eb0e27a54f85eac8, type: 2}
   _spawnOffsets:
   - {x: -1.5, y: 0}
   - {x: 0, y: 0}
