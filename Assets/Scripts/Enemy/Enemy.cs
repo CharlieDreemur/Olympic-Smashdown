@@ -1,10 +1,14 @@
+using System;
+using System.Net.Http.Headers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class Enemy : Entity
 {
     public EnemyData enemyData;
+    [Required]
     public GameObject target;
     public BehaviorDesigner.Runtime.BehaviorTree behaviorTree;
     public int health;
@@ -23,6 +27,14 @@ public class Enemy : Entity
         behaviorTree.SetVariableValue("targetTransform", target.transform);
         behaviorTree.SetVariableValue("selfTransform", transform);
         behaviorTree.SetVariableValue("projectileData", enemyData.projectileData);
+        switch(enemyData.enemyType){
+            case EnemyType.dasher:
+                behaviorTree.SetVariableValue("dashCurve", enemyData.dashCurve);
+                behaviorTree.SetVariableValue("dashSpeed", enemyData.dashSpeed);
+                behaviorTree.SetVariableValue("dashTime", enemyData.dashTime);
+                break;
+        }
+        
     }
 
 }
