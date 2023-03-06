@@ -17,6 +17,7 @@ public class ProjectileTrackStraight : ProjectileTrack
         //projectile.rb.AddForce(displacement, ForceMode.Acceleration);
         projectile.distance += step;
         projectile.rb.MovePosition(targetPosition);
+        //rb.velocity = new Vector2(projectile.args.direction.x, projectile.args.direction.y) * Speed;
     }
 
     // Update is called once per frame

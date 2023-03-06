@@ -9,6 +9,12 @@ public class Enemy : Entity
     public BehaviorDesigner.Runtime.BehaviorTree behaviorTree;
     public int health;
     private void Awake() {
+        if(target == null)
+            Debug.LogAssertion("Target is null");
+        if(enemyData == null)
+            Debug.LogAssertion("EnemyData is null");
+        if(behaviorTree == null)
+            Debug.LogAssertion("BehaviorTree is null");
         behaviorTree = GetComponent<BehaviorDesigner.Runtime.BehaviorTree>();
         health = enemyData.health;
         behaviorTree.SetVariableValue("moveSpeed", enemyData.moveSpeed);

@@ -12,6 +12,10 @@ public abstract class ProjectileTrack
     protected Entity target;
     protected float speedMultipler;
     protected AnimationCurve speedCurve;
+    protected Rigidbody2D rb
+    {
+        get=>projectile.RB;
+    }
     protected float Speed
     {
         get
