@@ -220,7 +220,12 @@ public class Projectile : MonoBehaviour
     }
 
     public void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.TryGetComponent<Reflector>(out Reflector reflector)) {
+        if (other.gameObject.TryGetComponent<ProjectileDestroyer>(out ProjectileDestroyer destroyer))
+        {
+            Release();
+        }
+        else if (other.gameObject.TryGetComponent<Reflector>(out Reflector reflector))
+        {
             args.direction = Vector3.Reflect(args.direction, other.contacts[0].normal);
             track = new ProjectileTrackStraight(this);
         }

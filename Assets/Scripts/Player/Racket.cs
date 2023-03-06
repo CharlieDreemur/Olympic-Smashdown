@@ -58,14 +58,14 @@ public class Racket : MonoBehaviour
             Debug.Log(proj);
             var projDir3 = (proj.gameObject.transform.position - transform.position);
             var projDir2 = new Vector2(projDir3.x, projDir3.y).normalized;
-           // test direction
-           // 0.707 is like 45 deg
-           if (Vector2.Dot(direction.normalized, projDir2) > 0.707f)
-           {
-               proj.args.direction = direction.normalized;
-               // var projRb = proj.GetComponent<Rigidbody2D>();
-               // projRb.velocity = direction.normalized * projRb.velocity.magnitude;
-           }
+            // test direction
+            // 0.707 is like 45 deg
+            if (Vector2.Dot(direction.normalized, projDir2) > 0.707f)
+            {
+                proj.args.direction = direction.normalized;
+                // var projRb = proj.GetComponent<Rigidbody2D>();
+                // projRb.velocity = direction.normalized * projRb.velocity.magnitude;
+            }
         }
     }
 }
