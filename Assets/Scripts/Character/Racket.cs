@@ -1,14 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Racket : MonoBehaviour
 {
-    private HashSet<GameObject> _objectsInRange;
+    private HashSet<Projectile> _objectsInRange;
     
     public GameObject racketGraphics;
     public float racketRadius = 5f;
+
+    private void Awake()
+    {
+        _objectsInRange = new HashSet<Projectile>();
+    }
+
     private void Update()
     {
         var mousePos = Camera.main!.ScreenToWorldPoint(Input.mousePosition);
@@ -25,27 +33,38 @@ public class Racket : MonoBehaviour
         }
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        // tracking enemy now
-        // will change to projectiles later
-        if (other.GetComponent<Enemy>() != null)
+        var proj = col.GetComponent<Projectile>();
+        if (proj != null)
         {
-            _objectsInRange.Add(other.gameObject);
+            _objectsInRange.Add(proj);
         }
     }
     
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<Enemy>() != null)
+        var proj = other.GetComponent<Projectile>();
+        if (proj != null && _objectsInRange.Contains(proj))
         {
-            _objectsInRange.Remove(other.gameObject);
+            _objectsInRange.Remove(proj);
         }
     }
 
-    public void Swing(Vector2 direction)
+    private void Swing(Vector2 direction)
     {
-        // test angles and apply swing here
-        Debug.Log("Swing");
+        foreach (var proj in _objectsInRange)
+        {
+            Debug.Log(proj);
+            var projDir3 = (proj.gameObject.transform.position - transform.position);
+            var projDir2 = new Vector2(projDir3.x, projDir3.y).normalized;
+           // test direction
+           // 0.707 is like 45 deg
+           if (Vector2.Dot(direction.normalized, projDir2) > 0.707f)
+           {
+               var projRb = proj.GetComponent<Rigidbody2D>();
+               projRb.velocity = direction.normalized * projRb.velocity.magnitude;
+           }
+        }
     }
 }
