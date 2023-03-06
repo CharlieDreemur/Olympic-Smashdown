@@ -3,14 +3,14 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterController2D: Entity
+public class PlayerController2D: MonoBehaviour
 {
     [Header("Movement Settings")]
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
-    public CharacterData data;
+    public PlayerData data;
 
     
 

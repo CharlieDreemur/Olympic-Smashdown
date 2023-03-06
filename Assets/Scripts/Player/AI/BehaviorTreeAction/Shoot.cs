@@ -15,7 +15,7 @@ public class Shoot : Action
     public override TaskStatus OnUpdate()
     {
         _direction= new Vector2(target.Value.position.x - self.Value.position.x, target.Value.position.y - self.Value.position.y);
-        Projectile.InstantiateProjectile(projectileData.Value, self.Value.position, self.Value.GetComponent<Entity>(), _direction);
+        Projectile.InstantiateProjectile(projectileData.Value, self.Value.position, ProjectileOwnerType.enemy, _direction);
         return TaskStatus.Success;
     }
 }

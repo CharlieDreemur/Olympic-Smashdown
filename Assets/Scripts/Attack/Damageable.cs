@@ -14,9 +14,9 @@ public interface IDamageable
 
     public virtual void ApplyDamage(DamageInfo damageInfo)
     {
-        TakeDamage(damageInfo.Damage);
+        TakeDamage(damageInfo.damage);
         OnHit(damageInfo);
-        Vector3 knockbackDisplacement = KnockbackDirection * damageInfo.Knockback;
+        Vector3 knockbackDisplacement = KnockbackDirection * damageInfo.knockback;
         if (knockbackDisplacement != Vector3.zero)
         {
             TakeKnockback(knockbackDisplacement);
@@ -118,4 +118,25 @@ public interface IDamageable
     }
 
     public abstract void OnDeath();
+}
+
+[System.Serializable]
+public struct DamageInfo
+{
+    public DamageInfo(float damage, float knockback, ProjectileOwnerType ownerType)
+    {
+        this.damage = damage;
+        this.knockback = knockback;
+        //！this.canStun = canStun;
+        //! this.BuffsToApply = new List<BuffFactory>();
+        this.ownerType = ownerType;
+        this.hitEntities = new HashSet<Entity>();
+    }
+    public float damage;
+    public float knockback;
+    //!public bool canStun;
+    //! public List<BuffFactory> BuffsToApply;
+    public ProjectileOwnerType ownerType;
+
+    public HashSet<Entity> hitEntities;
 }

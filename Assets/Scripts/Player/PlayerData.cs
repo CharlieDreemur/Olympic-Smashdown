@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-[CreateAssetMenu(fileName = "CharacterData", menuName = "Data/CharacterData")]
-public class CharacterData : ScriptableObject
+[CreateAssetMenu(fileName = "PlayerData", menuName = "Data/PlayerData")]
+public class PlayerData : ScriptableObject
 {
     [MinValue(0)]
     [GUIColor(0.2f, 0.2f, 1f)]

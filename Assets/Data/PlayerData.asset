@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 224f9b15eafff7040821bdea9ca3aeb6, type: 3}
-  m_Name: CharacterData
+  m_Script: {fileID: 11500000, guid: 2a1b54497cc122a46ba45f50c3e1b61a, type: 3}
+  m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProperty
   moveSpeed: 5
   health: 3

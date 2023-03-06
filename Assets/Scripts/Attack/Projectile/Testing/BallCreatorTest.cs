@@ -30,7 +30,7 @@ public class BallCreatorTest : MonoBehaviour
         Projectile.InstantiateProjectile(
             args.projectileData,
             projectile.transform.position,
-            projectile.args.DamageInfo.Instigator,
+            projectile.args.DamageInfo.ownerType,
             direction,
             projectile.args.target,
             ignoredCollision);

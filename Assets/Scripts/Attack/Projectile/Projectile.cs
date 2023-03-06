@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using System.Reflection;
 
 public enum ProjectileTrackType { straight, homing, arc }
-
+public enum ProjectileOwnerType { enemy, player }
 //Everything needed for instantiate a projectile that given not by projectile itself and need to set by outer classes
 [System.Serializable]
 public struct ProjectileArgs
@@ -16,11 +16,11 @@ public struct ProjectileArgs
     public DamageInfo DamageInfo;
 
     public ProjectileArgs(
-        ProjectileData data, 
-        Vector3 spawnPos, 
-        DamageInfo calculateDamageInfo, 
-        Vector3 direction, 
-        Entity target = null, 
+        ProjectileData data,
+        Vector3 spawnPos,
+        DamageInfo calculateDamageInfo,
+        Vector3 direction,
+        Entity target = null,
         List<Entity> ignoredCollisionList = null)
     {
         this._data = data;
@@ -84,23 +84,23 @@ public class Projectile : MonoBehaviour
     private GameObject areaIndicator;
 
     public static GameObject InstantiateProjectile(
-        ProjectileData data, 
-        Vector3 spawnPos, 
-        Entity instigator, 
-        Vector3 attackDirection, 
-        Entity target = null, 
+        ProjectileData data,
+        Vector3 spawnPos,
+        ProjectileOwnerType ownerType,
+        Vector3 attackDirection,
+        Entity target = null,
         List<Entity> ignoredCollisionList = null)
     {
-        DamageInfo damageInfo = new DamageInfo(data.damage, instigator, data.knockback);
+        DamageInfo damageInfo = new DamageInfo(data.damage, data.knockback, ownerType);
         return InstantiateProjectile(data, spawnPos, damageInfo, attackDirection, target, ignoredCollisionList);
     }
 
     public static GameObject InstantiateProjectile(
-        ProjectileData data, 
-        Vector3 spawnPos, 
-        DamageInfo damageInfo, 
-        Vector3 attackDirection, 
-        Entity target = null, 
+        ProjectileData data,
+        Vector3 spawnPos,
+        DamageInfo damageInfo,
+        Vector3 attackDirection,
+        Entity target = null,
         List<Entity> ignoredCollisionList = null)
     {
         ProjectileArgs projectileArgs = new ProjectileArgs(data, spawnPos, damageInfo, attackDirection, target, ignoredCollisionList); //Target is null
@@ -149,7 +149,7 @@ public class Projectile : MonoBehaviour
         switch (args.Data.trackType)
         {
             case ProjectileTrackType.straight:
-                rb.velocity = new Vector2(args.direction.x, args.direction.y)* args.Data.speedMultipler;
+                rb.velocity = new Vector2(args.direction.x, args.direction.y) * args.Data.speedMultipler;
                 // track = new ProjectileTrackStraight(this);
                 break;
             case ProjectileTrackType.homing:
@@ -234,19 +234,26 @@ public class Projectile : MonoBehaviour
         }
 
         Debug.Log(entity);
-        if (entity == args.DamageInfo.Instigator)
+        switch (args.DamageInfo.ownerType)
         {
-            Debug.Log($"ignored {entity}");
-            Physics.IgnoreCollision(args.DamageInfo.Instigator.GetComponent<Collider>(), collider);
-            return;
-        }
+            case ProjectileOwnerType.player:
+                if (entity is Player)
+                {
+                    Debug.Log($"ignored {entity}");
+                    Physics.IgnoreCollision(entity.GetComponent<Collider>(), collider);
 
-        /* //!
-        if (!AreaAttack.IsAttackable(args.Data.attackObjectType, collider.tag))
-        {
-            return;
+                    break;
+                }
+                return;
+            case ProjectileOwnerType.enemy:
+                if (entity is Enemy)
+                {
+                    Debug.Log($"ignored {entity}");
+                    Physics.IgnoreCollision(entity.GetComponent<Collider>(), collider);
+                    break;
+                }
+                return;
         }
-        */
 
         if (args.ignoredCollisionList != null && args.ignoredCollisionList.Count > 0)
         {
