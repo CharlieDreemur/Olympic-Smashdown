@@ -618,7 +618,7 @@
             	UNITY_SETUP_INSTANCE_ID(v);
                 UNITY_TRANSFER_INSTANCE_ID(v, o);
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
-
+            	
 				#if BILBOARD_ON
 				half3 camRight = mul((half3x3)unity_CameraToWorld, half3(1,0,0));
 				half3 camUp = half3(0,1,0);
@@ -1202,15 +1202,8 @@
 				half4 mask = tex2D(_MaskTex, i.uv);
 				mask.rgb *= _LitAmount;
 				mask = saturate(mask);
-				SurfaceData2D surfaceData;
-				InputData2D inputData;
-				surfaceData.albedo = col.rgb;
-				surfaceData.alpha = col.a;
-				surfaceData.mask = mask;
-				inputData.uv = i.uv;
-				inputData.lightingUV = i.lightingUV;
-				half3 lightResult = CombinedShapeLightShared(surfaceData, inputData).rgb;
-            	
+                half3 lightResult = CombinedShapeLightShared(col, mask, i.lightingUV).rgb;
+
 				#if GLOWLIGHT_ON
 				mask.rgb += mask.rgb;
 				mask.rgb -= col.rgb;

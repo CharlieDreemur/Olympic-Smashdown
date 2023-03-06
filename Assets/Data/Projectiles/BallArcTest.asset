@@ -44,7 +44,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultipler: 20
+  speedMultipler: 5
   speedCurve:
     serializedVersion: 2
     m_Curve:
