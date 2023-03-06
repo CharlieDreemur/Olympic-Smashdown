@@ -21,7 +21,4 @@ public class CanvasManager : MonoBehaviour
         health_slider.GetComponent<Image>().fillAmount = cur_health / max_health;
         health_num.text = cur_health.ToString();
     }
-    {
-        
-    }
 }
