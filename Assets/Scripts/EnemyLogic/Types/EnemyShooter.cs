@@ -69,7 +69,7 @@ public class EnemyShooter : EnemyMaster
             // print("WaitAndPrint " + Time.time);
             GameObject bullet = Instantiate(bullet_prefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Bullet>().trigger_tags.Add("Player");
-            bullet.GetComponent<Bullet>().direction = target.transform.position - transform.position;
+            bullet.GetComponent<Bullet>().direction = target.transform.position - transform.position;  // TODO: normalize?
             bullet.GetComponent<Bullet>().damage = 10f; // TODO: update damage
         }
     }
