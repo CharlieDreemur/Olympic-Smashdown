@@ -97,7 +97,7 @@ public class WaveManager : MonoBehaviour
     private IEnumerator WaveCoroutine()
     {
         Debug.Log("Wave started");
-        _spawnCooldown = _currentWaveData.SpawnInterval;
+        _spawnCooldown = 0f;
         _currentWaveTime = 0f;
 
         while (!IsWaveOver())
