@@ -41,7 +41,7 @@ Material:
     - _CenterX: 960
     - _CenterY: 540
     - _EnableExternalAlpha: 0
-    - _Radius: 50
+    - _Radius: 2236.6663
     - _RefScreenSizeX: 1920
     - _RefScreenSizeY: 1080
     m_Colors:
