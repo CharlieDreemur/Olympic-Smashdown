@@ -708,6 +708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ce446a5e5b3064284508adad32c6c6, type: 3}
+--- !u!58 &1571039877 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7698973864632822059, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
+  m_PrefabInstance: {fileID: 7698973864510556847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2355879992248434135
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,6 +790,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7698973864632822058, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
+      propertyPath: arcAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698973864632822058, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
+      propertyPath: _triggerCollider
+      value: 
+      objectReference: {fileID: 1571039877}
+    - target: {fileID: 7698973864632822058, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
+      propertyPath: racketGraphicRadius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698973864632822059, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7698973864883003334, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
       propertyPath: m_RootOrder
       value: 1
