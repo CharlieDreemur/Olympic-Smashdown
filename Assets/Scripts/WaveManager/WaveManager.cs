@@ -4,7 +4,6 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-[InfoBox("**NOT READY** This script does not have Enemy script integration", InfoMessageType.Warning)]
 public class WaveManager : MonoBehaviour
 {
     [Header("Data")]
@@ -33,7 +32,7 @@ public class WaveManager : MonoBehaviour
 
     private GameObject _player;
     private List<WaveData>.Enumerator _currentWaveEnumerator;
-    private List<MockEnemyAI> _enemies = new List<MockEnemyAI>(); // TODO: Replace with Enemy script
+    private List<Enemy> _enemies = new List<Enemy>(); // TODO: Replace with Enemy script
     private List<GameObject> _warningObjects = new List<GameObject>(); // Keep track of all the warning objects so we can destroy them when the wave ends
     private WaveData _currentWaveData;
     private float _spawnCooldown = 0f;
@@ -140,8 +139,8 @@ public class WaveManager : MonoBehaviour
 
     private void CleanUpEnemies()
     {
-        List<MockEnemyAI> enemiesToKill = new List<MockEnemyAI>(_enemies);
-        foreach (MockEnemyAI enemy in enemiesToKill)
+        List<Enemy> enemiesToKill = new List<Enemy>(_enemies);
+        foreach (Enemy enemy in enemiesToKill)
         {
             enemy.Kill();
         }
@@ -215,12 +214,12 @@ public class WaveManager : MonoBehaviour
         Destroy(warning);
 
         GameObject enemy = Instantiate(enemyPrefab, position, Quaternion.identity);
-        MockEnemyAI enemyAI = enemy.GetComponent<MockEnemyAI>();
+        Enemy enemyAI = enemy.GetComponent<Enemy>();
         enemyAI.died.AddListener(() => OnEnemyDied(enemyAI, isElite));
         _enemies.Add(enemyAI);
     }
 
-    private void OnEnemyDied(MockEnemyAI enemyAI, bool isElite)
+    private void OnEnemyDied(Enemy enemyAI, bool isElite)
     {
         _enemies.Remove(enemyAI);
         _totalMobsAlive--;
