@@ -1200,9 +1200,16 @@
 				originalAlpha = col.a;
 
 				half4 mask = tex2D(_MaskTex, i.uv);
-				mask.rgb *= _LitAmount;
+				mask.rgb *= _LitAmount; 
 				mask = saturate(mask);
-                half3 lightResult = CombinedShapeLightShared(col, mask, i.lightingUV).rgb;
+				SurfaceData2D surfaceData; 
+				surfaceData.albedo = mask.rgb; 
+				surfaceData.alpha = mask.a;
+				surfaceData.mask = mask; 
+				InputData2D inputData; 
+				inputData.lightingUV = i.lightingUV;
+				half3 lightResult = CombinedShapeLightShared(surfaceData, inputData).rgb;
+                // half3 lightResult = CombinedShapeLightShared(half4(col), surfaceData, i.lightingUV).rgb;
 
 				#if GLOWLIGHT_ON
 				mask.rgb += mask.rgb;
