@@ -15,6 +15,8 @@ public class BuffIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public float fade_duration;
 
+    public UpgradeData.UpgradeDataStruct buff_data;
+
     int UILayer;
 
     void Start()
@@ -34,6 +36,8 @@ public class BuffIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         GetComponent<Image>().sprite = buff_data_.icon;
         detail_desc.text = buff_data_.description;
         detail_name.text = buff_data_.name;
+
+        buff_data = buff_data_;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

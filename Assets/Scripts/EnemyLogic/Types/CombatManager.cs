@@ -50,7 +50,7 @@ public class CombatManager : MonoBehaviour
 
     public void HandleEnemyDeath(GameObject enemy) {
         kill_count += 1;
-        if (canvas_manager != null) canvas_manager.UpdateKillCount(kill_count);
+        // if (canvas_manager != null) canvas_manager.UpdateKillCount(kill_count);
 
         if (current_enemies.Contains(enemy)) {
             current_enemies.Remove(current_enemies.Find((x) => x.Equals(enemy)));
