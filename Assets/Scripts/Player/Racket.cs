@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 
 public class Racket : MonoBehaviour
@@ -13,16 +14,18 @@ public class Racket : MonoBehaviour
     [Required]
     [Tooltip("The trigger collider of the racket.")]
     [SerializeField] private Collider2D _triggerCollider;
-    public GameObject racketGraphics;
-    [Space(10)]
 
 
     [Header("Racket Settings")]
     [Range(0, 90)]
     [Tooltip("The angle of the hitbox of the racket.")]
-    [SerializeField] private float arcAngle = 45f;
+    [SerializeField] private float _arcAngle = 45f;
 
-    public float racketGraphicRadius = 5f;
+    public Collider2D TriggerCollider { get => _triggerCollider; private set { } }
+    public float ArcAngle { get => _arcAngle; private set { } }
+    public Quaternion RacketRotation { get; private set; }
+    public Vector3 AimDirection { get; private set; }
+    public UnityEvent swung;
     private float _triggerColliderRadius;
 
 
@@ -38,16 +41,11 @@ public class Racket : MonoBehaviour
     {
         var mousePos = Camera.main!.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        var racketDirection = (mousePos - transform.position).normalized;
-        if (racketDirection != Vector3.zero)
-        {
-            racketGraphics.transform.position = transform.position + Quaternion.Euler(0, 0, -arcAngle / 2) * (racketDirection.normalized * racketGraphicRadius); // Set the racket to the left limit of the arc
-            racketGraphics.transform.rotation = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, -arcAngle / 2) * racketDirection);
-        }
+        AimDirection = (mousePos - transform.position).normalized;
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Swing(racketDirection);
+            Swing(AimDirection);
         }
     }
 
@@ -71,6 +69,7 @@ public class Racket : MonoBehaviour
 
     private void Swing(Vector2 direction)
     {
+        swung.Invoke();
         foreach (var proj in _objectsInRange)
         {
             Debug.Log(proj);
@@ -91,14 +90,10 @@ public class Racket : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _triggerColliderRadius);
-
-        var mousePos = Camera.main!.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-        var racketDirection = (mousePos - transform.position).normalized;
-        if (racketDirection != Vector3.zero)
+        if (AimDirection != Vector3.zero)
         {
-            Gizmos.DrawLine(transform.position, transform.position + Quaternion.Euler(0, 0, arcAngle / 2) * (racketDirection.normalized * _triggerColliderRadius)); // right limit of the arc
-            Gizmos.DrawLine(transform.position, transform.position + Quaternion.Euler(0, 0, -arcAngle / 2) * (racketDirection.normalized * _triggerColliderRadius)); // left limit of the arc
+            Gizmos.DrawLine(transform.position, transform.position + Quaternion.Euler(0, 0, _arcAngle / 2) * (AimDirection * _triggerColliderRadius)); // right limit of the arc
+            Gizmos.DrawLine(transform.position, transform.position + Quaternion.Euler(0, 0, -_arcAngle / 2) * (AimDirection * _triggerColliderRadius)); // left limit of the arc
 
             Gizmos.color = Color.green;
 
