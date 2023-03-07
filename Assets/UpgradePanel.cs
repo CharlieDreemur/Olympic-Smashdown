@@ -10,6 +10,7 @@ public class UpgradePanel : MonoBehaviour
 
     [Header("child objects")]
     public Image icon;
+    public TextMeshProUGUI name;
     public TextMeshProUGUI desc;
     public TextMeshProUGUI fun_fact;
 
@@ -43,6 +44,7 @@ public class UpgradePanel : MonoBehaviour
         icon.sprite = upgrade_data.icon;
         desc.text = upgrade_data.description;
         fun_fact.text = upgrade_data.funFact;
+        name.text = upgrade_data.name;
     }
 
     public void Show() {
