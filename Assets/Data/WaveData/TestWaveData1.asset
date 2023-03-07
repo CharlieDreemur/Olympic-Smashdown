@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: TestWaveData1
   m_EditorClassIdentifier: 
   SpawnInfos:
-  - EnemyPrefab: {fileID: 2388160119063236490, guid: fc942aeb5d58a314cb27fec5b420b794, type: 3}
+  - EnemyPrefab: {fileID: 2355879992007875020, guid: 1088e365489e2f04188687998fe2e8a7, type: 3}
     Count: 3
     Weight: 1
     IsGrouped: 1
   EliteSpawnInfos:
-  - EnemyPrefab: {fileID: 6542517825441053435, guid: 0d7affe8c906f9e479097c5d4153f1d8, type: 3}
+  - EnemyPrefab: {fileID: 2355879992007875020, guid: bfebc049f61c5ed4da81e95a36712cb5, type: 3}
     Count: 1
     Weight: 1
     IsGrouped: 0
