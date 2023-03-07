@@ -46,7 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waveData:
   - {fileID: 11400000, guid: b9c9f2124176e894083527ccb56bea32, type: 2}
-  _player: {fileID: 0}
+  itemPoolData: {fileID: 11400000, guid: b51c39399c2e82f4eb0e27a54f85eac8, type: 2}
   _warningPrefab: {fileID: 5026762404992528570, guid: 0557602ac03b6be4ebe7e8af5dc3d9cb, type: 3}
   _eliteWarningPrefab: {fileID: 7668302405429155688, guid: 36d7fa5e7f311aa4fac5b6bddc59d391, type: 3}
-  _spawnDelay: 1
+  _spawnDelay: 2
+  eliteEnemySpawned:
+    m_PersistentCalls:
+      m_Calls: []
