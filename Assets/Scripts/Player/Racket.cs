@@ -80,6 +80,7 @@ public class Racket : MonoBehaviour
             if (Vector2.Dot(direction.normalized, projDir2) > 0.707f)
             {
                 proj.args.direction = direction.normalized;
+                proj.args.DamageInfo.ownerType = ProjectileOwnerType.player;
                 // var projRb = proj.GetComponent<Rigidbody2D>();
                 // projRb.velocity = direction.normalized * projRb.velocity.magnitude;
             }

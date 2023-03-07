@@ -12,7 +12,7 @@ public class Enemy : Entity
     public EnemyData enemyData;
     public BehaviorDesigner.Runtime.BehaviorTree behaviorTree;
     public UnityEvent died;
-    public int health;
+    public int health = 1;
     private GameObject _target;
     private void Awake()
     {
@@ -49,4 +49,22 @@ public class Enemy : Entity
         Destroy(gameObject);
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        var proj = col.gameObject.GetComponent<Projectile>();
+        if (proj != null && proj.args.DamageInfo.ownerType == ProjectileOwnerType.player)
+        {
+            Destroy(col.gameObject);
+            Hurt(1);
+        }
+    }
+    
+    public void Hurt(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Kill();
+        }
+    }
 }

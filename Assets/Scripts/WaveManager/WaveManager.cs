@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,7 +26,18 @@ public class WaveManager : MonoBehaviour
     [Tooltip("The time it takes for the warning prefab to fade out and spawn the enemy")]
     [Range(0f, 3f)]
     [SerializeField] private float _spawnDelay;
+
     [Space(10)]
+
+    [Header("TransitionCurtain")]
+    [Tooltip("The thing that transitions to the next level")]
+    [SerializeField]
+    private TransitionBlackout curtain;
+    
+    [Header("Next Level")]
+    [Tooltip("String pointing to the next level")]
+    [SerializeField]
+    private string nextLevel = "";
 
     public UnityEvent<GameObject> eliteEnemySpawned;
     public ItemPoolData ItemPoolData { get => itemPoolData; private set { } }
@@ -61,7 +73,14 @@ public class WaveManager : MonoBehaviour
 
     private void EndStage()
     {
-        Debug.Log("Stage ended");
+        if (nextLevel == "")
+        {
+            StartCoroutine(curtain.LoadAsyncSceneWithFadeOut("Scenes/WinScene"));
+        }
+        else
+        {
+            StartCoroutine(curtain.LoadAsyncSceneWithFadeOut(nextLevel));
+        }
     }
 
     private void StartNextWave()

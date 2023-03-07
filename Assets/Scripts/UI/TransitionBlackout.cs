@@ -41,7 +41,7 @@ public class TransitionBlackout : MonoBehaviour
     
 
 
-    IEnumerator FadeOutCoro()
+    public IEnumerator FadeOutCoro()
     {
         // should be plenty
         _radius = fadeoutStartRadius;
@@ -52,7 +52,7 @@ public class TransitionBlackout : MonoBehaviour
         }
     }
     
-    IEnumerator FadeInCoro()
+    public IEnumerator FadeInCoro()
     {
         // should be plenty
         _radius = 0;
@@ -69,7 +69,7 @@ public class TransitionBlackout : MonoBehaviour
         StartCoroutine(FadeInCoro());
     }
     
-    IEnumerator LoadAsyncSceneWithFadeOut(string targetScene)
+    public IEnumerator LoadAsyncSceneWithFadeOut(string targetScene)
     {
         yield return FadeOutCoro();
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(targetScene);
