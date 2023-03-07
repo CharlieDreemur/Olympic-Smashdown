@@ -10,14 +10,15 @@ using UnityEngine.Events;
 public class Enemy : Entity
 {
     public EnemyData enemyData;
-    [Required]
-    public GameObject target;
     public BehaviorDesigner.Runtime.BehaviorTree behaviorTree;
     public UnityEvent died;
     public int health;
+    private GameObject _target;
     private void Awake()
     {
-        if (target == null)
+        _target = GameObject.FindGameObjectWithTag("Player");
+
+        if (_target == null)
             Debug.LogAssertion("Target is null");
         if (enemyData == null)
             Debug.LogAssertion("EnemyData is null");
@@ -28,7 +29,7 @@ public class Enemy : Entity
         behaviorTree.SetVariableValue("moveSpeed", enemyData.moveSpeed);
         behaviorTree.SetVariableValue("attackRange", enemyData.attackRange);
         behaviorTree.SetVariableValue("attackWindupTime", enemyData.attackWindupTime);
-        behaviorTree.SetVariableValue("targetTransform", target.transform);
+        behaviorTree.SetVariableValue("targetTransform", _target.transform);
         behaviorTree.SetVariableValue("selfTransform", transform);
         behaviorTree.SetVariableValue("projectileData", enemyData.projectileData);
         switch (enemyData.enemyType)
@@ -39,7 +40,6 @@ public class Enemy : Entity
                 behaviorTree.SetVariableValue("dashTime", enemyData.dashTime);
                 break;
         }
-
     }
 
     [Button("Kill")]
