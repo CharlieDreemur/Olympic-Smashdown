@@ -10,7 +10,7 @@ public class UpgradePanel : MonoBehaviour
 
     [Header("child objects")]
     public Image icon;
-    public TextMeshProUGUI name;
+    public new TextMeshProUGUI name;
     public TextMeshProUGUI desc;
     public TextMeshProUGUI fun_fact;
 
