@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 41.8, y: -19.9}
-  m_SizeDelta: {x: 442.0854, y: 271.7645}
+  m_AnchoredPosition: {x: 78.984, y: -27.1}
+  m_SizeDelta: {x: 975.3172, y: 271.7645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2401596605898556025
 CanvasRenderer:
@@ -96,12 +96,12 @@ MonoBehaviour:
   m_fontSize: 250
   m_fontSizeBase: 250
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 150
+  m_fontSizeMax: 250
+  m_fontStyle: 16
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -387,7 +387,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2401596607664679796}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -475,6 +475,12 @@ MonoBehaviour:
   detail_desc: {fileID: 2401596607475371824}
   detail_name: {fileID: 2401596605898556030}
   fade_duration: 0.5
+  buff_data:
+    icon: {fileID: 0}
+    name: 
+    description: 
+    upgradeType: 0
+    funFact: 
 --- !u!114 &2401596607664679794
 MonoBehaviour:
   m_ObjectHideFlags: 0
