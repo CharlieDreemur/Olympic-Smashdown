@@ -44,10 +44,10 @@ public class Racket : MonoBehaviour
         mousePos.z = 0;
         AimDirection = (mousePos - transform.position).normalized;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && _canSwing)
         {
             Swing(AimDirection);
-            StartSwingCooldown();
+            StartCoroutine(StartSwingCooldown());
         }
     }
 
