@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3231d6b4e8793824f9ec209ba3b4b949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health_slider: {fileID: 6681382334754301668}
+  health_slider: {fileID: 6681382333423049875}
   health_num: {fileID: 8673814376022061631}
   demobuff: {fileID: 11400000, guid: bea200f0dbe72184f8a10c1f06c3a759, type: 2}
 --- !u!1 &932555474230183162
@@ -2539,9 +2539,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17cbc357bf20de74485f5f5d54b77b72, type: 3}
---- !u!1 &6681382334754301668 stripped
+--- !u!1 &6681382333423049875 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5784895257406628654, guid: 17cbc357bf20de74485f5f5d54b77b72, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5784895256579905881, guid: 17cbc357bf20de74485f5f5d54b77b72, type: 3}
   m_PrefabInstance: {fileID: 932555473965139402}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &6681382334754301669 stripped
