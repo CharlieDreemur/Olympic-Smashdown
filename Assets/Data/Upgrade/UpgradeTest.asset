@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
   m_Name: UpgradeTest
   m_EditorClassIdentifier: 
-  upgradeData:
-  - icon: {fileID: 21300000, guid: ab4465ab72ca5544da8e8dd1110b6973, type: 3}
-    name: Demo Name
-    description: -50% Moving Speed
-    upgradeType: 0
-    funFact: ice skating may be beteer
-  - icon: {fileID: 0}
-    name: 
-    description: 
-    upgradeType: 0
-    funFact: 
+  icon: {fileID: 0}
+  name: 
+  description: 
+  funFact: 
+  statsBonus:
+    health: 0
+    moveSpeed: 0
+    playerSize: 0
+    reflectDamage: 0
+    reflectMoveSpeed: 0
+    racketDamage: 0
+    racketAttackSpeed: 0
+    racketSize: 0
