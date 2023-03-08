@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
-using Sirenix.OdinInspector;
 
 public class Player : Entity
 {
@@ -23,6 +23,8 @@ public class Player : Entity
     [FoldoutGroup("Events")]
     public UnityEvent onHurt;
     [FoldoutGroup("Events")]
+    public UnityEvent<int, int> onHealthChange;
+    [FoldoutGroup("Events")]
     public UnityEvent onDash;
     [FoldoutGroup("Events")]
     public UnityEvent onReflect;
@@ -32,6 +34,7 @@ public class Player : Entity
         // note that this will need to be changed as we add more levels
         // probably some don't destroy on load setup
         playerStats.Init(data);
+        onHealthChange.Invoke(playerStats.health, playerStats.maxHealth);
     }
     private void Start()
     {
@@ -45,6 +48,7 @@ public class Player : Entity
     public void Hurt(int damage)
     {
         onHurt.Invoke();
+        onHealthChange.Invoke(playerStats.health, playerStats.maxHealth);
         playerStats.health -= damage;
         if (playerStats.health <= 0)
         {

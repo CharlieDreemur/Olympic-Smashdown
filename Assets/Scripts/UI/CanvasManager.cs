@@ -28,41 +28,49 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Q)) {
+        if (Input.GetKey(KeyCode.Q))
+        {
             // ShowUpgradePanel(demobuff);
             // UpdateHealth(3f, 6f);
             AddBuff(demobuff);
         }
 
-        if (Input.GetKey(KeyCode.E)) {
+        if (Input.GetKey(KeyCode.E))
+        {
             // HideUpgradePanel();
             RemoveBuff(demobuff);
         }
     }
 
-    public void UpdateHealth(float cur_health, float max_health) {
-        health_slider.GetComponent<Image>().fillAmount = cur_health / max_health;
+    public void UpdateHealth(int cur_health, int max_health)
+    {
+        health_slider.GetComponent<Image>().fillAmount = (float)cur_health / (float)max_health;
         health_num.text = cur_health.ToString();
     }
 
-    public void ShowUpgradePanel(UpgradeData _upgrade_data) {
+    public void ShowUpgradePanel(UpgradeData _upgrade_data)
+    {
         upgrade_panel.SetUpgradeData(_upgrade_data);
         upgrade_panel.Show();
     }
 
-    public void SetUpgradePanelData(UpgradeData _upgrade_data) {
+    public void SetUpgradePanelData(UpgradeData _upgrade_data)
+    {
         upgrade_panel.SetUpgradeData(_upgrade_data);
     }
 
-    public void HideUpgradePanel() {
+    public void HideUpgradePanel()
+    {
         upgrade_panel.Hide();
     }
 
-    public void AddBuff(UpgradeData buff_data_) {
+    public void AddBuff(UpgradeData buff_data_)
+    {
         buff_list.AddBuff(buff_data_);
     }
 
-    public void RemoveBuff(UpgradeData buff_data_) {
+    public void RemoveBuff(UpgradeData buff_data_)
+    {
         buff_list.RemoveBuff(buff_data_);
     }
 

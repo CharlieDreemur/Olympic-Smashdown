@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: UpgradeTest
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  name: 
-  description: 
-  funFact: 
+  name: DEMOBUFF
+  description: this is a demo buff
+  funFact: this is a line of fun fact
   statsBonus:
-    health: 0
-    moveSpeed: 0
-    playerSize: 0
-    reflectDamage: 0
-    reflectMoveSpeed: 0
-    racketDamage: 0
-    racketAttackSpeed: 0
-    racketSize: 0
+    healthBonus: 0
+    moveSpeedBonus: 0
+    playerSizeBonus: 0
+    reflectDamageBonus: 0
+    reflectMoveSpeedBonus: 0
+    racketDamageBonus: 0
+    racketAttackSpeedBonus: 0
+    racketSizeBonus: 0
