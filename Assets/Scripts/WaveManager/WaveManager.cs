@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using UnityEditor.U2D.Animation;
+// using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -33,7 +33,7 @@ public class WaveManager : MonoBehaviour
     [Tooltip("The thing that transitions to the next level")]
     [SerializeField]
     private TransitionBlackout curtain;
-    
+
     [Header("Next Level")]
     [Tooltip("String pointing to the next level")]
     [SerializeField]
