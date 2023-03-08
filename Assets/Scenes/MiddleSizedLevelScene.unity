@@ -1274,6 +1274,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   health: 0
+  dashCooldownTimer: 0
 --- !u!1001 &7698973864510556847
 PrefabInstance:
   m_ObjectHideFlags: 0
