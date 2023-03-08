@@ -17,7 +17,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
 
     private BuffList buff_list;
     private UpgradePanel upgrade_panel;
-    public UpgradeData.UpgradeDataStruct demobuff; // TODO: only for demo use
+    public UpgradeData demobuff; // TODO: only for demo use
 
     void Start()
     {
