@@ -10,19 +10,19 @@ public class UpgradePanel : MonoBehaviour
 
     [Header("child objects")]
     public Image icon;
-    public TextMeshProUGUI name;
+    public new TextMeshProUGUI name;
     public TextMeshProUGUI desc;
     public TextMeshProUGUI fun_fact;
 
     [Header("upgrade data")]
-    public UpgradeData.UpgradeDataStruct upgrade_data;
+    public UpgradeData upgrade_data;
 
     [Header("hooks")]
     public GameObject start_pos;
     public GameObject end_pos;
     public float moving_time;
 
-    public UpgradeData.UpgradeDataStruct test_data;
+    public UpgradeData test_data;
     
 
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class UpgradePanel : MonoBehaviour
         
     }
 
-    public void SetUpgradeData(UpgradeData.UpgradeDataStruct _upgrade_data) {
+    public void SetUpgradeData(UpgradeData _upgrade_data) {
         upgrade_data = _upgrade_data;
 
         icon.sprite = upgrade_data.icon;

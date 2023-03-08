@@ -4,7 +4,7 @@ using BehaviorDesigner.Runtime.Tasks;
 
 
 [TaskDescription("Returns success if the target is within the specified range, otherwise failure.")]
-public class IsInRange : Action
+public class IsInRange : Conditional
 {
     public SharedTransform targetTransform;
     public SharedTransform selfTransform;

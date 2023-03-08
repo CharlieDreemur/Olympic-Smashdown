@@ -18,9 +18,56 @@ public class PlayerData : ScriptableObject
     public int racketDamage = 1;
     [MinValue(0.1)]
     public int racketSpeed = 1;
-    [MinValue(0.1)]
-    public int racketRange = 1;
-
-
 
 }
+[System.Serializable] [HideLabel]
+    public struct PlayerStats
+    {
+        [FoldoutGroup("Player")]
+        public int health;
+        [FoldoutGroup("Player")]
+        public float moveSpeed;
+        [FoldoutGroup("Player")]
+        public float playerSize;
+        [FoldoutGroup("Reflect")]
+        public int reflectDamage;
+        [FoldoutGroup("Reflect")]
+        public float reflectMoveSpeed;
+        [FoldoutGroup("Racket")]
+        public int racketDamage;
+        [FoldoutGroup("Racket")]
+        public float racketAttackSpeed;
+        [FoldoutGroup("Racket")]
+        public float racketSize;
+        public void Init(PlayerData data){
+            health = data.health;
+            moveSpeed = data.moveSpeed;
+            playerSize = data.racketSize;
+            reflectDamage = data.racketDamage;
+            reflectMoveSpeed = data.racketSpeed;
+            racketDamage = data.racketDamage;
+            racketAttackSpeed = data.racketSpeed;
+            racketSize = data.racketSize;
+        }
+        public void Add(PlayerStats stats){
+            stats.health += health;
+            stats.moveSpeed += moveSpeed;
+            stats.playerSize += playerSize;
+            stats.reflectDamage += reflectDamage;
+            stats.reflectMoveSpeed += reflectMoveSpeed;
+            stats.racketDamage += racketDamage;
+            stats.racketAttackSpeed += racketAttackSpeed;
+            stats.racketSize += racketSize;
+        }
+        public void Minus(PlayerStats stats){
+            stats.health -= health;
+            stats.moveSpeed -= moveSpeed;
+            stats.playerSize -= playerSize;
+            stats.reflectDamage -= reflectDamage;
+            stats.reflectMoveSpeed -= reflectMoveSpeed;
+            stats.racketDamage -= racketDamage;
+            stats.racketAttackSpeed -= racketAttackSpeed;
+            stats.racketSize -= racketSize;
+        }
+
+    }
