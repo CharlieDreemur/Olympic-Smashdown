@@ -48,10 +48,10 @@ public class Enemy : Entity
     private void Update()
     {
         //Cooldown timer for dash
-        dashCooldownTimer = (float)behaviorTree.GetVariable("dashCooldownTimer").GetValue();
         switch (enemyData.enemyType)
         {
             case EnemyType.dasher:
+            dashCooldownTimer = (float)behaviorTree.GetVariable("dashCooldownTimer").GetValue();
                 if (dashCooldownTimer > 0)
                 {
                     dashCooldownTimer -= Time.deltaTime;
