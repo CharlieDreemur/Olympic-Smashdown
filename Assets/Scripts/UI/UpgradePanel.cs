@@ -28,8 +28,8 @@ public class UpgradePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetUpgradeData(test_data);
-        Show();
+        // SetUpgradeData(test_data);
+        // Show();
     }
 
     // Update is called once per frame

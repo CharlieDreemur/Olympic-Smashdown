@@ -497,6 +497,7 @@ RectTransform:
   - {fileID: 138711027}
   - {fileID: 427374585}
   - {fileID: 2138533136}
+  - {fileID: 1133317482}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -580,12 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_slider: {fileID: 804970763}
   health_num: {fileID: 342892292}
-  demobuff:
-    icon: {fileID: 21300000, guid: 9e59d774f83497f4381f5a2ca148a106, type: 3}
-    name: DEMOBUFFF
-    description: this is a demo buff for test only
-    upgradeType: 0
-    funFact: this is a fun fact about this demo buff
+  demobuff: {fileID: 11400000, guid: bea200f0dbe72184f8a10c1f06c3a759, type: 2}
 --- !u!1 &427374584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,8 +1165,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1133317482}
+  m_Children: []
   m_Father: {fileID: 386690692}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1894,21 +1889,11 @@ MonoBehaviour:
   name: {fileID: 906427720}
   desc: {fileID: 572235684}
   fun_fact: {fileID: 1855026693}
-  upgrade_data:
-    icon: {fileID: 0}
-    name: 
-    description: 
-    upgradeType: 0
-    funFact: 
+  upgrade_data: {fileID: 11400000, guid: bea200f0dbe72184f8a10c1f06c3a759, type: 2}
   start_pos: {fileID: 1599847559}
   end_pos: {fileID: 1303861001}
   moving_time: 1
-  test_data:
-    icon: {fileID: 21300000, guid: 9e59d774f83497f4381f5a2ca148a106, type: 3}
-    name: Test Data
-    description: -50% Moving Speed
-    upgradeType: 0
-    funFact: ice skating may be beteer
+  test_data: {fileID: 11400000, guid: bea200f0dbe72184f8a10c1f06c3a759, type: 2}
 --- !u!114 &1284048412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3505,11 +3490,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 711516497}
+    m_TransformParent: {fileID: 386690692}
     m_Modifications:
     - target: {fileID: 2401596607664679796, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_Name
       value: icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2401596607664679796, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_Pivot.x
@@ -3521,7 +3510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3529,7 +3518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3537,15 +3526,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3577,11 +3566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 65.94861
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -154
       objectReference: {fileID: 0}
     - target: {fileID: 2401596607664679799, guid: 47da71a7e651b8c4a90fdbf52d40fb4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3646,6 +3635,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   health: 0
+  dashCooldownTimer: 0
 --- !u!212 &8517570411835012276
 SpriteRenderer:
   m_ObjectHideFlags: 0
