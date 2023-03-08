@@ -20,7 +20,7 @@ public class PlayerController2D: MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        moveSpeed = player.data.moveSpeed;
+        moveSpeed = player.playerStats.moveSpeed;
     }
 
     private void Update()
