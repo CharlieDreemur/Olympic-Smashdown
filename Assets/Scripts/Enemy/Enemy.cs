@@ -14,6 +14,8 @@ public class Enemy : Entity
     public UnityEvent died;
     public int health = 1;
     private GameObject _target;
+    [SerializeField]
+    private float dashCooldownTimer = 0;
     private void Awake()
     {
         _target = GameObject.FindGameObjectWithTag("Player");
@@ -35,11 +37,29 @@ public class Enemy : Entity
         switch (enemyData.enemyType)
         {
             case EnemyType.dasher:
-                behaviorTree.SetVariableValue("dashCurve", enemyData.dashCurve);
+                //behaviorTree.SetVariableValue("dashCurve", enemyData.dashCurve);
                 behaviorTree.SetVariableValue("dashSpeed", enemyData.dashSpeed);
                 behaviorTree.SetVariableValue("dashTime", enemyData.dashTime);
+                behaviorTree.SetVariableValue("dashCooldown", enemyData.dashCooldown);
+                behaviorTree.SetVariableValue("dashWindupTime", enemyData.dashWindupTime);
                 break;
         }
+    }
+    private void Update()
+    {
+        //Cooldown timer for dash
+        dashCooldownTimer = (float)behaviorTree.GetVariable("dashCooldownTimer").GetValue();
+        switch (enemyData.enemyType)
+        {
+            case EnemyType.dasher:
+                if (dashCooldownTimer > 0)
+                {
+                    dashCooldownTimer -= Time.deltaTime;
+                    behaviorTree.SetVariableValue("dashCooldownTimer", dashCooldownTimer);
+                }
+                break;
+        }
+
     }
 
     [Button("Kill")]
@@ -58,7 +78,7 @@ public class Enemy : Entity
             Hurt(1);
         }
     }
-    
+
     public void Hurt(int damage)
     {
         health -= damage;
