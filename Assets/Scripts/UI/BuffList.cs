@@ -6,7 +6,7 @@ using UnityEngine;
 public class BuffList : MonoBehaviour
 {
     
-    public List<UpgradeData.UpgradeDataStruct> buffs;
+    public List<UpgradeData> buffs;
     // public List<GameObject> childs;
     public GameObject buff_icon_prefab;
 
@@ -23,7 +23,7 @@ public class BuffList : MonoBehaviour
         
     }
 
-    public void AddBuff(UpgradeData.UpgradeDataStruct buff_data_) {
+    public void AddBuff(UpgradeData buff_data_) {
         buffs.Add(buff_data_);
         GameObject added_buff = Instantiate(buff_icon_prefab, Vector3.zero, Quaternion.identity);
         added_buff.transform.SetParent(transform);
@@ -35,7 +35,7 @@ public class BuffList : MonoBehaviour
         // childs.Add(added_buff);
     }
 
-    public void RemoveBuff(UpgradeData.UpgradeDataStruct buff_data_) {
+    public void RemoveBuff(UpgradeData buff_data_) {
         buffs.Remove(buff_data_);
         foreach (Transform child in transform) {
             if (child.GetComponent<BuffIcon>().buff_data.name == buff_data_.name) {

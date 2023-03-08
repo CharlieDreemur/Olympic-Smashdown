@@ -18,8 +18,6 @@ public class PlayerData : ScriptableObject
     public int racketDamage = 1;
     [MinValue(0.1)]
     public int racketSpeed = 1;
-    [MinValue(0.1)]
-    public int racketRange = 1;
 
 
 

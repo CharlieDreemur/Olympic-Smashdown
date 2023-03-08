@@ -15,7 +15,7 @@ public class BuffIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public float fade_duration;
 
-    public UpgradeData.UpgradeDataStruct buff_data;
+    public UpgradeData buff_data;
 
     int UILayer;
 
@@ -32,7 +32,7 @@ public class BuffIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
 
     // Start is called before the first frame update
-    public void SetData(UpgradeData.UpgradeDataStruct buff_data_) {
+    public void SetData(UpgradeData buff_data_) {
         GetComponent<Image>().sprite = buff_data_.icon;
         detail_desc.text = buff_data_.description;
         detail_name.text = buff_data_.name;
