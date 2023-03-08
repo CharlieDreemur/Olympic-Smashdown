@@ -17,11 +17,27 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
 
     private BuffList buff_list;
     private UpgradePanel upgrade_panel;
+    public UpgradeData.UpgradeDataStruct demobuff; // TODO: only for demo use
 
     void Start()
     {
         buff_list = GameObject.FindObjectOfType<BuffList>();
         upgrade_panel = GameObject.FindObjectOfType<UpgradePanel>();
+
+    }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Q)) {
+            // ShowUpgradePanel(demobuff);
+            // UpdateHealth(3f, 6f);
+            AddBuff(demobuff);
+        }
+
+        if (Input.GetKey(KeyCode.E)) {
+            // HideUpgradePanel();
+            RemoveBuff(demobuff);
+        }
     }
 
     public void UpdateHealth(float cur_health, float max_health) {

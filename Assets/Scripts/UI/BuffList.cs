@@ -39,7 +39,8 @@ public class BuffList : MonoBehaviour
         buffs.Remove(buff_data_);
         foreach (Transform child in transform) {
             if (child.GetComponent<BuffIcon>().buff_data.name == buff_data_.name) {
-                GameObject.Destroy(child);
+                GameObject.Destroy(child.gameObject);
+                return;
             }
         }
     }
