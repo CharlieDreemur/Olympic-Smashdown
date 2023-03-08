@@ -20,6 +20,7 @@ public class Racket : MonoBehaviour
     [Range(0, 90)]
     [Tooltip("The angle of the hitbox of the racket.")]
     [SerializeField] private float _arcAngle = 45f;
+    [SerializeField] private float _swingCooldown = 0.25f;
 
     public Collider2D TriggerCollider { get => _triggerCollider; private set { } }
     public float ArcAngle { get => _arcAngle; private set { } }
@@ -28,7 +29,7 @@ public class Racket : MonoBehaviour
     public UnityEvent swung;
     private float _triggerColliderRadius;
 
-
+    private bool _canSwing = true;
 
 
     private void Awake()
@@ -46,7 +47,15 @@ public class Racket : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Swing(AimDirection);
+            StartSwingCooldown();
         }
+    }
+
+    public IEnumerator StartSwingCooldown()
+    {
+        _canSwing = false;
+        yield return new WaitForSeconds(_swingCooldown);
+        _canSwing = true;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
