@@ -21,7 +21,11 @@ public class Player : Entity
     // some external manager will need to set the health on game start
     // and make it remember its health across levels
     public int health;
-
+    public float moveSpeed;
+    public float racketSize;
+    public int racketDamage;
+    public float racketAttackSpeed;
+    
     private void Awake()
     {   
         // for single scene setup, let's just set it to default value on start

@@ -6,19 +6,21 @@ using UnityEngine.Serialization;
 public class PlayerController2D: MonoBehaviour
 {
     [Header("Movement Settings")]
+    private Player player;
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
-    public PlayerData data;
-
+    private float moveSpeed;
     
 
     private void Start()
     {
+        player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        moveSpeed = player.data.moveSpeed;
     }
 
     private void Update()
@@ -33,7 +35,7 @@ public class PlayerController2D: MonoBehaviour
             spriteRenderer.flipX = true;
         
         // Calculate the movement vector
-        movement = new Vector2(horizontalInput, verticalInput).normalized * data.moveSpeed;
+        movement = new Vector2(horizontalInput, verticalInput).normalized * moveSpeed;
         if (horizontalInput!=0 || verticalInput!=0)
         {
             animator.SetBool("isMove", true);

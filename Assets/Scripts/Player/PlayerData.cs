@@ -19,6 +19,6 @@ public class PlayerData : ScriptableObject
     [MinValue(0.1)]
     public int racketSpeed = 1;
 
-
-
 }
+
+
