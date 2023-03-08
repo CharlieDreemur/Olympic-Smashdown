@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1b54497cc122a46ba45f50c3e1b61a, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProperty
-  moveSpeed: 5
-  health: 3
-  racketSize: 1
-  racketDamage: 1
-  racketSpeed: 1
-  racketRange: 1
+  stats:
+    health: 3
+    maxHealth: 3
+    moveSpeed: 5
+    playerSize: 1
+    reflectDamage: 1
+    reflectMoveSpeed: 1
+    racketDamage: 1
+    racketAttackSpeed: 1
+    racketSize: 1

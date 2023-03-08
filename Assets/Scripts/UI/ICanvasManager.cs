@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public interface ICanvasManager
 {
-    public void UpdateHealth(float cur_health, float max_health);
+    public void UpdateHealth(int cur_health, int max_health);
     public void ShowUpgradePanel(UpgradeData _upgrade_data);
     public void SetUpgradePanelData(UpgradeData _upgrade_data);
     public void HideUpgradePanel();
