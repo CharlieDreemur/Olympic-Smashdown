@@ -36,7 +36,7 @@ public class PlayerController2D : MonoBehaviour
             spriteRenderer.flipX = true;
 
         // Calculate the movement vector
-        movement = new Vector2(horizontalInput, verticalInput).normalized * player.playerStats.moveSpeed;
+        movement = new Vector2(horizontalInput, verticalInput).normalized * player.playerStats.moveSpeed * player.playerStats.moveSpeedMultiplier;
         if (horizontalInput != 0 || verticalInput != 0)
         {
             animator.SetBool("isMove", true);
