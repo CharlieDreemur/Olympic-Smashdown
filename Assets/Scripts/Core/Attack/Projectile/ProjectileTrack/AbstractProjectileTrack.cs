@@ -10,7 +10,7 @@ public abstract class ProjectileTrack
     protected ProjectileData _data;
     protected Projectile projectile;
     protected Entity target;
-    protected float speedMultipler;
+    protected float moveSpeed;
     protected AnimationCurve speedCurve;
     protected Rigidbody2D rb
     {
@@ -20,11 +20,11 @@ public abstract class ProjectileTrack
     {
         get
         {
-            return speedMultipler * speedCurve.Evaluate(projectile.time);
+            return moveSpeed * speedCurve.Evaluate(projectile.time);
         }
         set
         {
-            speedMultipler = value;
+            moveSpeed = value;
         }
     }
     protected Vector3 Scale
@@ -41,7 +41,7 @@ public abstract class ProjectileTrack
         this.projectile = projectile;
         this._data = projectile.args.Data;
         this.target = projectile.args.target;
-        this.speedMultipler = _data.speedMultipler;
+        this.moveSpeed = _data.speedMultipler;
         this.speedCurve = _data.speedCurve;
     }
 
