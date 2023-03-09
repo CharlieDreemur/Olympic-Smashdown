@@ -75,6 +75,7 @@ MonoBehaviour:
   cooldown: 0
   stun: 0
   isTriggerWhenRelease: 1
+  destroysObstacles: 0
   gravityScale: 0
   isGreaterAngle: 0
   indicatorRadius: 0
