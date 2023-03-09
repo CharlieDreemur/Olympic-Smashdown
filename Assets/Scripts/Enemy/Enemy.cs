@@ -81,6 +81,8 @@ public class Enemy : Entity
 
     public void Hurt(int damage)
     {
+        string jsonValue = JsonUtility.ToJson(new CreateDamageTextEventArgs(transform.position, damage, DamageType.Normal));
+        EventManager.Invoke("CreateDamageText", jsonValue);
         health -= damage;
         if (health <= 0)
         {

@@ -14,20 +14,14 @@ public enum DamageType{
 
 public class DamageTextManager : Singleton<DamageTextManager>
 {
-    private UnityAction<string> action;
-    public static DamageTextData data;
-    void OnAwake(){  
-        data = Resources.Load("Data/UI/DamageTextData") as DamageTextData;
-        action = new UnityAction<string>(Create);
+
+    public DamageTextData data;
+    [Required]
+    public Transform canvas;
+    void Awake(){  
+        EventManager.AddListener("CreateDamageText", new UnityAction<string>(Create));
     }
 
-    public void Init(){
-        EventManager.AddListener("CreateDamageText", action);
-    }
-    
-    private void OnDisable() {
-        EventManager.RemoveListener("CreateDamageText", action);
-    }
     
     public static void Create(string jsonValue){
         CreateDamageTextEventArgs args =  JsonUtility.FromJson<CreateDamageTextEventArgs>(jsonValue);
@@ -35,14 +29,14 @@ public class DamageTextManager : Singleton<DamageTextManager>
     }
 
     public static void Create(CreateDamageTextEventArgs args){
-        if(data==null){
+        if(Instance.data==null){
             Debug.LogWarning("CreateDamageTextEventArgs is Null");
             //return null;
         }
-        //GameObject damageTextGameObject = Instantiate(data.prefab, pos, Quaternion.identity);
-        UnityEngine.GameObject damageTextGameObject = Instantiate(data.Prefab, args.pos, Quaternion.identity);
+        GameObject damageTextGameObject = Instantiate(Instance.data.Prefab, args.pos, Quaternion.identity);
+        damageTextGameObject.transform.SetParent(Instance.canvas);
         DamageText damageText = damageTextGameObject.GetComponent<DamageText>();
-        damageText.Init(data, args);
+        damageText.Init(Instance.data, args);
         //return damageText;
     }
     
