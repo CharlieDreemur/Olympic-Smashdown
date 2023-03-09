@@ -37,6 +37,7 @@ public struct PlayerStats
         currentHealth = data.stats.currentHealth;
         maxHealth = data.stats.maxHealth;
         moveSpeed = data.stats.moveSpeed;
+        moveSpeedMultiplier = data.stats.moveSpeedMultiplier;
         playerSizeMultiplier = data.stats.racketSizeMultiper;
         reflectDamageMultiplier = data.stats.racketDamageMultipler;
         reflectMoveSpeedMultiplier = data.stats.reflectMoveSpeedMultiplier;
@@ -49,6 +50,7 @@ public struct PlayerStats
         currentHealth += stats.currentHealth;
         maxHealth += stats.maxHealth;
         moveSpeed += stats.moveSpeed;
+        moveSpeedMultiplier += stats.moveSpeedMultiplier;
         playerSizeMultiplier += stats.playerSizeMultiplier; 
         reflectDamageMultiplier += stats.reflectDamageMultiplier;
         reflectMoveSpeedMultiplier += stats.reflectMoveSpeedMultiplier;
@@ -62,6 +64,7 @@ public struct PlayerStats
         currentHealth -= stats.currentHealth;
         maxHealth -= stats.maxHealth;
         moveSpeed -= stats.moveSpeed;
+        moveSpeedMultiplier -= stats.moveSpeedMultiplier;
         playerSizeMultiplier -= stats.playerSizeMultiplier; 
         reflectDamageMultiplier -= stats.reflectDamageMultiplier;
         reflectMoveSpeedMultiplier -= stats.reflectMoveSpeedMultiplier;
