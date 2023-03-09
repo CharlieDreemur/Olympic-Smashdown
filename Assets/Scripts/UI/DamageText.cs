@@ -13,10 +13,9 @@ public class DamageText : MonoBehaviour
     private DamageType damageType_;
     private bool isCrit_;
     private float disappearTimer_;
-    private Vector3 moveVector_;
+    private Vector3 moveVector_ = new Vector3(0.7f,1);
 
     private static int sortingOrder; //渲染层级，确保后生产的text会在上层
-
     private void Awake(){
         textMesh_ = transform.GetComponent<TextMeshPro>();
        
@@ -49,7 +48,7 @@ public class DamageText : MonoBehaviour
         disappearTimer_ = data.disappearTime;
         sortingOrder ++;
         textMesh_.sortingOrder = sortingOrder;
-        moveVector_ = new Vector3(0.7f,1) * data.moveSpeed;
+        moveVector_ *= data.moveSpeed;
         transform.localScale = Vector3.one;
     }
 
