@@ -13,7 +13,7 @@ public class DamageText : MonoBehaviour
     private DamageType damageType_;
     private bool isCrit_;
     private float disappearTimer_;
-    private Vector3 moveVector_ = new Vector3(0.35f,0.5f);
+    private Vector3 moveVector_ = new Vector3(0.7f,1f);
 
     private static int sortingOrder; //渲染层级，确保后生产的text会在上层
     private void Awake(){
@@ -65,16 +65,14 @@ public class DamageText : MonoBehaviour
   
     public void Update(){
         transform.position += moveVector_*Time.deltaTime;
-        moveVector_ -= moveVector_ * 8f * Time.deltaTime;
+        moveVector_ -= moveVector_ * 4f * Time.deltaTime;
         if(disappearTimer_ > data.disappearTime * 0.5f){
             //First hald of the damageText lifetime
-            float increaseScaleAmout = 1f;
-            transform.localScale += Vector3.one * increaseScaleAmout * Time.deltaTime;
+            transform.localScale += Vector3.one * data.increaseScaleAmout * Time.deltaTime;
         }
         else{
             //Second half of the damageText lifetime
-            float decreaseScaleAmount = 1f;
-            transform.localScale -= Vector3.one * decreaseScaleAmount * Time.deltaTime;
+            transform.localScale -= Vector3.one * data.decreaseScaleAmount * Time.deltaTime;
 
         }
 

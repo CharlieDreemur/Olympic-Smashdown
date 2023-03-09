@@ -40,4 +40,8 @@ public class DamageTextData : ScriptableObject
 
     [FoldoutGroup("Detailed Setup")]
     public float disappearSpeed = 3f; //字体的消失速度
+    [FoldoutGroup("Detailed Setup")]
+    public float increaseScaleAmout = 1f; //字体的放大速度
+    [FoldoutGroup("Detailed Setup")]
+    public float decreaseScaleAmount = 1f; //字体的缩小速度
 }
