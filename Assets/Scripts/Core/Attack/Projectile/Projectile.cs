@@ -230,9 +230,7 @@ public class Projectile : MonoBehaviour
             track = new ProjectileTrackStraight(this);
             if (args.DamageInfo.ownerType == ProjectileOwnerType.player)
             {
-                track.Speed *= Player.Instance.playerStats.reflectMoveSpeedMultiplier;
-                track.SetProjectileScale(transform.localScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
-                Debug.Log($"reflect speed: {track.Speed}, scale: {transform.localScale.x}");
+                // Upgrade effects on player projectiles when they hit a reflector
             }
         }
     }

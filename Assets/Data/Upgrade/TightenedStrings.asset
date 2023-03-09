@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
-  m_Name: BetterFasterStronger
+  m_Name: TightenedStrings
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 54af60d343d3e3b458ad7e97dd60dd04, type: 3}
-  name: Better, Faster, Stronger
-  description: Make your stronger
+  icon: {fileID: 21300000, guid: bffd0625224bc9641b5c18715de90184, type: 3}
+  name: Tightened Strings
+  description: '[Racket string tightening station]'
   funFact: 
   statsBonus:
     moveSpeed: 0
@@ -22,9 +22,9 @@ MonoBehaviour:
     playerSizeMultiplier: 0
     reflectDamage: 0
     reflectDamageMultiplier: 0
-    reflectMoveSpeed: 0
+    reflectMoveSpeed: 1
     reflectMoveSpeedMultiplier: 0
-    reflectScaleMultiplier: 0
+    reflectScaleMultiplier: 1
     racketDamage: 0
     racketDamageMultipler: 0
     racketSwingCooldown: 0
