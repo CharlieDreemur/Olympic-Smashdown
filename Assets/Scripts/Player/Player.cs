@@ -44,12 +44,12 @@ public class Player : Entity
         // note that this will need to be changed as we add more levels
         // probably some don't destroy on load setup
         playerStats.Init(data);
-        onHealthChange.Invoke(playerStats.currentHealth, playerStats.maxHealth);
+        onHealthChange.Invoke(playerStats.CurrentHealth, playerStats.MaxHealth);
         EventManager.AddListener("UpgradeEvent", new UnityAction<string>(OnUpgrade));
     }
     private void Start()
     {
-        playerStats.currentHealth = playerStats.maxHealth;
+        playerStats.CurrentHealth = playerStats.MaxHealth;
         OnUpgrade();
         onStart.Invoke();
     }
@@ -65,9 +65,8 @@ public class Player : Entity
     public void Hurt(int damage)
     {
         onHurt.Invoke();
-        onHealthChange.Invoke(playerStats.currentHealth, playerStats.maxHealth);
-        playerStats.currentHealth -= damage;
-        if (playerStats.currentHealth <= 0)
+        playerStats.CurrentHealth -= damage;
+        if (playerStats.CurrentHealth <= 0)
         {
             Die();
         }
