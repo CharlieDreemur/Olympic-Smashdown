@@ -33,7 +33,7 @@ public class DamageTextManager : Singleton<DamageTextManager>
             Debug.LogWarning("CreateDamageTextEventArgs is Null");
             //return null;
         }
-        GameObject damageTextGameObject = Instantiate(Instance.data.Prefab, args.pos, Quaternion.identity);
+        GameObject damageTextGameObject = Instantiate(Instance.data.Prefab, args.pos- new Vector3(0,2), Quaternion.identity);
         damageTextGameObject.transform.SetParent(Instance.canvas);
         DamageText damageText = damageTextGameObject.GetComponent<DamageText>();
         damageText.Init(Instance.data, args);
