@@ -66,7 +66,7 @@ public class EventManager : Singleton<EventManager>
         JsonEvent thisEvent = null;
         if(Instance._eventDictionary.TryGetValue(eventName, out thisEvent)){
             if(Instance.isPrintMessage){
-                MessageManager.AddMessage($"Call [{eventName}]");
+                Debug.Log($"Call [{eventName}]");
             }
             thisEvent.Invoke(value);
         }

@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
   m_Name: UpgradeTest
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 624a4cf9a01aa0c4fbb058aa5730d4e8, type: 3}
   name: DEMOBUFF
   description: this is a demo buff
   funFact: this is a line of fun fact
   statsBonus:
-    healthBonus: 0
-    moveSpeedBonus: 0
-    playerSizeBonus: 0
-    reflectDamageBonus: 0
-    reflectMoveSpeedBonus: 0
-    racketDamageBonus: 0
-    racketAttackSpeedBonus: 0
-    racketSizeBonus: 0
+    currentHealth: 0
+    maxHealth: 0
+    moveSpeed: 20
+    playerSize: 3
+    reflectDamage: 0
+    reflectMoveSpeed: 0
+    racketDamage: 0
+    racketSwingCooldown: 0
+    racketSize: 0

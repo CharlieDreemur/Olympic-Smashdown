@@ -51,7 +51,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
 
     private void Init()
     {
-        UpdateHealth(Player.Instance.playerStats.health, Player.Instance.playerStats.maxHealth);
+        UpdateHealth(Player.Instance.playerStats.currentHealth, Player.Instance.playerStats.maxHealth);
     }
 
     public void UpdateHealth(int cur_health, int max_health)
