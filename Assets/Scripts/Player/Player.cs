@@ -10,7 +10,7 @@ public class Player : Entity
 
     // weird dependency but it is probably fine
     public TransitionBlackout curtain;
-
+    public SpriteRenderer spriteRenderer;
 
     // some external manager will need to set the health on game start
     // and make it remember its health across levels
@@ -44,6 +44,7 @@ public class Player : Entity
         // note that this will need to be changed as we add more levels
         // probably some don't destroy on load setup
         playerStats.Init(data);
+        spriteRenderer = GetComponent<SpriteRenderer>();
         onHealthChange.Invoke(playerStats.CurrentHealth, playerStats.MaxHealth);
         EventManager.AddListener("UpgradeEvent", new UnityAction<string>(OnUpgrade));
     }
