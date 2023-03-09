@@ -10,6 +10,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
     [Header("Child Objects")]
     public GameObject health_slider;
     public TextMeshProUGUI health_num;
+    public TextMeshProUGUI wave_num;
     // public GameObject upgrade_panel_obj;
     // public GameObject buff_grid_obj;
 
@@ -19,11 +20,17 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
     private UpgradePanel upgrade_panel;
     public UpgradeData demobuff; // TODO: only for demo use
 
+    private void Awake()
+    {
+        Player.Instance.onHealthChange.AddListener(UpdateHealth);
+    }
+
+
     void Start()
     {
+        Init();
         buff_list = GameObject.FindObjectOfType<BuffList>();
         upgrade_panel = GameObject.FindObjectOfType<UpgradePanel>();
-
     }
 
     void FixedUpdate()
@@ -42,8 +49,15 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
         }
     }
 
+    private void Init()
+    {
+        UpdateHealth(Player.Instance.playerStats.health, Player.Instance.playerStats.maxHealth);
+    }
+
     public void UpdateHealth(int cur_health, int max_health)
     {
+        Debug.Log("Updating health: " + cur_health + "/" + max_health);
+        Debug.Log("Fill amount: " + (float)cur_health / (float)max_health);
         health_slider.GetComponent<Image>().fillAmount = (float)cur_health / (float)max_health;
         health_num.text = cur_health.ToString();
     }
@@ -74,5 +88,8 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
         buff_list.RemoveBuff(buff_data_);
     }
 
-
+    public void UpdateWaveNum(int wave_num_)
+    {
+        wave_num.text = $"Wave Numner: {wave_num_.ToString()}";
+    }
 }

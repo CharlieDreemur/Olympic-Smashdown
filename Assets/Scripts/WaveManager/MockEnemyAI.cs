@@ -14,7 +14,7 @@ public class MockEnemyAI : MonoBehaviour
 
     private void Awake()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = Player.Instance.gameObject;
         if (_player == null)
         {
             Debug.LogError("Player not found");

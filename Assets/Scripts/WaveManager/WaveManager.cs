@@ -37,16 +37,18 @@ public class WaveManager : MonoBehaviour
     [Header("Next Level")]
     [Tooltip("String pointing to the next level")]
     [SerializeField]
-    private string nextLevel = "";
-
     public UnityEvent<GameObject> eliteEnemySpawned;
-    public ItemPoolData ItemPoolData { get => itemPoolData; private set { } }
+    public UnityEvent<int> WaveStarted;
 
+    private string nextLevel = "";
+    public ItemPoolData ItemPoolData { get; private set; }
     private GameObject _player;
     private List<WaveData>.Enumerator _currentWaveEnumerator;
     private List<Enemy> _enemies = new List<Enemy>(); // TODO: Replace with Enemy script
     private List<GameObject> _warningObjects = new List<GameObject>(); // Keep track of all the warning objects so we can destroy them when the wave ends
     private WaveData _currentWaveData;
+    private int _currentWaveIndex;
+    public int CurrentWaveIndex => _currentWaveIndex;
     private float _spawnCooldown = 0f;
     private float _currentWaveTime = 0f;
     private bool _eliteMobsSpawned = false;
@@ -55,7 +57,7 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         ItemPoolData = itemPoolData; // Make this data accessible for ItemSpawner scripts
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = Player.Instance.gameObject;
         if (_player == null)
         {
             Debug.LogError("No player found in scene, disabling WaveManager. Please make sure there is a GameObject tagged as \"Player\" in the scene");
@@ -88,6 +90,7 @@ public class WaveManager : MonoBehaviour
         if (_currentWaveData == null) // First wave
         {
             _currentWaveEnumerator = _waveData.GetEnumerator();
+            _currentWaveIndex = 0;
             _currentWaveData = _currentWaveEnumerator.MoveNext() ? _currentWaveEnumerator.Current : null; // Get the first wave data
             if (_currentWaveData == null)
             {
@@ -100,6 +103,7 @@ public class WaveManager : MonoBehaviour
         {
             if (_currentWaveEnumerator.MoveNext()) // More waves
             {
+                _currentWaveIndex++;
                 _currentWaveData = _currentWaveEnumerator.Current;
                 StartCoroutine(WaveCoroutine());
             }
@@ -110,12 +114,12 @@ public class WaveManager : MonoBehaviour
                 return;
             }
         }
-
     }
 
     private IEnumerator WaveCoroutine()
     {
         Debug.Log("Wave started");
+        WaveStarted?.Invoke(CurrentWaveIndex + 1);
         _spawnCooldown = 0f;
         _currentWaveTime = 0f;
 
