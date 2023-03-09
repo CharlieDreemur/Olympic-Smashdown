@@ -13,10 +13,6 @@ public interface IUpgrade
     /// <summary>
     /// Invoke when the player start the level
     /// </summary>
-    void OnStart(){}
-    /// <summary>
-    /// Invoke when the player update
-    /// </summary>
     void OnUpdate(){}
     /// <summary>
     /// Invoke when the player dash
@@ -45,8 +41,8 @@ public class Upgrade : MonoBehaviour, IUpgrade
     [SerializeField] 
     public UpgradeData upgradeData;
     [SerializeField] [ReadOnly]
-    private Player player;
-    private SpriteRenderer spriteRenderer;
+    protected Player player;
+    protected SpriteRenderer spriteRenderer;
 
 
     private void Awake()
@@ -60,40 +56,9 @@ public class Upgrade : MonoBehaviour, IUpgrade
         Debug.Log("OnUpgrade: " + upgradeData.name);
         player = Player.Instance;
         player.playerStats.Add(upgradeData.statsBonus);
-        player.onUpdate.AddListener(OnUpdate);
-        player.onStart.AddListener(OnStart);
-        player.onDash.AddListener(OnDash);
-        player.onReflect.AddListener(OnReflect);
-        player.onHurt.AddListener(OnHurt);
+        upgradeData.specialUpgrade?.OnUpgrade();
         EventManager.Invoke("UpgradeEvent", "");
        
-    }
-    public virtual void OnStart()
-    {
-    }
-    public virtual void OnUpdate()
-    {
-        
-    }
-    public virtual void OnDash()
-    {
-        
-    }
-    public virtual void OnReflect()
-    {
-        
-    }
-    public virtual void OnHurt()
-    {
-        
-    }
-    public virtual void OnKillEnemy()
-    {
-        
-    }
-    public virtual void OnDeath()
-    {
-        
     }
     
 }

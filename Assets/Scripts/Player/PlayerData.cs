@@ -13,9 +13,35 @@ public class PlayerData : ScriptableObject
 public struct PlayerStats
 {
     [FoldoutGroup("Player")]
-    public int currentHealth;
+    private int currentHealth;
+    [MinValue(0)] [MaxValue("@maxHealth")] [ShowInInspector]
+    public int CurrentHealth{
+        get => currentHealth;
+        set{
+            currentHealth = value;
+            if(currentHealth > maxHealth){
+                currentHealth = maxHealth;
+            }
+            if(currentHealth < 0){
+                currentHealth = 0;
+            }
+            Player.Instance.onHealthChange.Invoke(CurrentHealth, MaxHealth);
+        }
+    }
+
     [FoldoutGroup("Player")]
-    public int maxHealth;
+    private int maxHealth;
+    [MinValue(1)] [ShowInInspector]
+    public int MaxHealth{
+        get => maxHealth;
+        set{
+            maxHealth = value;
+            if(currentHealth > maxHealth){
+                currentHealth = maxHealth;
+            }
+            Player.Instance.onHealthChange.Invoke(CurrentHealth, MaxHealth);
+        }
+    }
     [FoldoutGroup("Player")]
     public float moveSpeed;
     [FoldoutGroup("Player")]
