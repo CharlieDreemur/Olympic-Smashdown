@@ -45,6 +45,7 @@ public class Upgrade : MonoBehaviour, IUpgrade
 
     public virtual void OnUpgrade()
     {
+        player.playerStats.Add(upgradeData.statsBonus);
         player.onUpdate.AddListener(OnUpdate);
         player.onStart.AddListener(OnStart);
         player.onDash.AddListener(OnDash);

@@ -13,7 +13,7 @@ public class PlayerData : ScriptableObject
 public struct PlayerStats
 {
     [FoldoutGroup("Player")]
-    public int health;
+    public int currentHealth;
     [FoldoutGroup("Player")]
     public int maxHealth;
     [FoldoutGroup("Player")]
@@ -27,40 +27,43 @@ public struct PlayerStats
     [FoldoutGroup("Racket")]
     public int racketDamage;
     [FoldoutGroup("Racket")]
-    public float racketAttackSpeed;
+    public float racketSwingCooldown;
     [FoldoutGroup("Racket")]
     public float racketSize;
     public void Init(PlayerData data)
     {
-        health = data.stats.health;
+        currentHealth = data.stats.currentHealth;
+        maxHealth = data.stats.maxHealth;
         moveSpeed = data.stats.moveSpeed;
         playerSize = data.stats.racketSize;
         reflectDamage = data.stats.racketDamage;
         reflectMoveSpeed = data.stats.reflectMoveSpeed;
         racketDamage = data.stats.racketDamage;
-        racketAttackSpeed = data.stats.racketAttackSpeed;
+        racketSwingCooldown = data.stats.racketSwingCooldown;
         racketSize = data.stats.racketSize;
     }
     public void Add(PlayerStats stats)
     {
-        stats.health += health;
+        stats.currentHealth += currentHealth;
+        stats.maxHealth += maxHealth;
         stats.moveSpeed += moveSpeed;
         stats.playerSize += playerSize;
         stats.reflectDamage += reflectDamage;
         stats.reflectMoveSpeed += reflectMoveSpeed;
         stats.racketDamage += racketDamage;
-        stats.racketAttackSpeed += racketAttackSpeed;
+        stats.racketSwingCooldown += racketSwingCooldown;
         stats.racketSize += racketSize;
     }
     public void Minus(PlayerStats stats)
     {
-        stats.health -= health;
+        stats.currentHealth -= currentHealth;
+        stats.maxHealth -= maxHealth;
         stats.moveSpeed -= moveSpeed;
         stats.playerSize -= playerSize;
         stats.reflectDamage -= reflectDamage;
         stats.reflectMoveSpeed -= reflectMoveSpeed;
         stats.racketDamage -= racketDamage;
-        stats.racketAttackSpeed -= racketAttackSpeed;
+        stats.racketSwingCooldown -= racketSwingCooldown;
         stats.racketSize -= racketSize;
     }
 

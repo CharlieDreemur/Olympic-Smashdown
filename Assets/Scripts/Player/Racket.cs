@@ -21,7 +21,7 @@ public class Racket : MonoBehaviour
     [Tooltip("The angle of the hitbox of the racket.")]
     [SerializeField] private float _arcAngle = 45f;
     [SerializeField] private float _swingCooldown = 0.25f;
-
+    private float _racketSize = 1f;
     public Collider2D TriggerCollider { get => _triggerCollider; private set { } }
     public float ArcAngle { get => _arcAngle; private set { } }
     public Quaternion RacketRotation { get; private set; }

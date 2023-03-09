@@ -34,10 +34,11 @@ public class Player : Entity
         // note that this will need to be changed as we add more levels
         // probably some don't destroy on load setup
         playerStats.Init(data);
-        onHealthChange.Invoke(playerStats.health, playerStats.maxHealth);
+        onHealthChange.Invoke(playerStats.currentHealth, playerStats.maxHealth);
     }
     private void Start()
     {
+        playerStats.currentHealth = playerStats.maxHealth;
         onStart.Invoke();
     }
     private void Update()
@@ -48,9 +49,9 @@ public class Player : Entity
     public void Hurt(int damage)
     {
         onHurt.Invoke();
-        onHealthChange.Invoke(playerStats.health, playerStats.maxHealth);
-        playerStats.health -= damage;
-        if (playerStats.health <= 0)
+        onHealthChange.Invoke(playerStats.currentHealth, playerStats.maxHealth);
+        playerStats.currentHealth -= damage;
+        if (playerStats.currentHealth <= 0)
         {
             Die();
         }
