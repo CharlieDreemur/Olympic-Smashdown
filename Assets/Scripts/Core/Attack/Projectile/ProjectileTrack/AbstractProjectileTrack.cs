@@ -16,11 +16,15 @@ public abstract class ProjectileTrack
     {
         get=>projectile.RB;
     }
-    protected float Speed
+    public float Speed
     {
         get
         {
             return speedMultipler * speedCurve.Evaluate(projectile.time);
+        }
+        set
+        {
+            speedMultipler = value;
         }
     }
     protected Vector3 Scale
@@ -30,6 +34,7 @@ public abstract class ProjectileTrack
             return _data.scale * _data.scaleCurve.Evaluate(projectile.time);
         }
     }
+    protected float scaleMultiplier = 1f;
 
     public ProjectileTrack(Projectile projectile)
     {
@@ -44,8 +49,11 @@ public abstract class ProjectileTrack
 
     public virtual void FixedUpdate()
     {
-        projectile.transform.localScale = Scale;
+        projectile.transform.localScale = Scale * scaleMultiplier;
     }
 
-    
+    public void SetProjectileScale(float scale)
+    {
+        scaleMultiplier = Mathf.Clamp(scale, 0, _data.maxScale);
+    }
 }
