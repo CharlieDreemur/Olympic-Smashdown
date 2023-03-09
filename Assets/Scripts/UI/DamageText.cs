@@ -13,7 +13,7 @@ public class DamageText : MonoBehaviour
     private DamageType damageType_;
     private bool isCrit_;
     private float disappearTimer_;
-    private Vector3 moveVector_ = new Vector3(0.7f,1);
+    private Vector3 moveVector_ = new Vector3(0.35f,0.5f);
 
     private static int sortingOrder; //渲染层级，确保后生产的text会在上层
     private void Awake(){
