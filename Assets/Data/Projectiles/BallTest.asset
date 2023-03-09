@@ -70,6 +70,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxArcHeight: 5
+  maxScale: 2
   attackDuration: 0
   cooldown: 0
   stun: 0

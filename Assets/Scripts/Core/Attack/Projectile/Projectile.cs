@@ -228,6 +228,12 @@ public class Projectile : MonoBehaviour
         {
             args.direction = Vector3.Reflect(args.direction, other.contacts[0].normal);
             track = new ProjectileTrackStraight(this);
+            if (args.DamageInfo.ownerType == ProjectileOwnerType.player)
+            {
+                track.Speed *= Player.Instance.playerStats.reflectMoveSpeedMultiplier;
+                track.SetProjectileScale(transform.localScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
+                Debug.Log($"reflect speed: {track.Speed}, scale: {transform.localScale.x}");
+            }
         }
     }
 
