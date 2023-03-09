@@ -23,9 +23,15 @@ public struct PlayerStats
     [FoldoutGroup("Player")]
     public float playerSizeMultiplier;
     [FoldoutGroup("Reflect")]
-    public int reflectDamageMultiplier;
+    public int reflectDamage;
+    [FoldoutGroup("Reflect")]
+    public float reflectDamageMultiplier;
+    [FoldoutGroup("Reflect")]
+    public float reflectMoveSpeed;
     [FoldoutGroup("Reflect")]
     public float reflectMoveSpeedMultiplier;
+    [FoldoutGroup("Racket")]
+    public int racketDamage;
     [FoldoutGroup("Racket")]
     public int racketDamageMultipler;
     [FoldoutGroup("Racket")]
@@ -39,8 +45,11 @@ public struct PlayerStats
         moveSpeed = data.stats.moveSpeed;
         moveSpeedMultiplier = data.stats.moveSpeedMultiplier;
         playerSizeMultiplier = data.stats.racketSizeMultiper;
+        reflectDamage = data.stats.reflectDamage;
         reflectDamageMultiplier = data.stats.racketDamageMultipler;
+        reflectMoveSpeed = data.stats.reflectMoveSpeed;
         reflectMoveSpeedMultiplier = data.stats.reflectMoveSpeedMultiplier;
+        racketDamage = data.stats.racketDamage;
         racketDamageMultipler = data.stats.racketDamageMultipler;
         racketSwingCooldown = data.stats.racketSwingCooldown;
         racketSizeMultiper = data.stats.racketSizeMultiper;
@@ -52,8 +61,11 @@ public struct PlayerStats
         moveSpeed += stats.moveSpeed;
         moveSpeedMultiplier += stats.moveSpeedMultiplier;
         playerSizeMultiplier += stats.playerSizeMultiplier; 
+        reflectDamage += stats.reflectDamage;
         reflectDamageMultiplier += stats.reflectDamageMultiplier;
+        reflectMoveSpeed += stats.reflectMoveSpeed;
         reflectMoveSpeedMultiplier += stats.reflectMoveSpeedMultiplier;
+        racketDamage += stats.racketDamage;
         racketDamageMultipler += stats.racketDamageMultipler;
         racketSwingCooldown += stats.racketSwingCooldown;
         racketSizeMultiper += stats.racketSizeMultiper;
@@ -66,8 +78,11 @@ public struct PlayerStats
         moveSpeed -= stats.moveSpeed;
         moveSpeedMultiplier -= stats.moveSpeedMultiplier;
         playerSizeMultiplier -= stats.playerSizeMultiplier; 
+        reflectDamage -= stats.reflectDamage;
         reflectDamageMultiplier -= stats.reflectDamageMultiplier;
+        reflectMoveSpeed -= stats.reflectMoveSpeed;
         reflectMoveSpeedMultiplier -= stats.reflectMoveSpeedMultiplier;
+        racketDamage -= stats.racketDamage;
         racketDamageMultipler -= stats.racketDamageMultipler;
         racketSwingCooldown -= stats.racketSwingCooldown;
         racketSizeMultiper -= stats.racketSizeMultiper;
