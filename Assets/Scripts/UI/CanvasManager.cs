@@ -20,11 +20,17 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
     private UpgradePanel upgrade_panel;
     public UpgradeData demobuff; // TODO: only for demo use
 
+    private void Awake()
+    {
+        Player.Instance.onHealthChange.AddListener(UpdateHealth);
+    }
+
+
     void Start()
     {
+        Init();
         buff_list = GameObject.FindObjectOfType<BuffList>();
         upgrade_panel = GameObject.FindObjectOfType<UpgradePanel>();
-
     }
 
     void FixedUpdate()
@@ -41,6 +47,11 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
             // HideUpgradePanel();
             RemoveBuff(demobuff);
         }
+    }
+
+    private void Init()
+    {
+        UpdateHealth(Player.Instance.playerStats.health, Player.Instance.playerStats.maxHealth);
     }
 
     public void UpdateHealth(int cur_health, int max_health)

@@ -144,7 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fa1d3c858848540b5623ac94e8d45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: d2e478e1886b18440af0a661f87dc16e, type: 2}
 --- !u!114 &7698973864883003340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +158,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 0}
   curtain: {fileID: 0}
-  health: 0
+  playerStats:
+    health: 0
+    maxHealth: 0
+    moveSpeed: 0
+    playerSize: 0
+    reflectDamage: 0
+    reflectMoveSpeed: 0
+    racketDamage: 0
+    racketAttackSpeed: 0
+    racketSize: 0
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  onHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onDash:
+    m_PersistentCalls:
+      m_Calls: []
+  onReflect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &815608262193296658
 MonoBehaviour:
   m_ObjectHideFlags: 0

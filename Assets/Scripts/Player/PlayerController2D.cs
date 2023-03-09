@@ -3,7 +3,10 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController2D: MonoBehaviour
+[RequireComponent(typeof(Player))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
+public class PlayerController2D : MonoBehaviour
 {
     [Header("Movement Settings")]
     private Player player;
@@ -12,7 +15,7 @@ public class PlayerController2D: MonoBehaviour
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
     private float moveSpeed;
-    
+
 
     private void Start()
     {
@@ -33,20 +36,20 @@ public class PlayerController2D: MonoBehaviour
             spriteRenderer.flipX = false;
         else if (horizontalInput < 0)
             spriteRenderer.flipX = true;
-        
+
         // Calculate the movement vector
         movement = new Vector2(horizontalInput, verticalInput).normalized * moveSpeed;
-        if (horizontalInput!=0 || verticalInput!=0)
+        if (horizontalInput != 0 || verticalInput != 0)
         {
             animator.SetBool("isMove", true);
-            animator.SetFloat("speed", movement.x+ movement.y);
+            animator.SetFloat("speed", movement.x + movement.y);
         }
         else
         {
             animator.SetBool("isMove", false);
         }
     }
-    
+
     private void FixedUpdate()
     {
         // Apply the movement vector to the character's Rigidbody2D component

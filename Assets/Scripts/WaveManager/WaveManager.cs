@@ -57,7 +57,7 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         ItemPoolData = itemPoolData; // Make this data accessible for ItemSpawner scripts
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = Player.Instance.gameObject;
         if (_player == null)
         {
             Debug.LogError("No player found in scene, disabling WaveManager. Please make sure there is a GameObject tagged as \"Player\" in the scene");
