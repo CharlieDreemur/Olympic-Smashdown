@@ -12,9 +12,8 @@ public class PlayerData : ScriptableObject
 [HideLabel]
 public struct PlayerStats
 {
-    [FoldoutGroup("Player")]
     private int currentHealth;
-    [MinValue(0)] [MaxValue("@maxHealth")] [ShowInInspector]
+    [MinValue(0)] [FoldoutGroup("Player")][MaxValue("@maxHealth")] [ShowInInspector]
     public int CurrentHealth{
         get => currentHealth;
         set{
@@ -29,9 +28,8 @@ public struct PlayerStats
         }
     }
 
-    [FoldoutGroup("Player")]
     private int maxHealth;
-    [MinValue(1)] [ShowInInspector]
+    [MinValue(1)] [FoldoutGroup("Player")] [ShowInInspector]
     public int MaxHealth{
         get => maxHealth;
         set{
@@ -56,12 +54,13 @@ public struct PlayerStats
     public float reflectMoveSpeed;
     [FoldoutGroup("Reflect")]
     public float reflectMoveSpeedMultiplier;
+    [FoldoutGroup("Reflect")]
+    public float reflectScaleMultiplier;
     [FoldoutGroup("Racket")]
     public int racketDamage;
     [FoldoutGroup("Racket")]
     public int racketDamageMultipler;
-    [FoldoutGroup("Racket")]
-    public float reflectScaleMultiplier;
+
     [FoldoutGroup("Racket")]
     public float racketSwingCooldown;
     [FoldoutGroup("Racket")]
