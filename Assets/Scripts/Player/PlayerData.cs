@@ -19,40 +19,42 @@ public struct PlayerStats
     [FoldoutGroup("Player")]
     public float moveSpeed;
     [FoldoutGroup("Player")]
-    public float playerSize;
+    public float moveSpeedMultipler;
+    [FoldoutGroup("Player")]
+    public float playerSizeMultipler;
     [FoldoutGroup("Reflect")]
-    public int reflectDamage;
+    public int reflectDamageMultipler;
     [FoldoutGroup("Reflect")]
-    public float reflectMoveSpeed;
+    public float reflectMoveSpeedMultipler;
     [FoldoutGroup("Racket")]
-    public int racketDamage;
+    public int racketDamageMultipler;
     [FoldoutGroup("Racket")]
     public float racketSwingCooldown;
     [FoldoutGroup("Racket")]
-    public float racketSize;
+    public float racketSizeMultiper;
     public void Init(PlayerData data)
     {
         currentHealth = data.stats.currentHealth;
         maxHealth = data.stats.maxHealth;
         moveSpeed = data.stats.moveSpeed;
-        playerSize = data.stats.racketSize;
-        reflectDamage = data.stats.racketDamage;
-        reflectMoveSpeed = data.stats.reflectMoveSpeed;
-        racketDamage = data.stats.racketDamage;
+        playerSizeMultipler = data.stats.racketSizeMultiper;
+        reflectDamageMultipler = data.stats.racketDamageMultipler;
+        reflectMoveSpeedMultipler = data.stats.reflectMoveSpeedMultipler;
+        racketDamageMultipler = data.stats.racketDamageMultipler;
         racketSwingCooldown = data.stats.racketSwingCooldown;
-        racketSize = data.stats.racketSize;
+        racketSizeMultiper = data.stats.racketSizeMultiper;
     }
     public void Add(PlayerStats stats)
     {
         currentHealth += stats.currentHealth;
         maxHealth += stats.maxHealth;
         moveSpeed += stats.moveSpeed;
-        playerSize += stats.playerSize; 
-        reflectDamage += stats.reflectDamage;
-        reflectMoveSpeed += stats.reflectMoveSpeed;
-        racketDamage += stats.racketDamage;
+        playerSizeMultipler += stats.playerSizeMultipler; 
+        reflectDamageMultipler += stats.reflectDamageMultipler;
+        reflectMoveSpeedMultipler += stats.reflectMoveSpeedMultipler;
+        racketDamageMultipler += stats.racketDamageMultipler;
         racketSwingCooldown += stats.racketSwingCooldown;
-        racketSize += stats.racketSize;
+        racketSizeMultiper += stats.racketSizeMultiper;
 
     }
     public void Minus(PlayerStats stats)
@@ -60,12 +62,12 @@ public struct PlayerStats
         currentHealth -= stats.currentHealth;
         maxHealth -= stats.maxHealth;
         moveSpeed -= stats.moveSpeed;
-        playerSize -= stats.playerSize; 
-        reflectDamage -= stats.reflectDamage;
-        reflectMoveSpeed -= stats.reflectMoveSpeed;
-        racketDamage -= stats.racketDamage;
+        playerSizeMultipler -= stats.playerSizeMultipler; 
+        reflectDamageMultipler -= stats.reflectDamageMultipler;
+        reflectMoveSpeedMultipler -= stats.reflectMoveSpeedMultipler;
+        racketDamageMultipler -= stats.racketDamageMultipler;
         racketSwingCooldown -= stats.racketSwingCooldown;
-        racketSize -= stats.racketSize;
+        racketSizeMultiper -= stats.racketSizeMultiper;
     }
 
 }

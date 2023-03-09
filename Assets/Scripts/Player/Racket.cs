@@ -39,7 +39,7 @@ public class Racket : MonoBehaviour
 
     private void Start(){
         _swingCooldown = Player.Instance.playerStats.racketSwingCooldown;
-        _racketSize = Player.Instance.playerStats.racketSize;
+        _racketSize = Player.Instance.playerStats.racketSizeMultiper;
         OnUpgrade();
     }
     private void OnUpgrade(string jsonValue =""){
