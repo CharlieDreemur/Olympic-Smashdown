@@ -1,12 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Player : Entity
 {
+    public static Player Instance { get; private set; }
+
     public PlayerData data;
 
     // weird dependency but it is probably fine
@@ -30,6 +29,16 @@ public class Player : Entity
     public UnityEvent onReflect;
     private void Awake()
     {
+        // If there is an instance, and it's not me, delete myself.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         // for single scene setup, let's just set it to default value on start
         // note that this will need to be changed as we add more levels
         // probably some don't destroy on load setup

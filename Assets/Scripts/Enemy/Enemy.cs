@@ -69,7 +69,7 @@ public class Enemy : Entity
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         var proj = col.gameObject.GetComponent<Projectile>();
         if (proj != null && proj.args.DamageInfo.ownerType == ProjectileOwnerType.player)
