@@ -159,14 +159,14 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: d2e478e1886b18440af0a661f87dc16e, type: 2}
   curtain: {fileID: 0}
   playerStats:
-    health: 0
+    currentHealth: 0
     maxHealth: 0
     moveSpeed: 0
     playerSize: 0
     reflectDamage: 0
     reflectMoveSpeed: 0
     racketDamage: 0
-    racketAttackSpeed: 0
+    racketSwingCooldown: 0
     racketSize: 0
   onStart:
     m_PersistentCalls:
