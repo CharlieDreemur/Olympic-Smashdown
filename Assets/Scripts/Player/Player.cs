@@ -37,6 +37,7 @@ public class Player : Entity
         else
         {
             Instance = this;
+            DontDestroyOnLoad(this);
         }
 
         // for single scene setup, let's just set it to default value on start
