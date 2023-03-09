@@ -33,6 +33,7 @@ public struct PlayerStats
     public void Init(PlayerData data)
     {
         health = data.stats.health;
+        maxHealth = data.stats.maxHealth;
         moveSpeed = data.stats.moveSpeed;
         playerSize = data.stats.racketSize;
         reflectDamage = data.stats.racketDamage;
@@ -44,6 +45,7 @@ public struct PlayerStats
     public void Add(PlayerStats stats)
     {
         stats.health += health;
+        stats.maxHealth += maxHealth;
         stats.moveSpeed += moveSpeed;
         stats.playerSize += playerSize;
         stats.reflectDamage += reflectDamage;
@@ -55,6 +57,7 @@ public struct PlayerStats
     public void Minus(PlayerStats stats)
     {
         stats.health -= health;
+        stats.maxHealth -= maxHealth;
         stats.moveSpeed -= moveSpeed;
         stats.playerSize -= playerSize;
         stats.reflectDamage -= reflectDamage;

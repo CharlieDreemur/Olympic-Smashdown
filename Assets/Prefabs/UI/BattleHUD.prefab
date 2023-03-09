@@ -1408,6 +1408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_slider: {fileID: 6681382333423049875}
   health_num: {fileID: 8673814376022061631}
+  wave_num: {fileID: 932555474230183164}
   demobuff: {fileID: 11400000, guid: bea200f0dbe72184f8a10c1f06c3a759, type: 2}
 --- !u!1 &932555474230183162
 GameObject:
@@ -1421,7 +1422,7 @@ GameObject:
   - component: {fileID: 932555474230183165}
   - component: {fileID: 932555474230183164}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: WaveNumText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
