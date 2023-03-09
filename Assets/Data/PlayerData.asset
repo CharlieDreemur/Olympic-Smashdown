@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProperty
   stats:
-    health: 100
+    currentHealth: 100
     maxHealth: 100
     moveSpeed: 5
-    playerSize: 1
-    reflectDamage: 1
-    reflectMoveSpeed: 1
-    racketDamage: 1
-    racketAttackSpeed: 1
-    racketSize: 1
+    moveSpeedMultiplier: 1
+    playerSizeMultiplier: 1
+    reflectDamage: 0
+    reflectDamageMultiplier: 1
+    reflectMoveSpeed: 0
+    reflectMoveSpeedMultiplier: 1
+    racketDamage: 0
+    racketDamageMultipler: 1
+    racketSwingCooldown: 0
+    racketSizeMultiper: 1
