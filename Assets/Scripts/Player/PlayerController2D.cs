@@ -14,7 +14,6 @@ public class PlayerController2D : MonoBehaviour
     private Animator animator;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
-    private float moveSpeed;
 
 
     private void Start()
@@ -22,8 +21,7 @@ public class PlayerController2D : MonoBehaviour
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        moveSpeed = player.playerStats.moveSpeed;
+        spriteRenderer = GetComponent<SpriteRenderer>();;
     }
 
     private void Update()
@@ -38,7 +36,7 @@ public class PlayerController2D : MonoBehaviour
             spriteRenderer.flipX = true;
 
         // Calculate the movement vector
-        movement = new Vector2(horizontalInput, verticalInput).normalized * moveSpeed;
+        movement = new Vector2(horizontalInput, verticalInput).normalized * player.playerStats.moveSpeed;
         if (horizontalInput != 0 || verticalInput != 0)
         {
             animator.SetBool("isMove", true);

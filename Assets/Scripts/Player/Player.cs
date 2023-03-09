@@ -44,11 +44,17 @@ public class Player : Entity
         // probably some don't destroy on load setup
         playerStats.Init(data);
         onHealthChange.Invoke(playerStats.currentHealth, playerStats.maxHealth);
+        EventManager.AddListener("UpgradeEvent", new UnityAction<string>(OnUpgrade));
     }
     private void Start()
     {
         playerStats.currentHealth = playerStats.maxHealth;
+        OnUpgrade();
         onStart.Invoke();
+    }
+
+    private void OnUpgrade(string jsonValue=""){
+        transform.localScale = new Vector3(transform.localScale.x * playerStats.playerSize, transform.localScale.y * playerStats.playerSize, 1);
     }
     private void Update()
     {

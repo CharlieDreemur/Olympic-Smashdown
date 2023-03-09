@@ -18,8 +18,8 @@ public class Racket : MonoBehaviour
     [Range(0, 90)]
     [Tooltip("The angle of the hitbox of the racket.")]
     [SerializeField] private float _arcAngle = 45f;
-    [SerializeField] private float _swingCooldown = 0.25f;
-    private float _racketSize = 1f;
+    [SerializeField] private float _swingCooldown;
+    private float _racketSize;
     public Collider2D TriggerCollider { get => _triggerCollider; private set { } }
     public float ArcAngle { get => _arcAngle; private set { } }
     public Quaternion RacketRotation { get; private set; }
@@ -34,6 +34,16 @@ public class Racket : MonoBehaviour
     {
         _objectsInRange = new HashSet<Projectile>();
         _triggerColliderRadius = _triggerCollider.bounds.extents.x;
+        EventManager.AddListener("UpgradeEvent", new UnityAction<string>(OnUpgrade));
+    }
+
+    private void Start(){
+        _swingCooldown = Player.Instance.playerStats.racketSwingCooldown;
+        _racketSize = Player.Instance.playerStats.racketSize;
+        OnUpgrade();
+    }
+    private void OnUpgrade(string jsonValue =""){
+        transform.localScale = new Vector3(_racketSize, _racketSize, 1);
     }
 
     private void Update()
@@ -79,7 +89,7 @@ public class Racket : MonoBehaviour
         swung.Invoke();
         foreach (var proj in _objectsInRange)
         {
-            Debug.Log(proj);
+            
             var projDir3 = (proj.gameObject.transform.position - transform.position);
             var projDir2 = new Vector2(projDir3.x, projDir3.y).normalized;
             // test direction

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
+
 public interface IUpgrade
 {
     /// <summary>
@@ -40,17 +42,30 @@ public interface IUpgrade
 
 public class Upgrade : MonoBehaviour, IUpgrade
 {
+    [SerializeField] 
     public UpgradeData upgradeData;
-    public Player player;
+    [SerializeField] [ReadOnly]
+    private Player player;
+    private SpriteRenderer spriteRenderer;
 
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = upgradeData.icon;
+    }
+    
     public virtual void OnUpgrade()
     {
+        Debug.Log("OnUpgrade: " + upgradeData.name);
+        player = Player.Instance;
         player.playerStats.Add(upgradeData.statsBonus);
         player.onUpdate.AddListener(OnUpdate);
         player.onStart.AddListener(OnStart);
         player.onDash.AddListener(OnDash);
         player.onReflect.AddListener(OnReflect);
         player.onHurt.AddListener(OnHurt);
+        EventManager.Invoke("UpgradeEvent", "");
        
     }
     public virtual void OnStart()
