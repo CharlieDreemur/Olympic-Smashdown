@@ -226,13 +226,16 @@ public class Projectile : MonoBehaviour
         }
         else if (other.gameObject.TryGetComponent<Reflector>(out Reflector reflector))
         {
+            if (args.Data.destroysObstacles)
+            {
+                Destroy(other.gameObject);
+                return;
+            }
             args.direction = Vector3.Reflect(args.direction, other.contacts[0].normal);
             track = new ProjectileTrackStraight(this);
             if (args.DamageInfo.ownerType == ProjectileOwnerType.player)
             {
-                track.Speed *= Player.Instance.playerStats.reflectMoveSpeedMultiplier;
-                track.SetProjectileScale(transform.localScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
-                Debug.Log($"reflect speed: {track.Speed}, scale: {transform.localScale.x}");
+                // Upgrade effects on player projectiles when they hit a reflector
             }
         }
     }

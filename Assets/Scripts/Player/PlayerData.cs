@@ -29,7 +29,7 @@ public struct PlayerStats
     }
 
     private int maxHealth;
-    [MinValue(1)] [FoldoutGroup("Player")] [ShowInInspector]
+    [FoldoutGroup("Player")] [ShowInInspector]
     public int MaxHealth{
         get => maxHealth;
         set{
@@ -67,8 +67,8 @@ public struct PlayerStats
     public float racketSizeMultiper;
     public void Init(PlayerData data)
     {
-        currentHealth = data.stats.currentHealth;
-        maxHealth = data.stats.maxHealth;
+        CurrentHealth = data.stats.CurrentHealth;
+        MaxHealth = data.stats.MaxHealth;
         moveSpeed = data.stats.moveSpeed;
         moveSpeedMultiplier = data.stats.moveSpeedMultiplier;
         playerSizeMultiplier = data.stats.racketSizeMultiper;
@@ -84,8 +84,8 @@ public struct PlayerStats
     }
     public void Add(PlayerStats stats)
     {
-        currentHealth += stats.currentHealth;
-        maxHealth += stats.maxHealth;
+        CurrentHealth += stats.CurrentHealth;
+        MaxHealth += stats.MaxHealth;
         moveSpeed += stats.moveSpeed;
         moveSpeedMultiplier += stats.moveSpeedMultiplier;
         playerSizeMultiplier += stats.playerSizeMultiplier; 
@@ -102,8 +102,8 @@ public struct PlayerStats
     }
     public void Minus(PlayerStats stats)
     {   
-        currentHealth -= stats.currentHealth;
-        maxHealth -= stats.maxHealth;
+        CurrentHealth -= stats.CurrentHealth;
+        MaxHealth -= stats.MaxHealth;
         moveSpeed -= stats.moveSpeed;
         moveSpeedMultiplier -= stats.moveSpeedMultiplier;
         playerSizeMultiplier -= stats.playerSizeMultiplier; 

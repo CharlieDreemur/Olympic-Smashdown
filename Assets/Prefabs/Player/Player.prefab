@@ -119,19 +119,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7698973864883003341}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7698973864883003338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,16 +158,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: d2e478e1886b18440af0a661f87dc16e, type: 2}
   curtain: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   playerStats:
-    currentHealth: 0
-    maxHealth: 0
     moveSpeed: 0
-    playerSize: 0
+    moveSpeedMultiplier: 0
+    playerSizeMultiplier: 0
     reflectDamage: 0
+    reflectDamageMultiplier: 0
     reflectMoveSpeed: 0
+    reflectMoveSpeedMultiplier: 0
+    reflectScaleMultiplier: 0
     racketDamage: 0
+    racketDamageMultipler: 0
     racketSwingCooldown: 0
-    racketSize: 0
+    racketSizeMultiper: 0
   onStart:
     m_PersistentCalls:
       m_Calls: []
