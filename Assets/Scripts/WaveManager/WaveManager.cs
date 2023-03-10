@@ -7,9 +7,19 @@ using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
+    [Header("Endless Mode Settings")]
+    [Tooltip("If true, the wave manager will not end the stage after the last wave, but will repeat the last wave instead")]
+    [SerializeField] private bool isEndless = false; 
+    [Tooltip("You can use this curve to define spawnIntervalMultiplier")]
+    [SerializeField] private AnimationCurve _spawnCooldownMultiplierCurve;
+    [Tooltip("The time at which the spawn cooldown multiplier curve ends and the spawn cooldown multiplier is set to its end value")]
+    [SerializeField] float _spawnCurveEndTime = 600f;
+    [Space(10)]
+
     [Header("Data")]
     [Tooltip("The wave data to use for this wave")]
     [SerializeField] List<WaveData> _waveData;
+    // [SerializeField] WaveData _dummyWaveData; 
     [SerializeField] private ItemPoolData itemPoolData;
     [Space(10)]
 
@@ -43,6 +53,7 @@ public class WaveManager : MonoBehaviour
     public UnityEvent<GameObject> eliteEnemySpawned;
     public UnityEvent<int> WaveStarted;
 
+
     private string nextLevel = "";
     public ItemPoolData ItemPoolData { get; private set; }
     private GameObject _player;
@@ -50,13 +61,15 @@ public class WaveManager : MonoBehaviour
     private List<Enemy> _enemies = new List<Enemy>(); // TODO: Replace with Enemy script
     private List<GameObject> _warningObjects = new List<GameObject>(); // Keep track of all the warning objects so we can destroy them when the wave ends
     private WaveData _currentWaveData;
-    private int _currentWaveIndex;
+    private int _currentWaveIndex = -1;
     public int CurrentWaveIndex => _currentWaveIndex;
     private float _spawnCooldown = 0f;
     private float _currentWaveTime = 0f;
+    private float _totalTime = 0f;
     private bool _eliteMobsSpawned = false;
     private uint _eliteMobsAlive = 0;
     private uint _totalMobsAlive = 0;
+
     private void Start()
     {
         ItemPoolData = itemPoolData; // Make this data accessible for ItemSpawner scripts
@@ -69,6 +82,11 @@ public class WaveManager : MonoBehaviour
         }
         // For testing purposes
         StartStage(); // TODO: Remove this
+    }
+
+    private void Update()
+    {
+        _totalTime += Time.deltaTime;
     }
 
     public void StartStage()
@@ -90,31 +108,35 @@ public class WaveManager : MonoBehaviour
 
     private void StartNextWave()
     {
-        if (_currentWaveData == null) // First wave
+        if(_waveData.Count == 0) {
+            Debug.LogError("No wave data found");
+            return;
+        }
+        if (_currentWaveIndex == -1) // First wave
         {
-            _currentWaveEnumerator = _waveData.GetEnumerator();
             _currentWaveIndex = 0;
-            _currentWaveData = _currentWaveEnumerator.MoveNext() ? _currentWaveEnumerator.Current : null; // Get the first wave data
-            if (_currentWaveData == null)
-            {
-                Debug.LogError("No wave data found");
-                return;
-            }
+            _currentWaveData = _waveData[_currentWaveIndex]; // Get the first wave data
             StartCoroutine(WaveCoroutine());
         }
         else
         {
-            if (_currentWaveEnumerator.MoveNext()) // More waves
+            // Debug.Log("current wave index: " + _currentWaveIndex);
+            // Debug.Log("wave data count: " + _waveData.Count);
+            if (++_currentWaveIndex < _waveData.Count) // More waves
             {
-                _currentWaveIndex++;
-                _currentWaveData = _currentWaveEnumerator.Current;
+                _currentWaveData = _waveData[_currentWaveIndex]; 
                 StartCoroutine(WaveCoroutine());
             }
             else // No more waves
             {
-                _currentWaveData = null;
-                EndStage();
-                return;
+                if(isEndless) {
+                    StartCoroutine(WaveCoroutine());
+                } else {
+                    Debug.Log("Stage ended");
+                    _currentWaveData = null;
+                    EndStage();
+                    return;
+                }
             }
         }
     }
@@ -125,6 +147,9 @@ public class WaveManager : MonoBehaviour
         WaveStarted?.Invoke(CurrentWaveIndex + 1);
         _spawnCooldown = 0f;
         _currentWaveTime = 0f;
+        _eliteMobsSpawned = false;
+        _eliteMobsAlive = 0;
+        _totalMobsAlive = 0;
 
         while (!IsWaveOver())
         {
@@ -139,12 +164,14 @@ public class WaveManager : MonoBehaviour
             if (_spawnCooldown <= 0 && _currentWaveTime >= _currentWaveData.EliteSpawnTime && !_eliteMobsSpawned)
             {
                 SpawnEliteMobs();
-                _spawnCooldown = _currentWaveData.SpawnInterval;
+                if(isEndless) {
+                    _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
+                }
             }
             else if (_spawnCooldown <= 0) // Spawn normal mobs if the cooldown is up, and elite mobs aren't spawning in this loop iteration
             {
                 SpawnNormalMobs();
-                _spawnCooldown = _currentWaveData.SpawnInterval;
+                _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
             }
 
             _spawnCooldown -= Time.deltaTime;
@@ -267,5 +294,10 @@ public class WaveManager : MonoBehaviour
     {
         return _eliteMobsSpawned && _eliteMobsAlive == 0;
     }
+
+    // [Button]
+    // public void AddWave() {
+    //     _waveData.Add(_dummyWaveData);
+    // }
 
 }

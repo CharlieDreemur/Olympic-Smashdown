@@ -13,6 +13,7 @@ public class Enemy : Entity
     public BehaviorDesigner.Runtime.BehaviorTree behaviorTree;
     public UnityEvent died;
     public int health = 1;
+    public bool dead = false;
     private GameObject _target;
     private Animator _animator;
     [SerializeField]
@@ -82,6 +83,9 @@ public class Enemy : Entity
     [Button("Kill")]
     public void Kill(Vector3 direction = default)
     {
+        if(dead) return;
+        
+        dead = true;
         died.Invoke();
         behaviorTree.enabled = false;
         _animator.Play("Die");
@@ -121,6 +125,7 @@ public class Enemy : Entity
 
     IEnumerator Death(float time)
     {
+        Debug.Log("Death coroutine started");
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }

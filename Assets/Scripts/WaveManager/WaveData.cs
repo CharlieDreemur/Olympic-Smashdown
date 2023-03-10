@@ -36,13 +36,15 @@ public class WaveData : ScriptableObject
         {
             if (randomValue < spawnInfo.Weight)
             {
+                Debug.Log("1 Spawninfo.count: " + spawnInfos[0].Count);
                 return spawnInfo;
             }
 
             randomValue -= spawnInfo.Weight;
         }
 
-        return spawnInfos[^1];
+        Debug.Log("2 Spawninfo.count: " + spawnInfos[0].Count);
+        return spawnInfos[0];
     }
 }
 
