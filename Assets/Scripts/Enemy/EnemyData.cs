@@ -26,7 +26,9 @@ public class EnemyData : ScriptableObject{
     [ShowIf("enemyType", EnemyType.dasher)]
     public float dashCooldown = 5; 
     public float attackRange;
+    public float attackPrepareTime;
     public float attackWindupTime;
+    public float attackCooldown;
     public ProjectileData projectileData;
 
 }

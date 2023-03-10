@@ -43,7 +43,10 @@ public class ProjectileData : ScriptableObject
     public bool isTriggerWhenRelease = true;
     //! public AttackCategory castType = AttackCategory.Cast;
     //! public List<ProjectileAction> actionList;
-    
+
+    public bool destroysObstacles = false;
+    public bool canBeReflected = true;
+
     [Space(10)]
     [Header("TrackParabola Setup")]
     public float gravityScale;

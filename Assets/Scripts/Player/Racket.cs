@@ -25,6 +25,7 @@ public class Racket : MonoBehaviour
     public Quaternion RacketRotation { get; private set; }
     public Vector3 AimDirection { get; private set; }
     public UnityEvent swung;
+    public bool isChangingProjectileSpriteColor = true;
     private float _triggerColliderRadius;
 
     private bool _canSwing = true;
@@ -89,7 +90,11 @@ public class Racket : MonoBehaviour
         swung.Invoke();
         foreach (var proj in _objectsInRange)
         {
-            
+            if (!proj.args.Data.canBeReflected)
+            {
+                continue;
+            }
+
             var projDir3 = (proj.gameObject.transform.position - transform.position);
             var projDir2 = new Vector2(projDir3.x, projDir3.y).normalized;
             // test direction
@@ -103,6 +108,10 @@ public class Racket : MonoBehaviour
             }
             proj.args.Data.speedMultipler *= Player.Instance.playerStats.reflectMoveSpeedMultiplier;
             proj.track.SetProjectileScale(transform.localScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
+            if (isChangingProjectileSpriteColor)
+            {
+                proj.GetComponent<SpriteRenderer>().color = Color.white;
+            }
         }
     }
 

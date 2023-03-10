@@ -54,3 +54,4 @@ MonoBehaviour:
   roundPositionToNearest: 0.5
   shouldRotateObstacles: 1
   obstaclePrefab: {fileID: 957371950163862606, guid: 91d4f8417d932ab4fbb8b4d305d1adf0, type: 3}
+  wallPrefab: {fileID: 2072509021443515154, guid: db93887de3f85f64ba2390f3683b3b14, type: 3}

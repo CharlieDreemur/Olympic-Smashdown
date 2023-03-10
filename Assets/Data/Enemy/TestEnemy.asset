@@ -41,7 +41,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   dashSpeed: 0
   dashTime: 2
+  dashWindupTime: 0.5
   dashCooldown: 5
   attackRange: 7
-  attackWindupTime: 1
+  attackPrepareTime: 0.8
+  attackWindupTime: 0.2
+  attackCooldown: 1
   projectileData: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}

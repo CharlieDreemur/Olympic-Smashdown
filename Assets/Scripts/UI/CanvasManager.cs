@@ -11,6 +11,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
     public GameObject health_slider;
     public TextMeshProUGUI health_num;
     public TextMeshProUGUI wave_num;
+    public TextMeshProUGUI score_num;
     // public GameObject upgrade_panel_obj;
     // public GameObject buff_grid_obj;
 
@@ -90,6 +91,11 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
 
     public void UpdateWaveNum(int wave_num_)
     {
-        wave_num.text = $"Wave Numner: {wave_num_.ToString()}";
+        wave_num.text = wave_num_.ToString();
+    }
+
+    public void UpdateScore(int score_)
+    {
+        score_num.text = score_.ToString();
     }
 }
