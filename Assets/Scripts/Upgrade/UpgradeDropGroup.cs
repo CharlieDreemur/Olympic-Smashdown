@@ -23,20 +23,16 @@ public class UpgradeDropGroup : MonoBehaviour
             return; 
         }
 
-        
-        Vector2 localPositionDirection = localPosition_.normalized;
-        float localPositionDistance = localPosition_.magnitude;
-        RaycastHit hit;
-        Ray ray = new Ray(transform.position, localPositionDirection);
-        Debug.Log("LayerMask: " + LayerMask.GetMask("Obstacle"));
-        Debug.DrawRay(ray.origin, ray.direction * localPositionDistance, Color.green, 5f);
-        if (Physics.Raycast(ray, out hit, localPositionDistance, LayerMask.GetMask("Obstacle"))) { // TODO: Make this layermask a variable
-            Debug.Log("Hit: " + hit.collider.name);
-            localPosition_ = hit.point - transform.position;
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(hit.point, 0.1f);
+        // Use raycast to =make sure the upgradeDrop is not spawned inside an obstacle
+        Vector2 direction = localPosition_.normalized;
+        float distance = localPosition_.magnitude;
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, (Vector2)transform.position + localPosition_, LayerMask.GetMask("Obstacle")); // TODO: Make this layermask a variable
+        if ( hit.collider != null) { // TODO: Make this layermask a variable
+            // Debug.Log("Hit: " + hit.collider.name);
+            localPosition_ = hit.point - (Vector2)transform.position;
         } else {
-        upgradeDropObj.transform.localPosition = localPosition_; 
+            // Debug.Log("No hit");
+            upgradeDropObj.transform.localPosition = localPosition_; 
         }
 
         _upgradeDrops.Add(upgradeDropObj);
