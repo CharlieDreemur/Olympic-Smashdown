@@ -1530,6 +1530,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: bffd0625224bc9641b5c18715de90184, type: 3}
+    - target: {fileID: 3821659924054881387, guid: e4648a2d99970124ca41fc9452447a50, type: 3}
+      propertyPath: upgradeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bce5963744441b498d315dc681010ff, type: 2}
     - target: {fileID: 3821659924054881389, guid: e4648a2d99970124ca41fc9452447a50, type: 3}
       propertyPath: m_RootOrder
       value: 8

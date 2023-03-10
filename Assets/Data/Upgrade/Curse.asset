@@ -17,8 +17,8 @@ MonoBehaviour:
   description: Curse
   funFact: 
   statsBonus:
-    moveSpeed: 2
-    moveSpeedMultiplier: 0
+    moveSpeed: 0
+    moveSpeedMultiplier: 2
     playerSizeMultiplier: 0
     reflectDamage: 0
     reflectDamageMultiplier: 0
@@ -29,4 +29,4 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
-  specialUpgrade: {fileID: 0}
+  specialUpgrade: {fileID: 11400000, guid: b707df9f2af133b45a02dd5de7d6414f, type: 2}
