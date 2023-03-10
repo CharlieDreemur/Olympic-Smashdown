@@ -9,17 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f70ddfdea585e3c4797ae94f24ca7912, type: 3}
-  m_Name: Reaper Scythe
+  m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
+  m_Name: Vampire Fangs
   m_EditorClassIdentifier: 
-  killCount: 15
-  Stats:
+  icon: {fileID: 21300000, guid: e703ee112fe245b4ab8cdc0c0d459863, type: 3}
+  name: 
+  description: 
+  funFact: 
+  statsBonus:
     currentHealth: 0
     maxHealth: 0
     moveSpeed: 0
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0
-    reflectDamage: 1
+    reflectDamage: 0
     reflectDamageMultiplier: 0
     reflectMoveSpeedMultiplier: 0
     reflectScaleMultiplier: 0
@@ -27,3 +30,4 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
+  specialUpgrade: {fileID: 11400000, guid: cd69a0cef07c03348b744450d5ea0434, type: 2}
