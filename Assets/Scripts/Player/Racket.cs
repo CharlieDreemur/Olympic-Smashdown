@@ -19,7 +19,7 @@ public class Racket : MonoBehaviour
     [Tooltip("The angle of the hitbox of the racket.")]
     [SerializeField] private float _arcAngle = 45f;
     [SerializeField] private float _swingCooldown;
-    private float _racketSize;
+    private Vector3 defaultScale;
     public Collider2D TriggerCollider { get => _triggerCollider; private set { } }
     public float ArcAngle { get => _arcAngle; private set { } }
     public Quaternion RacketRotation { get; private set; }
@@ -35,16 +35,16 @@ public class Racket : MonoBehaviour
     {
         _objectsInRange = new HashSet<Projectile>();
         _triggerColliderRadius = _triggerCollider.bounds.extents.x;
+        defaultScale = transform.localScale;
         EventManager.AddListener("UpgradeEvent", new UnityAction<string>(OnUpgrade));
     }
 
     private void Start(){
         _swingCooldown = Player.Instance.playerStats.racketSwingCooldown;
-        _racketSize = Player.Instance.playerStats.racketSizeMultiper;
         OnUpgrade();
     }
     private void OnUpgrade(string jsonValue =""){
-        transform.localScale = new Vector3(_racketSize, _racketSize, 1);
+        transform.localScale = defaultScale * Player.Instance.playerStats.racketSizeMultiper;
     }
 
     private void Update()
@@ -107,7 +107,7 @@ public class Racket : MonoBehaviour
                 // projRb.velocity = direction.normalized * projRb.velocity.magnitude;
             }
             proj.args.Data.speedMultipler *= Player.Instance.playerStats.reflectMoveSpeedMultiplier;
-            proj.track.SetProjectileScale(transform.localScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
+            proj.track.SetProjectileScale(defaultScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
             if (isChangingProjectileSpriteColor)
             {
                 proj.GetComponent<SpriteRenderer>().color = Color.white;

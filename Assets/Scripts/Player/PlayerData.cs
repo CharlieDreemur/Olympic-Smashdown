@@ -13,12 +13,8 @@ public class PlayerData : ScriptableObject
 public struct PlayerStats
 {
     [SerializeField]
-    [MinValue(0)]
-    //MaxValue is maxHealth
-    [MaxValue("@maxHealth")]
     [FoldoutGroup("Player")]
     private int currentHealth;
-    [MinValue(0)]
     public int CurrentHealth
     {
         get => currentHealth;
@@ -40,7 +36,6 @@ public struct PlayerStats
         }
     }
     [SerializeField]
-    [MinValue(0)]
     [FoldoutGroup("Player")]
     private int maxHealth;
     public int MaxHealth
@@ -88,7 +83,7 @@ public struct PlayerStats
         MaxHealth = data.stats.MaxHealth;
         moveSpeed = data.stats.moveSpeed;
         moveSpeedMultiplier = data.stats.moveSpeedMultiplier;
-        playerSizeMultiplier = data.stats.racketSizeMultiper;
+        playerSizeMultiplier = data.stats.playerSizeMultiplier;
         reflectDamage = data.stats.reflectDamage;
         reflectDamageMultiplier = data.stats.racketDamageMultipler;
         reflectMoveSpeedMultiplier = data.stats.reflectMoveSpeedMultiplier;
