@@ -27,6 +27,9 @@ public class WaveManager : MonoBehaviour
     [Range(0f, 3f)]
     [SerializeField] private float _spawnDelay;
 
+    [Tooltip("Used to identify obstacles in the scene so that enemies don't spawn on top of them")]
+    [SerializeField] private LayerMask _obstacleLayerMask;
+
     [Space(10)]
 
     [Header("TransitionCurtain")]
