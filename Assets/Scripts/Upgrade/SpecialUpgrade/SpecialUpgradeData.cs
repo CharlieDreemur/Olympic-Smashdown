@@ -14,6 +14,7 @@ public class SpecialUpgrade : ScriptableObject, IUpgrade
         player.onReflect.AddListener(OnReflect);
         player.onHurt.AddListener(OnHurt);
         player.onKillEnemy.AddListener(OnKillEnemy);
+        player.onDeath.AddListener(OnDeath);
         Upgrade();
     }
     public virtual void Upgrade(){
