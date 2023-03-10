@@ -12,6 +12,7 @@ public class ReaperScythe: SpecialUpgrade, IUpgrade{
     public override void OnKillEnemy()
     {
         //For every killCount number of enemies kills, add reflectDamage by damageAdd
+        Debug.Log("Player.Instance.enemyKilled: " + Player.Instance.enemyKilled);
         if(Player.Instance.enemyKilled % killCount == 0){
             Player.Instance.playerStats.reflectDamage += damageAdd;
         }
