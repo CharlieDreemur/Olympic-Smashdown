@@ -19,21 +19,21 @@ public class Player : Entity
     [SerializeField] [FoldoutGroup("Special Stats")]
     public int enemyKilled;
     [FoldoutGroup("Events")]
-    public UnityEvent onStart;
+    public SpecialEvent onStart = new SpecialEvent();
     [FoldoutGroup("Events")]
-    public UnityEvent onUpdate;
+    public SpecialEvent onUpdate = new SpecialEvent();
     [FoldoutGroup("Events")]
-    public UnityEvent onHurt;
+    public SpecialEvent onHurt = new SpecialEvent();
     [FoldoutGroup("Events")]
     public UnityEvent<int, int> onHealthChange;
     [FoldoutGroup("Events")]
-    public UnityEvent onDash;
+    public SpecialEvent onDash = new SpecialEvent();
     [FoldoutGroup("Events")]
-    public UnityEvent onReflect;
+    public SpecialEvent onReflect = new SpecialEvent();
     [FoldoutGroup("Events")]
-    public UnityEvent onDeath;
+    public SpecialEvent onDeath = new SpecialEvent();
     [FoldoutGroup("Events")]
-    public UnityEvent onKillEnemy;
+    public SpecialEvent onKillEnemy = new SpecialEvent();
     [SerializeField] 
     private string _firstSceneName = "MainScene";
 
@@ -69,7 +69,7 @@ public class Player : Entity
     private void Start()
     {
         playerStats.CurrentHealth = playerStats.MaxHealth;
-        if(onStart.GetPersistentEventCount()>0){
+        if(onStart.count > 0){
             onStart.Invoke();
         }
         OnUpgrade();
@@ -80,14 +80,14 @@ public class Player : Entity
     }
     private void Update()
     {
-        if(onUpdate.GetPersistentEventCount()>0){
+        if(onUpdate.count>0){
             onUpdate.Invoke();
         }
     }
 
     public void Hurt(int damage)
     {
-        if(onHurt.GetPersistentEventCount()>0){
+        if(onHurt.count>0){
             onHurt.Invoke();
         }
         playerStats.CurrentHealth -= damage;
@@ -98,14 +98,16 @@ public class Player : Entity
     }
     
     public void OnKillEnemy(){
-        if(onKillEnemy.GetPersistentEventCount()>0){
+        Debug.Log("OnKillEnemy:"+onKillEnemy.count);
+        if(onKillEnemy.count>0){
             enemyKilled++;
             onKillEnemy.Invoke();
         }
+        
     }
     public void Die()
     {
-        if(onDeath.GetPersistentEventCount()>0){
+        if(onDeath.count>0){
             onDeath.Invoke();
         }
         StartCoroutine(curtain.LoadAsyncSceneWithFadeOut("GameOverScene"));
@@ -122,4 +124,22 @@ public class Player : Entity
             }
         }
     }
+
+    
+}
+
+public class SpecialEvent:UnityEvent {
+
+    public int count { get; private set; }
+
+    public new void AddListener(UnityAction call) {
+        base.AddListener(call);
+        count++;
+    }
+
+    public new void RemoveListener(UnityAction call) {
+        base.RemoveListener(call);
+        count--;
+    }
+
 }
