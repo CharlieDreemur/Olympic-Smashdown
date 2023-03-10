@@ -206,7 +206,10 @@ public class WaveManager : MonoBehaviour
             Vector2 groupCenterPosition = new Vector2(playerPosition.x, playerPosition.y) + Random.insideUnitCircle * 10;
             for (int i = 0; i < spawnInfo.Count; i++)
             {
-                Vector2 randomPosition = groupCenterPosition + Random.insideUnitCircle * 2;
+                Vector2 randomPosition;
+                do{
+                    randomPosition = groupCenterPosition + Random.insideUnitCircle * 2;
+                }  while  (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));  
                 StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
             }
         }
@@ -218,7 +221,7 @@ public class WaveManager : MonoBehaviour
                 Vector2 randomPosition;
                 do
                 {
-                        randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
+                    randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
                 } while  (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));  // Check if there is obstacle at random position
                 StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
             }
