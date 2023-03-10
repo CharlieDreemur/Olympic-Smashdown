@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2731896840979571799}
   - component: {fileID: 9030300767957054672}
   - component: {fileID: 2226187327586210041}
+  - component: {fileID: -1419495584905633404}
   m_Layer: 0
   m_Name: DashEnemy
   m_TagString: Untagged
@@ -186,5 +187,21 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
+  gizmoViewMode: 0
+  showBehaviorDesignerGizmo: 0
+--- !u!114 &-1419495584905633404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491432202499124103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2b63ef7eec8584280e5b1fdb9ef83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnOffsets:
+  - {x: -2, y: 0}
+  - {x: 0, y: 0}
+  - {x: 2, y: 0}

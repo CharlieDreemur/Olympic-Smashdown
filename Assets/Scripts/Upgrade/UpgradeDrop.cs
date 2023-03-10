@@ -11,6 +11,9 @@ public class UpgradeDrop : MonoBehaviour
     [SerializeField]
     [ReadOnly]
     private bool canPickup = false;
+    
+    [HideInInspector]
+    public UpgradeDropGroup UpgradeDropGroup;
 
     private void Awake()
     {
@@ -21,7 +24,13 @@ public class UpgradeDrop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && canPickup)
         {
             upgrade.OnUpgrade();
-            Destroy(gameObject);
+            if(UpgradeDropGroup != null) {
+                UpgradeDropGroup.OnPickUp(); // This will destroy this upgrade drop along with others in the same group 
+            } else {
+                Debug.LogWarning("Upgrade Drop does not know which UpgradeGroup it belongs to", this);
+                Destroy(gameObject);
+            }
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

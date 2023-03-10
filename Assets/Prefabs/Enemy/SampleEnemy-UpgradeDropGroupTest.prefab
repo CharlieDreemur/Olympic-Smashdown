@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4254956238224807452}
   - component: {fileID: 7185232760710481563}
   - component: {fileID: 736174770}
+  - component: {fileID: 70576162}
   - component: {fileID: 4146959337502952732}
   m_Layer: 0
-  m_Name: SampleEnemy
+  m_Name: SampleEnemy-UpgradeDropGroupTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,8 +186,24 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
+--- !u!114 &70576162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2355879992007875020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2b63ef7eec8584280e5b1fdb9ef83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnOffsets:
+  - {x: -1.5, y: 0}
+  - {x: 0, y: 0}
+  - {x: 1.5, y: 0}
 --- !u!95 &4146959337502952732
 Animator:
   serializedVersion: 5

@@ -23,6 +23,7 @@ public class ItemSpawner : MonoBehaviour
     {
         Enemy enemy = GetComponent<Enemy>();
         enemy.died.AddListener(() => SpawnItems());
+        _itemCount = _spawnOffsets.Count; 
         _waveManager = FindObjectOfType<WaveManager>();
         if (_waveManager == null)
         {
@@ -32,10 +33,12 @@ public class ItemSpawner : MonoBehaviour
     }
     private void SpawnItems()
     {
+        GameObject upgradeGroupObj = Instantiate(new GameObject("UpgradeDropGroup", typeof(UpgradeDropGroup)), gameObject.transform.position, Quaternion.identity);
+        UpgradeDropGroup upgradeDropGroup = upgradeGroupObj.GetComponent<UpgradeDropGroup>();
         List<GameObject> items = _waveManager.ItemPoolData.GetRandomItems(_itemCount);
         for (int i = 0; i < _itemCount; i++)
         {
-            Instantiate(items[i], transform.position + new Vector3(_spawnOffsets[i].x, _spawnOffsets[i].y, 0), Quaternion.identity);
+            upgradeDropGroup.InstantiateUpgradeDrop(items[i], _spawnOffsets[i]);
         }
     }
 }
