@@ -133,8 +133,6 @@ public class ObstacleGeneration : MonoBehaviour
 
                 // Set the obstacle's scale based on its dimensions
                 /// obstacle.transform.localScale = new Vector3(obstacleWidthNew, obstacleHeightNew, 1);
-            
-                Debug.Log($"Obstacle generated at {obstacle.transform.position} with rotation {obstacle.transform.rotation}");
             }
         }
     }
