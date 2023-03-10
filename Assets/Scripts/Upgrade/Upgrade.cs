@@ -53,7 +53,6 @@ public class Upgrade : MonoBehaviour, IUpgrade
     
     public virtual void OnUpgrade()
     {
-        Debug.Log("OnUpgrade: " + upgradeData.name);
         player = Player.Instance;
         player.playerStats.Add(upgradeData.statsBonus);
         upgradeData.specialUpgrade?.OnUpgrade();

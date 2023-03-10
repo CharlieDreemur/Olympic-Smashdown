@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ItemPoolData", menuName = "Data/ItemPoolData", order = 0)]
 public class ItemPoolData : ScriptableObject
 {
+    public GameObject Item;
     [SerializeField] List<ItemPoolElement> _items = new();
 
     public List<GameObject> GetRandomItems(int count)
@@ -18,7 +19,8 @@ public class ItemPoolData : ScriptableObject
             {
                 itemSet = new HashSet<ItemPoolElement>(_items); // If we've run out of items, reset the set
             }
-            result.Add(selected.Item);
+            Item.GetComponent<Upgrade>().upgradeData = selected.UpgradeData;
+            result.Add(Item);
         }
         return result;
     }
@@ -52,7 +54,7 @@ public class ItemPoolData : ScriptableObject
 [System.Serializable]
 public struct ItemPoolElement
 {
-    public GameObject Item;
+    public UpgradeData UpgradeData;
     public float Weight;
 }
 
