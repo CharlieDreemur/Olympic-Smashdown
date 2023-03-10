@@ -24,7 +24,9 @@ public struct PlayerStats
             if(currentHealth < 0){
                 currentHealth = 0;
             }
-            Player.Instance.onHealthChange.Invoke(CurrentHealth, MaxHealth);
+            if(Player.Instance != null) {
+                Player.Instance.onHealthChange?.Invoke(CurrentHealth, MaxHealth);
+            }
         }
     }
 
@@ -37,7 +39,9 @@ public struct PlayerStats
             if(currentHealth > maxHealth){
                 currentHealth = maxHealth;
             }
-            Player.Instance.onHealthChange.Invoke(CurrentHealth, MaxHealth);
+            if(Player.Instance != null) {
+                Player.Instance.onHealthChange?.Invoke(CurrentHealth, MaxHealth);
+            }
         }
     }
     [FoldoutGroup("Player")]

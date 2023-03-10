@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
@@ -27,17 +28,29 @@ public class Player : Entity
     public UnityEvent onDash;
     [FoldoutGroup("Events")]
     public UnityEvent onReflect;
+
+    [SerializeField] 
+    private string _firstSceneName = "MainScene";
+
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(scene.name == _firstSceneName && Instance != null) { // Make sure the player is reset on the first scene
+            Destroy(Instance.gameObject); // destroy the old instance
+            Instance = this; // set the new instance
+            DontDestroyOnLoad(this); // don't destroy this instance
+        } else {
+            // If there is an instance, and it's not me, delete myself.
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+                DontDestroyOnLoad(this);
+            }
         }
 
         // for single scene setup, let's just set it to default value on start
