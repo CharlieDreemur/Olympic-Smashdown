@@ -31,8 +31,6 @@ public class ProjectileData : ScriptableObject
     public float maxArcHeight = 5f;
     //The final speed will be the speed*speedCurve
 
-    public float maxScale = 2f;
-
     [Min(0.0f)]
     public float attackDuration;
     [Min(0.0f)]

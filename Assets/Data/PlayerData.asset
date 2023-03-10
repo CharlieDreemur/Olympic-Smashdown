@@ -25,4 +25,4 @@ MonoBehaviour:
     racketDamage: 2
     racketDamageMultipler: 1
     racketSwingCooldown: 0
-    racketSizeMultiper: 2
+    racketSizeMultiper: 1

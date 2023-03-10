@@ -54,6 +54,7 @@ public abstract class ProjectileTrack
 
     public void SetProjectileScale(float scale)
     {
-        scaleMultiplier = Mathf.Clamp(scale, 0, _data.maxScale);
+        //Max Scale is 99
+        scaleMultiplier = Mathf.Clamp(scale, 0, 99);
     }
 }
