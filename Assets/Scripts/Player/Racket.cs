@@ -90,7 +90,11 @@ public class Racket : MonoBehaviour
         swung.Invoke();
         foreach (var proj in _objectsInRange)
         {
-            
+            if (!proj.args.Data.canBeReflected)
+            {
+                continue;
+            }
+
             var projDir3 = (proj.gameObject.transform.position - transform.position);
             var projDir2 = new Vector2(projDir3.x, projDir3.y).normalized;
             // test direction

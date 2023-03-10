@@ -21,6 +21,10 @@ public class ObstacleGeneration : MonoBehaviour
     float obstacleWidth;
     float obstacleHeight;
 
+    [SerializeField] GameObject wallPrefab;
+
+    GameObject obstacleParent;
+
     void Awake()
     {
         // Calculate the map dimensions
@@ -32,11 +36,37 @@ public class ObstacleGeneration : MonoBehaviour
         obstacleWidth = obstaclePrefab.transform.localScale.y;
 
         // Generate the obstacles
+        GenerateWalls();
         GenerateObstacles();
+    }
+
+    private void GenerateWalls()
+    {
+        // Create a parent object for the walls
+        GameObject wallParent = new GameObject("Walls");
+
+        // Create the walls
+        GameObject topWall = Instantiate(wallPrefab, wallParent.transform);
+        topWall.transform.position = new Vector3(0f, mapMaxBounds.y + 1f, 0f);
+        topWall.transform.localScale = new Vector3(mapWidth + 3f, 1f, 1f);
+
+        GameObject bottomWall = Instantiate(wallPrefab, wallParent.transform);
+        bottomWall.transform.position = new Vector3(0f, mapMinBounds.y - 1f, 0f);
+        bottomWall.transform.localScale = new Vector3(mapWidth + 3f, 1f, 1f);
+
+        GameObject leftWall = Instantiate(wallPrefab, wallParent.transform);
+        leftWall.transform.position = new Vector3(mapMinBounds.x - 1f, 0f, 0f);
+        leftWall.transform.localScale = new Vector3(1f, mapHeight + 3f, 1f);
+
+        GameObject rightWall = Instantiate(wallPrefab, wallParent.transform);
+        rightWall.transform.position = new Vector3(mapMaxBounds.x + 1f, 0f, 0f);
+        rightWall.transform.localScale = new Vector3(1f, mapHeight + 3f, 1f);
     }
 
     private void GenerateObstacles()
     {
+        obstacleParent = new GameObject("Obstacles");
+
         // Calculate the number of biomes on the map
         int numBiomesX = Mathf.FloorToInt(mapWidth / biomeWidth);
         int numBiomesY = Mathf.FloorToInt(mapHeight / biomeHeight);
@@ -99,11 +129,10 @@ public class ObstacleGeneration : MonoBehaviour
                 // Instantiate the obstacle and rotate it randomly
                 GameObject obstacle = Instantiate(obstaclePrefab, new Vector3(obstacleX, obstacleY, 0), Quaternion.identity);
                 obstacle.transform.Rotate(Vector3.forward, obstacleZRot);
+                obstacle.transform.SetParent(obstacleParent.transform);
 
                 // Set the obstacle's scale based on its dimensions
                 /// obstacle.transform.localScale = new Vector3(obstacleWidthNew, obstacleHeightNew, 1);
-            
-                Debug.Log($"Obstacle generated at {obstacle.transform.position} with rotation {obstacle.transform.rotation}");
             }
         }
     }
