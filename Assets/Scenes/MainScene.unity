@@ -1681,6 +1681,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   health: 0
+  dead: 0
   dashCooldownTimer: 0
   attackCooldownTimer: 0
   _spriteRenderer: {fileID: 0}
@@ -1693,15 +1694,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5709327166501083034, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
       propertyPath: m_Size.x
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5709327166501083034, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
       propertyPath: m_Size.y
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5709327166501083034, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
       propertyPath: m_Offset.x
-      value: 0.03
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7698973864632822059, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
       propertyPath: m_Radius

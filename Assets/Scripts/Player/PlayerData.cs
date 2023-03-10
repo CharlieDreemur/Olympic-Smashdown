@@ -55,8 +55,6 @@ public struct PlayerStats
     [FoldoutGroup("Reflect")]
     public float reflectDamageMultiplier;
     [FoldoutGroup("Reflect")]
-    public float reflectMoveSpeed;
-    [FoldoutGroup("Reflect")]
     public float reflectMoveSpeedMultiplier;
     [FoldoutGroup("Reflect")]
     public float reflectScaleMultiplier;
@@ -78,7 +76,6 @@ public struct PlayerStats
         playerSizeMultiplier = data.stats.racketSizeMultiper;
         reflectDamage = data.stats.reflectDamage;
         reflectDamageMultiplier = data.stats.racketDamageMultipler;
-        reflectMoveSpeed = data.stats.reflectMoveSpeed;
         reflectMoveSpeedMultiplier = data.stats.reflectMoveSpeedMultiplier;
         reflectScaleMultiplier = data.stats.reflectScaleMultiplier;
         racketDamage = data.stats.racketDamage;
@@ -95,7 +92,6 @@ public struct PlayerStats
         playerSizeMultiplier += stats.playerSizeMultiplier; 
         reflectDamage += stats.reflectDamage;
         reflectDamageMultiplier += stats.reflectDamageMultiplier;
-        reflectMoveSpeed += stats.reflectMoveSpeed;
         reflectMoveSpeedMultiplier += stats.reflectMoveSpeedMultiplier;
         reflectScaleMultiplier += stats.reflectScaleMultiplier;
         racketDamage += stats.racketDamage;
@@ -113,7 +109,6 @@ public struct PlayerStats
         playerSizeMultiplier -= stats.playerSizeMultiplier; 
         reflectDamage -= stats.reflectDamage;
         reflectDamageMultiplier -= stats.reflectDamageMultiplier;
-        reflectMoveSpeed -= stats.reflectMoveSpeed;
         reflectMoveSpeedMultiplier -= stats.reflectMoveSpeedMultiplier;
         reflectScaleMultiplier -= stats.reflectScaleMultiplier;
         racketDamage -= stats.racketDamage;
