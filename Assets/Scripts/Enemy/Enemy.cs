@@ -14,12 +14,15 @@ public class Enemy : Entity
     public UnityEvent died;
     public int health = 1;
     private GameObject _target;
+    private Animator _animator;
     [SerializeField]
     private float dashCooldownTimer = 0;
+    [SerializeField]
+    private float attackCooldownTimer = 0;
     private void Awake()
     {
         _target = GameObject.FindGameObjectWithTag("Player");
-
+        _animator = GetComponent<Animator>();
         if (_target == null)
             Debug.LogAssertion("Target is null");
         if (enemyData == null)
@@ -30,7 +33,9 @@ public class Enemy : Entity
         health = enemyData.health;
         behaviorTree.SetVariableValue("moveSpeed", enemyData.moveSpeed);
         behaviorTree.SetVariableValue("attackRange", enemyData.attackRange);
+        behaviorTree.SetVariableValue("attackPrepareTime", enemyData.attackPrepareTime);
         behaviorTree.SetVariableValue("attackWindupTime", enemyData.attackWindupTime);
+        behaviorTree.SetVariableValue("attackCooldown", enemyData.attackCooldown);
         behaviorTree.SetVariableValue("targetTransform", _target.transform);
         behaviorTree.SetVariableValue("selfTransform", transform);
         behaviorTree.SetVariableValue("projectileData", enemyData.projectileData);
@@ -47,6 +52,13 @@ public class Enemy : Entity
     }
     private void Update()
     {
+        //Cooldown timer for attack
+        attackCooldownTimer = (float)behaviorTree.GetVariable("attackCooldownTimer").GetValue();
+        if (attackCooldownTimer > 0)
+        {
+            attackCooldownTimer -= Time.deltaTime;
+            behaviorTree.SetVariableValue("attackCooldownTimer", attackCooldownTimer);
+        }
         //Cooldown timer for dash
         switch (enemyData.enemyType)
         {
@@ -66,7 +78,11 @@ public class Enemy : Entity
     public void Kill()
     {
         died.Invoke();
-        Destroy(gameObject);
+        behaviorTree.enabled = false;
+        _animator.Play("Die");
+        //Destroy(gameObject) after die animation is done
+        AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        StartCoroutine(Death(stateInfo.length));
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -88,5 +104,11 @@ public class Enemy : Entity
         {
             Kill();
         }
+    }
+
+    IEnumerator Death(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
     }
 }
