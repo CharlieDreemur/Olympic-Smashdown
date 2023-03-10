@@ -55,6 +55,8 @@ public class Enemy : Entity
     }
     private void Update()
     {
+        if(behaviorTree == null)
+            Debug.LogError("BehaviorTree is null");
         //Cooldown timer for attack
         attackCooldownTimer = (float)behaviorTree.GetVariable("attackCooldownTimer")?.GetValue();
         if (attackCooldownTimer > 0)

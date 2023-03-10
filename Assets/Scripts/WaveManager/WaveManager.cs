@@ -27,6 +27,9 @@ public class WaveManager : MonoBehaviour
     [Range(0f, 3f)]
     [SerializeField] private float _spawnDelay;
 
+    [Tooltip("Used to identify obstacles in the scene so that enemies don't spawn on top of them")]
+    [SerializeField] private LayerMask _obstacleLayerMask;
+
     [Space(10)]
 
     [Header("TransitionCurtain")]
@@ -212,7 +215,11 @@ public class WaveManager : MonoBehaviour
             for (int i = 0; i < spawnInfo.Count; i++)
             {
                 Vector2 randomDirection = Random.insideUnitCircle.normalized;
-                Vector2 randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
+                Vector2 randomPosition;
+                do
+                {
+                        randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
+                } while  (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));  // Check if there is obstacle at random position
                 StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
             }
         }
