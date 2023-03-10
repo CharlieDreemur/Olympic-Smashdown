@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
   m_Name: RKT XL
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  name: 
-  description: 
-  funFact: 
+  icon: {fileID: 21300000, guid: 4f7792f96c4d082489c725743e981ab0, type: 3}
+  name: RKT XL
+  description: Extra large racket
+  funFact: Used by giant athletes
   statsBonus:
     moveSpeed: 0
     moveSpeedMultiplier: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
     racketDamage: 0
     racketDamageMultipler: 0
     racketSwingCooldown: 0
-    racketSizeMultiper: 0
+    racketSizeMultiper: 0.25
   specialUpgrade: {fileID: 0}

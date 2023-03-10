@@ -16,6 +16,8 @@ public class Player : Entity
     // some external manager will need to set the health on game start
     // and make it remember its health across levels
     public PlayerStats playerStats;
+    [SerializeField]
+    public int enemyKilled;
     [FoldoutGroup("Events")]
     public UnityEvent onStart;
     [FoldoutGroup("Events")]
