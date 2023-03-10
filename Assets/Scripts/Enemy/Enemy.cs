@@ -88,7 +88,7 @@ public class Enemy : Entity
         dead = true;
         died.Invoke();
         behaviorTree.enabled = false;
-        Player.Instance.enemyKilled++;
+        Player.Instance.OnKillEnemy();
         _animator.Play("Die");
         //Death Effect
         transform.DOJump(transform.position - direction, 0.5f, 1, 0.5f);

@@ -16,7 +16,7 @@ public class Player : Entity
     // some external manager will need to set the health on game start
     // and make it remember its health across levels
     public PlayerStats playerStats;
-    [SerializeField]
+    [SerializeField] [FoldoutGroup("Special Stats")]
     public int enemyKilled;
     [FoldoutGroup("Events")]
     public UnityEvent onStart;
@@ -30,7 +30,10 @@ public class Player : Entity
     public UnityEvent onDash;
     [FoldoutGroup("Events")]
     public UnityEvent onReflect;
-
+    [FoldoutGroup("Events")]
+    public UnityEvent onDeath;
+    [FoldoutGroup("Events")]
+    public UnityEvent onKillEnemy;
     [SerializeField] 
     private string _firstSceneName = "MainScene";
 
@@ -66,8 +69,10 @@ public class Player : Entity
     private void Start()
     {
         playerStats.CurrentHealth = playerStats.MaxHealth;
+        if(onStart.GetPersistentEventCount()>0){
+            onStart.Invoke();
+        }
         OnUpgrade();
-        onStart.Invoke();
     }
 
     private void OnUpgrade(string jsonValue=""){
@@ -75,21 +80,34 @@ public class Player : Entity
     }
     private void Update()
     {
-        onUpdate.Invoke();
+        if(onUpdate.GetPersistentEventCount()>0){
+            onUpdate.Invoke();
+        }
     }
 
     public void Hurt(int damage)
     {
-        onHurt.Invoke();
+        if(onHurt.GetPersistentEventCount()>0){
+            onHurt.Invoke();
+        }
         playerStats.CurrentHealth -= damage;
         if (playerStats.CurrentHealth <= 0)
         {
             Die();
         }
     }
-
+    
+    public void OnKillEnemy(){
+        if(onKillEnemy.GetPersistentEventCount()>0){
+            enemyKilled++;
+            onKillEnemy.Invoke();
+        }
+    }
     public void Die()
     {
+        if(onDeath.GetPersistentEventCount()>0){
+            onDeath.Invoke();
+        }
         StartCoroutine(curtain.LoadAsyncSceneWithFadeOut("GameOverScene"));
     }
 
