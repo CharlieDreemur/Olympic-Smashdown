@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82fe767d7fe80e94e96f2bdb8bd5ed27, type: 3}
   m_Name: Reaper Scythe
   m_EditorClassIdentifier: 
-  killCount: 1
+  killCount: 15
   damageAdd: 1
