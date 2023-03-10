@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UpgradeDropGroup : MonoBehaviour
 {
-    private List<GameObject> _upgradeDrops = new();
+    private List<GameObject> _upgradeDrops = new(); 
+
     // Invoked by UpgradeDrop when it is picked up 
     public void OnPickUp() {
         foreach(var upgradeDrop in _upgradeDrops) {
@@ -35,10 +36,10 @@ public class UpgradeDropGroup : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(hit.point, 0.1f);
         } else {
-            upgradeDropObj.transform.localPosition = localPosition_; 
+        upgradeDropObj.transform.localPosition = localPosition_; 
         }
 
-        _upgradeDrops.Add(upgradeDropObj);  
+        _upgradeDrops.Add(upgradeDropObj);
         upgradeDrop.UpgradeDropGroup = this; 
     }
 }
