@@ -110,7 +110,8 @@ public class Racket : MonoBehaviour
             proj.track.SetProjectileScale(transform.localScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
             if (isChangingProjectileSpriteColor)
             {
-                proj.GetComponent<SpriteRenderer>().color = Color.white;
+                proj.SetEnemyProjectileHighlightGOActive(false);
+                // proj.GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
     }

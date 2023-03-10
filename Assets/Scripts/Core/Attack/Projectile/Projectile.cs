@@ -81,6 +81,8 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public float totalDistanceToTarget = 0.0f;
     [HideInInspector] public Vector3 targetPosition;
 
+    [SerializeField] GameObject enemyProjectileHighlightGO;
+
     private GameObject areaIndicator;
 
     public static GameObject InstantiateProjectile(
@@ -304,5 +306,13 @@ public class Projectile : MonoBehaviour
         }
         PoolManager.ReleaseObject(gameObject);
         */
+    }
+
+    public void SetEnemyProjectileHighlightGOActive(bool value)
+    {
+        if (enemyProjectileHighlightGO != null)
+        {
+            enemyProjectileHighlightGO.SetActive(value);
+        }
     }
 }
