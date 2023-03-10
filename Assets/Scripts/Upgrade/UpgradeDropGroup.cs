@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class UpgradeDropGroup : MonoBehaviour
 {
-    private List<GameObject> _upgradeDrops = new(); 
-
+    private List<GameObject> _upgradeDrops = new();
     // Invoked by UpgradeDrop when it is picked up 
     public void OnPickUp() {
         foreach(var upgradeDrop in _upgradeDrops) {
@@ -23,8 +22,23 @@ public class UpgradeDropGroup : MonoBehaviour
             return; 
         }
 
-        upgradeDropObj.transform.localPosition = localPosition_; 
-        _upgradeDrops.Add(upgradeDropObj);
+        
+        Vector2 localPositionDirection = localPosition_.normalized;
+        float localPositionDistance = localPosition_.magnitude;
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position, localPositionDirection);
+        Debug.Log("LayerMask: " + LayerMask.GetMask("Obstacle"));
+        Debug.DrawRay(ray.origin, ray.direction * localPositionDistance, Color.green, 5f);
+        if (Physics.Raycast(ray, out hit, localPositionDistance, LayerMask.GetMask("Obstacle"))) { // TODO: Make this layermask a variable
+            Debug.Log("Hit: " + hit.collider.name);
+            localPosition_ = hit.point - transform.position;
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(hit.point, 0.1f);
+        } else {
+            upgradeDropObj.transform.localPosition = localPosition_; 
+        }
+
+        _upgradeDrops.Add(upgradeDropObj);  
         upgradeDrop.UpgradeDropGroup = this; 
     }
 }
