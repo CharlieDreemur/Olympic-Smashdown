@@ -8,7 +8,7 @@ using Sirenix.OdinInspector;
 public class Curse : SpecialUpgrade, IUpgrade{
     public override void Upgrade()
     {
-        Player.Instance.playerStats.MaxHealth = 100000;
+        Player.Instance.playerStats.MaxHealth = 1;
     }
 
 }
