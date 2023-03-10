@@ -80,10 +80,13 @@ public class Player : Entity
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.GetComponent<Projectile>() != null)
+        if (col.gameObject.TryGetComponent<Projectile>(out Projectile proj))
         {
-            Destroy(col.gameObject);
-            Hurt(1);
+            if (proj.args.DamageInfo.ownerType == ProjectileOwnerType.enemy)
+            {
+                Destroy(col.gameObject);
+                Hurt(1);             
+            }
         }
     }
 }

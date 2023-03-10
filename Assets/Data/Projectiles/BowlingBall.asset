@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BowlingBall
   m_EditorClassIdentifier: 
   Name: BallTest
-  prefab: {fileID: 7069734107908870345, guid: 5c387a0c73cf72e42932a129c8f931e1, type: 3}
+  prefab: {fileID: 7069734107908870345, guid: 466e7a7daa7345448a1c805b29ca73c3, type: 3}
   lifeCycle: 60
   maxDistance: 2000
   damage: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultipler: 12
+  speedMultipler: 5
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -75,7 +75,8 @@ MonoBehaviour:
   cooldown: 0
   stun: 0
   isTriggerWhenRelease: 1
-  destroysObstacles: 0
+  destroysObstacles: 1
+  canBeReflected: 0
   gravityScale: 0
   isGreaterAngle: 0
   indicatorRadius: 0

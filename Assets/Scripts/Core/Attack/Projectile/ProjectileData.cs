@@ -45,6 +45,7 @@ public class ProjectileData : ScriptableObject
     //! public List<ProjectileAction> actionList;
 
     public bool destroysObstacles = false;
+    public bool canBeReflected = true;
 
     [Space(10)]
     [Header("TrackParabola Setup")]

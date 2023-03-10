@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7069734107908870346}
   - component: {fileID: 1149666769688729530}
   m_Layer: 6
-  m_Name: Golf Ball
+  m_Name: Bowling Ball
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3fd57b8a8a69184a830cb5e5e76ff13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3503eeae8d4b463448f41ab8dc106ec8, type: 3}
   m_Color: {r: 1, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
     direction: {x: 1, y: 0, z: 0}
     target: {fileID: 0}
     ignoredCollisionList: []
-    _data: {fileID: 11400000, guid: 5486c89b30617804dae768b565dfb979, type: 2}
+    _data: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}
   distance: 0
   time: 0
   triggerEntities: []
