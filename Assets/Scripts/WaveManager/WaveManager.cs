@@ -166,12 +166,18 @@ public class WaveManager : MonoBehaviour
                 SpawnEliteMobs();
                 if(isEndless) {
                     _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
+                } else {
+                    _spawnCooldown = _currentWaveData.SpawnInterval;
                 }
             }
             else if (_spawnCooldown <= 0) // Spawn normal mobs if the cooldown is up, and elite mobs aren't spawning in this loop iteration
             {
                 SpawnNormalMobs();
-                _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
+                if(isEndless) {
+                    _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
+                } else {
+                    _spawnCooldown = _currentWaveData.SpawnInterval;
+                }
             }
 
             _spawnCooldown -= Time.deltaTime;
