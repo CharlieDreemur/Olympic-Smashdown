@@ -108,7 +108,8 @@ public class Enemy : Entity
         if (proj != null && proj.args.DamageInfo.ownerType == ProjectileOwnerType.player)
         {
             Destroy(col.gameObject);
-            Hurt(1, hitDirection);
+            int damage = (int)(Player.Instance.playerStats.reflectDamage*Player.Instance.playerStats.reflectDamageMultiplier);
+            Hurt(damage, hitDirection);
         }
     }
 

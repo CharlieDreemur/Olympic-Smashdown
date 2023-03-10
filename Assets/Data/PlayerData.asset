@@ -16,12 +16,12 @@ MonoBehaviour:
     moveSpeed: 5
     moveSpeedMultiplier: 1
     playerSizeMultiplier: 1
-    reflectDamage: 0
+    reflectDamage: 5
     reflectDamageMultiplier: 1
     reflectMoveSpeed: 0
     reflectMoveSpeedMultiplier: 1
     reflectScaleMultiplier: 1
-    racketDamage: 0
+    racketDamage: 2
     racketDamageMultipler: 1
     racketSwingCooldown: 0
     racketSizeMultiper: 1
