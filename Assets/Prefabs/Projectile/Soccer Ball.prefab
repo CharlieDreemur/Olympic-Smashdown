@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7069734107908870346}
   - component: {fileID: 1149666769688729530}
   m_Layer: 6
-  m_Name: Ball
+  m_Name: Soccer Ball
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

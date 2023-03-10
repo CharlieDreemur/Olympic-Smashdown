@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6ee17c1fd346ef4db5e46b9dc7f8121, type: 3}
-  m_Name: BallTest
+  m_Name: SoccerBall
   m_EditorClassIdentifier: 
   Name: BallTest
   prefab: {fileID: 7069734107908870345, guid: 438d5c8c67b3c974eaa94a29cfe206c6, type: 3}
