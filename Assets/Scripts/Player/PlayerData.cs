@@ -12,34 +12,49 @@ public class PlayerData : ScriptableObject
 [HideLabel]
 public struct PlayerStats
 {
+    [SerializeField]
+    [MinValue(0)]
+    //MaxValue is maxHealth
+    [MaxValue("@maxHealth")]
+    [FoldoutGroup("Player")]
     private int currentHealth;
-    [MinValue(0)] [FoldoutGroup("Player")][MaxValue("@maxHealth")] [ShowInInspector]
-    public int CurrentHealth{
+    [MinValue(0)]
+    public int CurrentHealth
+    {
         get => currentHealth;
-        set{
+        set
+        {
             currentHealth = value;
-            if(currentHealth > maxHealth){
+            if (currentHealth > maxHealth)
+            {
                 currentHealth = maxHealth;
             }
-            if(currentHealth < 0){
+            if (currentHealth < 0)
+            {
                 currentHealth = 0;
             }
-            if(Player.Instance != null) {
+            if (Player.Instance != null)
+            {
                 Player.Instance.onHealthChange?.Invoke(CurrentHealth, MaxHealth);
             }
         }
     }
-
+    [SerializeField]
+    [MinValue(0)]
+    [FoldoutGroup("Player")]
     private int maxHealth;
-    [FoldoutGroup("Player")] [ShowInInspector]
-    public int MaxHealth{
+    public int MaxHealth
+    {
         get => maxHealth;
-        set{
+        set
+        {
             maxHealth = value;
-            if(currentHealth > maxHealth){
+            if (currentHealth > maxHealth)
+            {
                 currentHealth = maxHealth;
             }
-            if(Player.Instance != null) {
+            if (Player.Instance != null)
+            {
                 Player.Instance.onHealthChange?.Invoke(CurrentHealth, MaxHealth);
             }
         }
@@ -89,7 +104,7 @@ public struct PlayerStats
         MaxHealth += stats.MaxHealth;
         moveSpeed += stats.moveSpeed;
         moveSpeedMultiplier += stats.moveSpeedMultiplier;
-        playerSizeMultiplier += stats.playerSizeMultiplier; 
+        playerSizeMultiplier += stats.playerSizeMultiplier;
         reflectDamage += stats.reflectDamage;
         reflectDamageMultiplier += stats.reflectDamageMultiplier;
         reflectMoveSpeedMultiplier += stats.reflectMoveSpeedMultiplier;
@@ -101,12 +116,12 @@ public struct PlayerStats
 
     }
     public void Minus(PlayerStats stats)
-    {   
+    {
         CurrentHealth -= stats.CurrentHealth;
         MaxHealth -= stats.MaxHealth;
         moveSpeed -= stats.moveSpeed;
         moveSpeedMultiplier -= stats.moveSpeedMultiplier;
-        playerSizeMultiplier -= stats.playerSizeMultiplier; 
+        playerSizeMultiplier -= stats.playerSizeMultiplier;
         reflectDamage -= stats.reflectDamage;
         reflectDamageMultiplier -= stats.reflectDamageMultiplier;
         reflectMoveSpeedMultiplier -= stats.reflectMoveSpeedMultiplier;

@@ -18,7 +18,7 @@ MonoBehaviour:
     Weight: 1
     IsGrouped: 1
   EliteSpawnInfos:
-  - EnemyPrefab: {fileID: 2355879992007875020, guid: e14544b8fafca96439e8695245188b0a, type: 3}
+  - EnemyPrefab: {fileID: 2355879992007875020, guid: 1088e365489e2f04188687998fe2e8a7, type: 3}
     Count: 1
     Weight: 1
     IsGrouped: 0
