@@ -18,7 +18,7 @@ MonoBehaviour:
   maxDistance: 2000
   damage: 1
   knockback: 0
-  trackType: 2
+  trackType: 0
   scale: {x: 1, y: 1, z: 1}
   scaleCurve:
     serializedVersion: 2
@@ -44,13 +44,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultipler: 2
+  speedMultipler: 8
   speedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.50251675
-      value: 0.5
+      time: 0.01157471
+      value: 0.88426715
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -58,8 +58,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 1
+      time: 0.8546449
+      value: 0.9277093
+      inSlope: 0.14113317
+      outSlope: 0.14113317
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.300789
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.4092628
+      value: 1.3261026
       inSlope: 2
       outSlope: 2
       tangentMode: 0
