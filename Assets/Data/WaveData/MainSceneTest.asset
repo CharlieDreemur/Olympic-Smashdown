@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MainSceneTest
   m_EditorClassIdentifier: 
   SpawnInfos:
-  - EnemyPrefab: {fileID: 2355879992007875020, guid: 3bc7f58b5102e2649b5c69966784b867, type: 3}
-    Count: 2
+  - EnemyPrefab: {fileID: 2355879992007875020, guid: aa1f99e420b345546a31ac2f00f95fa4, type: 3}
+    Count: 1
     Weight: 8
     IsGrouped: 1
   - EnemyPrefab: {fileID: 2355879992007875020, guid: 53653eadaae1d0641875641790a8bdaa, type: 3}
