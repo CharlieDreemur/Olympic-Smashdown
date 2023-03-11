@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1003472db73043d48a544118ff4f95e0, type: 3}
   m_Name: BowlingEnemy1
   m_EditorClassIdentifier: 
-  health: 8
+  health: 15
   enemyType: 0
   moveSpeed: 3
   dashCurve:
@@ -43,8 +43,8 @@ MonoBehaviour:
   dashTime: 2
   dashWindupTime: 0.5
   dashCooldown: 5
-  attackRange: 7
-  attackPrepareTime: 0.8
-  attackWindupTime: 0.2
-  attackCooldown: 1
+  attackRange: 6
+  attackPrepareTime: 1
+  attackWindupTime: 0.4
+  attackCooldown: 2
   projectileData: {fileID: 11400000, guid: 02be37c49fca68a478ec7e647d546bfa, type: 2}
