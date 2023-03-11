@@ -7,29 +7,30 @@ using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
+    public ObstacleGeneration obstacleGeneration;
     [Header("Endless Mode Settings")]
     [Tooltip("If true, the wave manager will not end the stage after the last wave, but will repeat the last wave instead")]
-    [SerializeField] private bool isEndless = false; 
+    public bool isEndless = false;
     [Tooltip("You can use this curve to define spawnIntervalMultiplier")]
-    [SerializeField] private AnimationCurve _spawnCooldownMultiplierCurve;
+    public AnimationCurve _spawnCooldownMultiplierCurve;
     [Tooltip("The time at which the spawn cooldown multiplier curve ends and the spawn cooldown multiplier is set to its end value")]
-    [SerializeField] float _spawnCurveEndTime = 600f;
+    public float _spawnCurveEndTime = 600f;
     [Space(10)]
 
     [Header("Data")]
     [Tooltip("The wave data to use for this wave")]
-    [SerializeField] List<WaveData> _waveData;
+    public List<WaveData> _waveData;
     // [SerializeField] WaveData _dummyWaveData; 
-    [SerializeField] private ItemPoolData itemPoolData;
+    public ItemPoolData itemPoolData;
     [Space(10)]
 
     [Header("Prefabs")]
     [AssetsOnly]
     [Required("Please add a reference to the warning prefab")]
-    [SerializeField] GameObject _warningPrefab;
+    public GameObject _warningPrefab;
     [Required("Please add a reference to the elite warning prefab")]
     [AssetsOnly]
-    [SerializeField] GameObject _eliteWarningPrefab;
+    public GameObject _eliteWarningPrefab;
     [Space(10)]
 
     [Header("Spawn Settings")]
@@ -108,7 +109,8 @@ public class WaveManager : MonoBehaviour
 
     private void StartNextWave()
     {
-        if(_waveData.Count == 0) {
+        if (_waveData.Count == 0)
+        {
             Debug.LogError("No wave data found");
             return;
         }
@@ -124,14 +126,17 @@ public class WaveManager : MonoBehaviour
             // Debug.Log("wave data count: " + _waveData.Count);
             if (++_currentWaveIndex < _waveData.Count) // More waves
             {
-                _currentWaveData = _waveData[_currentWaveIndex]; 
+                _currentWaveData = _waveData[_currentWaveIndex];
                 StartCoroutine(WaveCoroutine());
             }
             else // No more waves
             {
-                if(isEndless) {
+                if (isEndless)
+                {
                     StartCoroutine(WaveCoroutine());
-                } else {
+                }
+                else
+                {
                     Debug.Log("Stage ended");
                     _currentWaveData = null;
                     EndStage();
@@ -164,18 +169,24 @@ public class WaveManager : MonoBehaviour
             if (_spawnCooldown <= 0 && _currentWaveTime >= _currentWaveData.EliteSpawnTime && !_eliteMobsSpawned)
             {
                 SpawnEliteMobs();
-                if(isEndless) {
+                if (isEndless)
+                {
                     _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
-                } else {
+                }
+                else
+                {
                     _spawnCooldown = _currentWaveData.SpawnInterval;
                 }
             }
             else if (_spawnCooldown <= 0) // Spawn normal mobs if the cooldown is up, and elite mobs aren't spawning in this loop iteration
             {
                 SpawnNormalMobs();
-                if(isEndless) {
+                if (isEndless)
+                {
                     _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
-                } else {
+                }
+                else
+                {
                     _spawnCooldown = _currentWaveData.SpawnInterval;
                 }
             }
@@ -241,9 +252,13 @@ public class WaveManager : MonoBehaviour
             for (int i = 0; i < spawnInfo.Count; i++)
             {
                 Vector2 randomPosition;
-                do{
+                do
+                {
                     randomPosition = groupCenterPosition + Random.insideUnitCircle * 2;
-                }  while  (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));  
+                    randomPosition.x = Mathf.Clamp(randomPosition.x, obstacleGeneration.mapMinBounds.x, obstacleGeneration.mapMaxBounds.x);
+                    randomPosition.y = Mathf.Clamp(randomPosition.y, obstacleGeneration.mapMinBounds.y, obstacleGeneration.mapMaxBounds.y);
+                    Debug.Log("random position: " + randomPosition);
+                } while (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));
                 StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
             }
         }
@@ -256,7 +271,10 @@ public class WaveManager : MonoBehaviour
                 do
                 {
                     randomPosition = new Vector2(playerPosition.x, playerPosition.y) + randomDirection * 6;
-                } while  (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));  // Check if there is obstacle at random position
+                    randomPosition.x = Mathf.Clamp(randomPosition.x, obstacleGeneration.mapMinBounds.x, obstacleGeneration.mapMaxBounds.x);
+                    randomPosition.y = Mathf.Clamp(randomPosition.y, obstacleGeneration.mapMinBounds.y, obstacleGeneration.mapMaxBounds.y);
+                    Debug.Log("random position: " + randomPosition);
+                } while (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));  // Check if there is obstacle at random position
                 StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
             }
         }
