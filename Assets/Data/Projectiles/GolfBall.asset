@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: BallTest
   prefab: {fileID: 7069734107908870345, guid: 5c387a0c73cf72e42932a129c8f931e1, type: 3}
-  lifeCycle: 60
+  lifeCycle: 15
   maxDistance: 2000
   damage: 1
   knockback: 0
@@ -70,12 +70,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxArcHeight: 5
-  maxScale: 2
   attackDuration: 0
   cooldown: 0
   stun: 0
   isTriggerWhenRelease: 1
   destroysObstacles: 0
+  canBeReflected: 1
   gravityScale: 0
   isGreaterAngle: 0
   indicatorRadius: 0

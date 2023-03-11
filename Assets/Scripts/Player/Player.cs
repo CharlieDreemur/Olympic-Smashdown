@@ -1,3 +1,4 @@
+using System.Collections;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : Entity
 {
+
+    private bool _canTakeDamage = true;
     public static Player Instance { get; private set; }
 
     public PlayerData data;
@@ -120,11 +123,21 @@ public class Player : Entity
             if (proj.args.DamageInfo.ownerType == ProjectileOwnerType.enemy)
             {
                 Destroy(col.gameObject);
-                Hurt(1);             
+                if (_canTakeDamage)
+                {
+                    StartCoroutine(InvincibilityCoro(0.7f));
+                    Hurt(1);
+                }
             }
         }
     }
 
+    IEnumerator InvincibilityCoro(float time)
+    {
+        _canTakeDamage = false;   
+        yield return new WaitForSeconds(time);
+        _canTakeDamage = true;
+    }
     
 }
 

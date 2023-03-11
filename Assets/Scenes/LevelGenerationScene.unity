@@ -254,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1784153807005109483, guid: e44c22d495c2aca44ad268e3b2e9d1b0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1784153807005109493, guid: e44c22d495c2aca44ad268e3b2e9d1b0, type: 3}
       propertyPath: m_RootOrder
@@ -359,10 +359,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1696453504898874588, guid: f7539bccff2cc1f4ab6c0c52a414c3f5, type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1696453504898874589, guid: f7539bccff2cc1f4ab6c0c52a414c3f5, type: 3}
-      propertyPath: shouldRotateObstacles
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
