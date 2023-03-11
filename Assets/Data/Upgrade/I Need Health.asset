@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
   m_Name: I Need Health
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  name: 
-  description: 
-  funFact: 
+  icon: {fileID: 21300000, guid: 24954d33dc7903b4b968d9aaf9893dd0, type: 3}
+  name: I Need Health!
+  description: Recover 2 Health!
+  funFact: Everything become...great again
   statsBonus:
-    currentHealth: 0
+    currentHealth: 2
     maxHealth: 0
     moveSpeed: 0
     moveSpeedMultiplier: 0
