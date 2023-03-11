@@ -93,7 +93,7 @@ public class Racket : MonoBehaviour
         }
 
         var enemy = other.GetComponent<Enemy>();
-        if (enemy != null && _objectsInRange.Contains(proj))
+        if (enemy != null && _enemiesInRange.Contains(enemy))
         {
             _enemiesInRange.Remove(enemy);
         }
