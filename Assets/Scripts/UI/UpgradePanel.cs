@@ -75,4 +75,8 @@ public class UpgradePanel : MonoBehaviour
 public class UpgradeArgs : EventArgs
 {
     public UpgradeData upgradeData;
+    public UpgradeArgs(UpgradeData _upgradeData)
+    {
+        upgradeData = _upgradeData;
+    }
 }

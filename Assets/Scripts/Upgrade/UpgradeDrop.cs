@@ -39,7 +39,7 @@ public class UpgradeDrop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canPickup = true;
-            string jsonValue = JsonUtility.ToJson(upgrade.upgradeData);
+            string jsonValue = JsonUtility.ToJson(new UpgradeArgs(upgrade.upgradeData));
             EventManager.Invoke("ShowUpgradeTextEvent", jsonValue);
         }
     }
