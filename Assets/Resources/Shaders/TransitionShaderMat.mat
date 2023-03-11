@@ -38,10 +38,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CenterX: 1021.7396
-    - _CenterY: 583.80176
+    - _CenterX: 960
+    - _CenterY: 540
     - _EnableExternalAlpha: 0
-    - _Radius: 2236.6663
+    - _Radius: 110
     - _RefScreenSizeX: 1920
     - _RefScreenSizeY: 1080
     m_Colors:
