@@ -30,11 +30,12 @@ public class ProjectileTrackArc : ProjectileTrack
         */
 
         projectile.rb.MovePosition(finalPosition);
-
+        /*
         if (projectile.distance >= projectile.totalDistanceToTarget)
         {
             projectile.Trigger();
         }
+        */
     }
 
     // Update is called once per frame

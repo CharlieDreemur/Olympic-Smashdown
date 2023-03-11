@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EliteGolf
   m_EditorClassIdentifier: 
   Name: TennisBall
-  prefab: {fileID: 7069734107908870345, guid: dc6e86dce7565184aa71cfb578aac840, type: 3}
+  prefab: {fileID: 7069734107908870345, guid: 5c387a0c73cf72e42932a129c8f931e1, type: 3}
   lifeCycle: 30
   maxDistance: 2000
   damage: 1
@@ -44,13 +44,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultipler: 7
+  speedMultipler: 8
   speedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: -0.013473511
+      value: 0.4973755
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -58,13 +58,22 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
+      time: 1.0088253
+      value: 1.0200754
+      inSlope: 1.8423885
+      outSlope: 1.8423885
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.5164948
+      value: -0.9937134
+      inSlope: -3.966732
+      outSlope: -3.966732
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

@@ -168,7 +168,7 @@ public class Projectile : MonoBehaviour
                 totalDistanceToTarget = transform.position.Distance2D(targetPosition);
                 //! areaIndicator = PoolManager.SpawnByName("AttackIndicator", targetPosition, Quaternion.identity);
                 //! areaIndicator.GetComponent<AttackCircleIndicator>().SetSize(args.Data.indicatorRadius);
-                Debug.DrawRay(targetPosition.Flatten(), Vector3.up, Color.blue, 2f);
+                //Debug.DrawRay(targetPosition.Flatten(), Vector3.up, Color.blue, 2f);
                 track = new ProjectileTrackArc(this);
                 break;
         }
