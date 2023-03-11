@@ -18,7 +18,7 @@ MonoBehaviour:
   maxDistance: 2000
   damage: 1
   knockback: 0
-  trackType: 0
+  trackType: 2
   scale: {x: 1, y: 1, z: 1}
   scaleCurve:
     serializedVersion: 2
@@ -44,7 +44,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultipler: 12
+  speedMultipler: 2
   speedCurve:
     serializedVersion: 2
     m_Curve:
