@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ObstacleGeneration : MonoBehaviour
 {
-    [SerializeField] Vector2 mapMinBounds;
-    [SerializeField] Vector2 mapMaxBounds;
+    public Vector2 mapMinBounds;
+    public Vector2 mapMaxBounds;
     float mapWidth;
     float mapHeight;
 
