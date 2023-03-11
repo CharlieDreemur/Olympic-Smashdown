@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 1743326530883637397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.575, y: 1.575, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7069734107908870349}
   m_RootOrder: 0
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 7069734107908870345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7653887678294829898}
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3503eeae8d4b463448f41ab8dc106ec8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e028c86396b445d4188589b7e1b049ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -187,7 +187,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.24
 --- !u!50 &7069734107908870346
 Rigidbody2D:
   serializedVersion: 4
@@ -233,7 +233,7 @@ MonoBehaviour:
     direction: {x: 1, y: 0, z: 0}
     target: {fileID: 0}
     ignoredCollisionList: []
-    _data: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}
+    _data: {fileID: 11400000, guid: 5486c89b30617804dae768b565dfb979, type: 2}
   distance: 0
   time: 0
   triggerEntities: []
