@@ -47,4 +47,4 @@ MonoBehaviour:
   attackPrepareTime: 1
   attackWindupTime: 0.2
   attackCooldown: 2
-  projectileData: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}
+  projectileData: {fileID: 11400000, guid: 6107b3c8e0a303a499c7b37a723ed78e, type: 2}
