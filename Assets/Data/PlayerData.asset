@@ -22,7 +22,7 @@ MonoBehaviour:
     reflectDamageMultiplier: 1
     reflectMoveSpeedMultiplier: 1
     reflectScaleMultiplier: 1
-    racketDamage: 2
+    racketDamage: 1
     racketDamageMultipler: 1
     racketSwingCooldown: 0
     racketSizeMultiper: 1
