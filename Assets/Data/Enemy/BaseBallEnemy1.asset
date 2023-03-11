@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1003472db73043d48a544118ff4f95e0, type: 3}
-  m_Name: BowlingEnemy1
+  m_Name: BaseBallEnemy1
   m_EditorClassIdentifier: 
   health: 8
   enemyType: 0
@@ -47,4 +47,4 @@ MonoBehaviour:
   attackPrepareTime: 0.8
   attackWindupTime: 0.2
   attackCooldown: 1
-  projectileData: {fileID: 11400000, guid: 02be37c49fca68a478ec7e647d546bfa, type: 2}
+  projectileData: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}

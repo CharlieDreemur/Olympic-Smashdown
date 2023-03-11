@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f84243d32eedf2449b5fc73e5255c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: fb7f16b572215ff47a5bd74ed1949388, type: 2}
+  enemyData: {fileID: 11400000, guid: f3e58cc88dbd98b45bd3ad69f84fe50d, type: 2}
   behaviorTree: {fileID: 736174770}
   died:
     m_PersistentCalls:

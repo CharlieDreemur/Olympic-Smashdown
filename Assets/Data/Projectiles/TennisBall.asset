@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TennisBall
   m_EditorClassIdentifier: 
   Name: TennisBall
-  prefab: {fileID: 7069734107908870345, guid: 435ccaea26e3ac0468f00ace114ee7d0, type: 3}
+  prefab: {fileID: 7069734107908870345, guid: dc6e86dce7565184aa71cfb578aac840, type: 3}
   lifeCycle: 60
   maxDistance: 2000
   damage: 1
@@ -70,7 +70,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   maxArcHeight: 5
-  maxScale: 2
   attackDuration: 0
   cooldown: 0
   stun: 0
