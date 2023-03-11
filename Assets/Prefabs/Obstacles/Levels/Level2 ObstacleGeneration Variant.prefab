@@ -38,7 +38,7 @@ PrefabInstance:
     - target: {fileID: 5271120983741976364, guid: 09244799dfd416643ae812f2cab511a5, type: 3}
       propertyPath: obstaclePrefab
       value: 
-      objectReference: {fileID: 6942914838719805440, guid: ae010cd7595a3464ab0e4daac53d45cd, type: 3}
+      objectReference: {fileID: 580887371136384268, guid: 9ec8aa1c9a799c34785d55ed1a0528ff, type: 3}
     - target: {fileID: 5271120983741976364, guid: 09244799dfd416643ae812f2cab511a5, type: 3}
       propertyPath: safeMaxBounds.x
       value: 3
@@ -54,6 +54,10 @@ PrefabInstance:
     - target: {fileID: 5271120983741976364, guid: 09244799dfd416643ae812f2cab511a5, type: 3}
       propertyPath: safeMinBounds.y
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5271120983741976364, guid: 09244799dfd416643ae812f2cab511a5, type: 3}
+      propertyPath: shouldReflectObstacles
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5271120983741976365, guid: 09244799dfd416643ae812f2cab511a5, type: 3}
       propertyPath: m_Name

@@ -73,11 +73,6 @@ public class AllIn12DRendererMaterialInspector : ShaderGUI
             EditorGUILayout.EndVertical();
         }
 
-        //Not needed since Unity batches sprites on its own
-        //EditorGUILayout.Separator();
-        //materialEditor.EnableInstancingField();
-        //Debug.Log(materialEditor.IsInstancingEnabled() + "  " + Application.isBatchMode);
-        
         DrawLine(Color.grey, 1, 3);
         GUILayout.Label("Lighting Properties", bigLabelStyle);
         currEnabledDrawers[lightingDrawer] = GUILayout.Toggle(currEnabledDrawers[lightingDrawer], new GUIContent("Show Lighting Properties"), toggleButtonStyle);

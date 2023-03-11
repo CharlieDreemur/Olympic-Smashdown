@@ -16,6 +16,7 @@ public class ObstacleGeneration : MonoBehaviour
     [SerializeField] float obstacleProbabilityPerBiome = 1f;
     [SerializeField] float roundPositionToNearest = 0.5f;
     [SerializeField] bool shouldRotateObstacles = true;
+    [SerializeField] bool shouldReflectObstacles = false;
 
     [SerializeField] GameObject obstaclePrefab;
     float obstacleWidth;
@@ -128,6 +129,10 @@ public class ObstacleGeneration : MonoBehaviour
 
                 // Instantiate the obstacle and rotate it randomly
                 GameObject obstacle = Instantiate(obstaclePrefab, new Vector3(obstacleX, obstacleY, 0), Quaternion.identity);
+                if (shouldReflectObstacles && Random.value < 0.5f)
+                {
+                    obstacle.transform.localScale = new Vector3(obstacle.transform.localScale.x * -1f, obstacle.transform.localScale.y, obstacle.transform.localScale.z);
+                }
                 obstacle.transform.Rotate(Vector3.forward, obstacleZRot);
                 obstacle.transform.SetParent(obstacleParent.transform);
 
