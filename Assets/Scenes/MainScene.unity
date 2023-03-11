@@ -743,6 +743,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: obstacleGeneration
+      value: 
+      objectReference: {fileID: 1430787243}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _obstacleLayerMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
@@ -1595,6 +1599,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44c22d495c2aca44ad268e3b2e9d1b0, type: 3}
+--- !u!114 &1430787243 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1784153807005109482, guid: e44c22d495c2aca44ad268e3b2e9d1b0, type: 3}
+  m_PrefabInstance: {fileID: 1430787242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760c8e9704ffcbf458c611eb8a3c2284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1487792405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7165032342976183865, guid: 8005def6bb025e941b1692c8625b4ade, type: 3}
