@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 70576162}
   - component: {fileID: 4146959337502952732}
   m_Layer: 0
-  m_Name: BaseBallEnemy
+  m_Name: TennisEnemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68e772848a319394fa01bde133849d8e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38bb3b85da1d3d14b84c0ca0fecb4e1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -222,7 +222,7 @@ Animator:
   m_GameObject: {fileID: 2355879992007875020}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a62f7253a7bff7541a4ec52469d59add, type: 2}
+  m_Controller: {fileID: 9100000, guid: 003881a4a90932944931d2c928e2a1a8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
