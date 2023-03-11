@@ -14,5 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 3821659924054881384, guid: e4648a2d99970124ca41fc9452447a50, type: 3}
   _items:
+  - UpgradeData: {fileID: 11400000, guid: cb644d50f9b63df44a8ee2831a176920, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 5d3f62760b51abc43a5f5126eb710107, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 2bce5963744441b498d315dc681010ff, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 0b0b57710ed7c5f44bac68067492ead0, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 5cf04eb9d20381b48baf9f003bbea161, type: 2}
+    Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 487ab6297955f0d4e8d4c5e8b2b6928e, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 1ae28e80bc4fae1408101a003b972a02, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: bea200f0dbe72184f8a10c1f06c3a759, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 4df2351520a818846af0f41d7dc342f6, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 7dbf817e70848ce42a262135b27c11c4, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: df0a58cc4749e674c800da5bd3bbb088, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: ce92e7049e40f044a8f01374d11ad66b, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 2adb3340671fe1f4d819635d77fd3140, type: 2}
     Weight: 1

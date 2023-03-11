@@ -30,4 +30,4 @@ MonoBehaviour:
     racketDamageMultipler: 1
     racketSwingCooldown: 0
     racketSizeMultiper: 0
-  specialUpgrade: {fileID: 11400000, guid: 66c9b4814d4456a40b194eec5bb58755, type: 2}
+  specialUpgrade: {fileID: 11400000, guid: 9810ad392bf3fdc418cd8d199e984fa6, type: 2}

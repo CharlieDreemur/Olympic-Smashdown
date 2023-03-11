@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a910a2c7b20a16147a234351712e29f6, type: 3}
   m_Name: Tennis Shooter
   m_EditorClassIdentifier: 
-  tennisShooterPrefab: {fileID: 0}
+  tennisShooterPrefab: {fileID: 1256193341295792974, guid: 95b53c17e090ce548afc98b3e7a11761, type: 3}
