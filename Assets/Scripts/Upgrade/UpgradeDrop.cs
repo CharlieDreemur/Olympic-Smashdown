@@ -23,7 +23,8 @@ public class UpgradeDrop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && canPickup)
         {
-            EventManager.Invoke("HideUpgradeTextEvent", "");
+            string jsonValue = JsonUtility.ToJson(new UpgradeArgs(upgrade.upgradeData));
+            EventManager.Invoke("PickUpgradeEvent", jsonValue);
             upgrade.OnUpgrade();
             if(UpgradeDropGroup != null) {
                 UpgradeDropGroup.OnPickUp(); // This will destroy this upgrade drop along with others in the same group 
