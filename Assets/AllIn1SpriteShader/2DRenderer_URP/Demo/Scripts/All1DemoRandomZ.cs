@@ -8,7 +8,7 @@ namespace AllIn1SpriteShader
     {
         [SerializeField] private Vector2 randomZRange = Vector3.zero;
 
-        private void Start()
+        public void Start()
         {
             transform.Translate(0f, 0f, Random.Range(randomZRange.x, randomZRange.y));
         }
