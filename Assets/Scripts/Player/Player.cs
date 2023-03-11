@@ -12,6 +12,7 @@ public class Player : Entity
     public static Player Instance { get; private set; }
 
     public PlayerData data;
+    public int score;
 
     // weird dependency but it is probably fine
     public TransitionBlackout curtain;
@@ -111,9 +112,9 @@ public class Player : Entity
     }
     
     public void OnKillEnemy(){
-        Debug.Log("OnKillEnemy:"+onKillEnemy.count);
         if(onKillEnemy.count>0){
             enemyKilled++;
+            score++;
             onKillEnemy.Invoke();
         }
         

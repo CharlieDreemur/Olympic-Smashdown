@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -24,6 +25,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
     private void Awake()
     {
         Player.Instance.onHealthChange.AddListener(UpdateHealth);
+        Player.Instance.onKillEnemy.AddListener(UpdateScore);
     }
 
 
@@ -92,6 +94,9 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
     public void UpdateWaveNum(int wave_num_)
     {
         wave_num.text = wave_num_.ToString();
+    }
+    public void UpdateScore(){
+        UpdateScore(Player.Instance.score);
     }
 
     public void UpdateScore(int score_)
