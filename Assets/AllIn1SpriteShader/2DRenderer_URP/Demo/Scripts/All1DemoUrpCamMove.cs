@@ -10,7 +10,7 @@ namespace AllIn1SpriteShader
         private Vector2 input = Vector3.zero;
         private Rigidbody2D rb;
 
-        private void Start()
+        public void Start()
         {
             rb = GetComponent<Rigidbody2D>();
         }
