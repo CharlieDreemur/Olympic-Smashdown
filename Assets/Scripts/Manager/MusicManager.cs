@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-
-
+using Sirenix.OdinInspector;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 public class MusicManager : Singleton<MusicManager>
@@ -10,9 +10,8 @@ public class MusicManager : Singleton<MusicManager>
     [SerializeField]
     private float _fadeTime = 2f;
 
-    [SerializeField]
     public Dictionary<string, AudioClip> musicClips = new Dictionary<string, AudioClip>();
-
+    public Dictionary<string, string> sceneMusic = new Dictionary<string, string>();
     private AudioSource _audioSource1;
     private AudioSource _audioSource2;
 
@@ -26,6 +25,14 @@ public class MusicManager : Singleton<MusicManager>
         _audioSource2 = audioSources[1];
     }
 
+    void Start(){
+        Scene scene = SceneManager.GetActiveScene();
+        foreach(KeyValuePair<string, string> entry in sceneMusic){
+            if(entry.Key == scene.name){
+                PlayMusic(entry.Value);
+            }
+        }
+    }
     public void SetVolume(float num)
     {
         _volume = num;

@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class Singleton<T> : MonoBehaviour where T : Singleton<T>
+using Sirenix.OdinInspector;
+public class Singleton<T> : SerializedMonoBehaviour where T : Singleton<T>
 {
     public static T Instance
     {
