@@ -17,6 +17,8 @@ MonoBehaviour:
   description: More max health!
   funFact: 
   statsBonus:
+    currentHealth: 1
+    maxHealth: 1
     moveSpeed: 0
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0

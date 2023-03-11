@@ -79,8 +79,8 @@ public struct PlayerStats
     public float racketSizeMultiper;
     public void Init(PlayerData data)
     {
-        CurrentHealth = data.stats.CurrentHealth;
         MaxHealth = data.stats.MaxHealth;
+        CurrentHealth = data.stats.CurrentHealth;
         moveSpeed = data.stats.moveSpeed;
         moveSpeedMultiplier = data.stats.moveSpeedMultiplier;
         playerSizeMultiplier = data.stats.playerSizeMultiplier;
@@ -95,8 +95,8 @@ public struct PlayerStats
     }
     public void Add(PlayerStats stats)
     {
-        CurrentHealth += stats.CurrentHealth;
         MaxHealth += stats.MaxHealth;
+        CurrentHealth += stats.CurrentHealth;
         moveSpeed += stats.moveSpeed;
         moveSpeedMultiplier += stats.moveSpeedMultiplier;
         playerSizeMultiplier += stats.playerSizeMultiplier;

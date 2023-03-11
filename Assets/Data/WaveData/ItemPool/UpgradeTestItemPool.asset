@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 3821659924054881384, guid: e4648a2d99970124ca41fc9452447a50, type: 3}
   _items:
-  - UpgradeData: {fileID: 11400000, guid: 487ab6297955f0d4e8d4c5e8b2b6928e, type: 2}
-    Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 0b0b57710ed7c5f44bac68067492ead0, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 1ae28e80bc4fae1408101a003b972a02, type: 2}
     Weight: 1
