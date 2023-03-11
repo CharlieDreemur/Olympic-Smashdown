@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
-  m_Name: Healing
+  m_Name: Angry Power
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: c8d46336327ab294d914e38f798fdc7e, type: 3}
-  name: Healing
-  description: Recover 1 health per 20 seconds
+  icon: {fileID: 21300000, guid: aa2da60565a1d8c44b7fa1399f674718, type: 3}
+  name: 
+  description: Every injury, get 1% more reflect damage
   funFact: 
   statsBonus:
     currentHealth: 0
@@ -30,4 +30,4 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
-  specialUpgrade: {fileID: 11400000, guid: 720c029a8fb7e2d45aa342da2a2a843e, type: 2}
+  specialUpgrade: {fileID: 11400000, guid: 980ed8aca2014d2488802d6fbab15835, type: 2}

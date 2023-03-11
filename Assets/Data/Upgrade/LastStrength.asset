@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
-  m_Name: Healing
+  m_Name: LastStrength
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: c8d46336327ab294d914e38f798fdc7e, type: 3}
-  name: Healing
-  description: Recover 1 health per 20 seconds
+  icon: {fileID: 21300000, guid: 15dc5c1ab4177e940910ab6a241776a6, type: 3}
+  name: LastStrength
+  description: More reflect and hit damage when below 30% health
   funFact: 
   statsBonus:
     currentHealth: 0
@@ -30,4 +30,4 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
-  specialUpgrade: {fileID: 11400000, guid: 720c029a8fb7e2d45aa342da2a2a843e, type: 2}
+  specialUpgrade: {fileID: 11400000, guid: 4027faef08a8da249a3502b804fb569e, type: 2}
