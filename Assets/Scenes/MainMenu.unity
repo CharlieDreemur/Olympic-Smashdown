@@ -814,6 +814,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5586538033724722247, guid: 254e7daeb794987469b4ce88e8353f29, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5586538033724722247, guid: 254e7daeb794987469b4ce88e8353f29, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 254e7daeb794987469b4ce88e8353f29, type: 3}
 --- !u!1 &876447177 stripped
@@ -1400,6 +1404,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"musicClips","add_keys":{"$id":0,"$type":"System.Object[], mscorlib","$rlength":5,"$rcontent":[{"$id":1,"$type":"System.String,
+        mscorlib","StartMusic"},$iref:1,{"$id":2,"$type":"System.String, mscorlib","BattleMusic"},$iref:1,$iref:2]},"remove_keys":{"$id":3,"$type":"System.Object[],
+        mscorlib","$rlength":1,"$rcontent":[{"$id":4,"$type":"System.String, mscorlib","BattleMusic"}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"musicClips.{\"BattleMusic\"}","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"musicClips.{\"StartMusic\"}","value":$eref:1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[3]
+      value: '"path":"sceneMusic","value":{"$id":0,"$type":"System.Collections.Generic.Dictionary`2[[System.String,
+        mscorlib],[System.String, mscorlib]], mscorlib","comparer":{"$id":1,"$type":"System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib"},"$rlength":2,"$rcontent":[{"$k":"MainMenu","$v":"StartMusic"},{"$k":"MainScene","$v":"BattleMusic"}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[4]
+      value: '"path":"sceneMusic.{\"MainMenu\"}","value":{"$id":0,"$type":"System.String,
+        mscorlib","StartMusic"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[5]
+      value: '"path":"sceneMusic.{\"MainScene\"}","value":{"$id":0,"$type":"System.String,
+        mscorlib","BattleMusic"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 25538e974b7793d42bcd1e3a75f041c4, type: 3}
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b91d87740c0077c4eaa444c3c7c8f189, type: 3}
     - target: {fileID: 631952937173276375, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1501,6 +1555,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
     - target: {fileID: 2264458278943792563, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
       propertyPath: m_Name
       value: SFXManager

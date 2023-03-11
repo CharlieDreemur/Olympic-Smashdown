@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(AudioSource))]
 public class SFXManager : Singleton<SFXManager>
 {
+    [ShowInInspector]
     public Dictionary<string, AudioClip> sfxClips = new Dictionary<string, AudioClip>();
     private AudioSource _audioSource;
     private float _volume = 1;
