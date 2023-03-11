@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,6 +16,7 @@ public class Player : Entity
     // weird dependency but it is probably fine
     public TransitionBlackout curtain;
     public SpriteRenderer spriteRenderer;
+    public List<UpgradeData> upgrades = new List<UpgradeData>();
 
     // some external manager will need to set the health on game start
     // and make it remember its health across levels
@@ -68,6 +70,7 @@ public class Player : Entity
         spriteRenderer = GetComponent<SpriteRenderer>();
         onHealthChange.Invoke(playerStats.CurrentHealth, playerStats.MaxHealth);
         EventManager.AddListener("UpgradeEvent", new UnityAction<string>(OnUpgrade));
+        EventManager.AddListener("PickUpgradeEvent", new UnityAction<string>(AddUpgrade));
     }
     private void Start()
     {
@@ -87,9 +90,16 @@ public class Player : Entity
             onUpdate.Invoke();
         }
     }
-
+    private void AddUpgrade(string jsonValue){
+        UpgradeArgs args = JsonUtility.FromJson<UpgradeArgs>(jsonValue);
+        upgrades.Add(args.upgradeData);
+    }
+    private void AddUpgrade(UpgradeData upgradeData){
+        upgrades.Add(upgradeData);
+    }
     public void Hurt(int damage)
     {
+        SFXManager.PlayMusic("playerHurt");
         if(onHurt.count>0){
             onHurt.Invoke();
         }

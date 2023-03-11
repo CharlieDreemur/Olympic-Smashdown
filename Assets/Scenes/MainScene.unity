@@ -310,6 +310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4330725641465061047, guid: 10e7f3e78b8237c479f63c1a9a4675ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1167
+      objectReference: {fileID: 0}
     - target: {fileID: 7134334478246529010, guid: 10e7f3e78b8237c479f63c1a9a4675ce, type: 3}
       propertyPath: endPos
       value: 
@@ -1235,6 +1239,67 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.SerializationNodes.Array.size
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[0]
+      value: '"path":"sfxClips","add_keys":{"$id":0,"$type":"System.Object[], mscorlib","$rlength":5,"$rcontent":[{"$id":1,"$type":"System.String,
+        mscorlib","ButtonClick"},$iref:1,{"$id":2,"$type":"System.String, mscorlib","PickUpgrade"},$iref:1,$iref:2]},"remove_keys":null'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"sfxClips.{\"ButtonClick\"}","value":$eref:0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"sfxClips.{\"PickUpgrade\"}","value":$eref:1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.ReferencedUnityObjects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.SerializationNodes.Array.data[3].Data
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.SerializationNodes.Array.data[25].Data
+      value: buttonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.SerializationNodes.Array.data[25].Name
+      value: $k
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.SerializationNodes.Array.data[24].Entry
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.SerializationNodes.Array.data[25].Entry
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f7c64958d9712724d8c46d8707633d22, type: 3}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c9a35bfc2c6e0542821bf26ccbd2d42, type: 3}
     - target: {fileID: 2264458278943792563, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
       propertyPath: m_Name
       value: SFXManager

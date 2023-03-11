@@ -8,7 +8,6 @@ using Sirenix.OdinInspector;
 [RequireComponent(typeof(AudioSource))]
 public class SFXManager : Singleton<SFXManager>
 {
-    [ShowInInspector]
     public Dictionary<string, AudioClip> sfxClips = new Dictionary<string, AudioClip>();
     private AudioSource _audioSource;
     private float _volume = 1;
@@ -43,9 +42,8 @@ public class SFXManager : Singleton<SFXManager>
     {
         if (Instance.sfxClips.ContainsKey(SFXName))
         {
-            Instance._audioSource.clip = Instance.sfxClips[SFXName];
             Instance._audioSource.loop = false;
-            Instance._audioSource.Play();
+            Instance._audioSource.PlayOneShot(Instance.sfxClips[SFXName]);
         }
     }
 
@@ -53,9 +51,8 @@ public class SFXManager : Singleton<SFXManager>
     {
         if (Instance.sfxClips.ContainsKey(SFXName))
         {
-            Instance._audioSource.clip = Instance.sfxClips[SFXName];
             Instance._audioSource.loop = true;
-            Instance._audioSource.Play();
+            Instance._audioSource.PlayOneShot(Instance.sfxClips[SFXName]);
         }
     }
 

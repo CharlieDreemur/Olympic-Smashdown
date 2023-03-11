@@ -144,7 +144,14 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 8300000, guid: 37c902b8d3a2e23499d9b2f605bde2ab, type: 3}
+    - {fileID: 8300000, guid: 017ccda61ca94a6408be1766fbaa61d8, type: 3}
+    - {fileID: 8300000, guid: c6ddf6dc91005f3458981acb90318770, type: 3}
+    - {fileID: 8300000, guid: dbfd86a2ff4c32b49a1aac50d7266fb4, type: 3}
+    - {fileID: 8300000, guid: 9448cb8d7b74e1243892b74cc939621a, type: 3}
+    - {fileID: 8300000, guid: f7c64958d9712724d8c46d8707633d22, type: 3}
+    - {fileID: 8300000, guid: 9c9a35bfc2c6e0542821bf26ccbd2d42, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -163,10 +170,97 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: playerSwing
+    - Name: $v
+      Entry: 10
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: playerHurt
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: enemyDeath
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: enemySpawn
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: eliteSpawn
+    - Name: $v
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: buttonClick
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: pickUpgrade
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
+  audioSources:
+  - {fileID: 2264458278943792557}
+  - {fileID: 0}

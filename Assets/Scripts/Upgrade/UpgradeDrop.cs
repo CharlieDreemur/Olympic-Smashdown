@@ -23,7 +23,9 @@ public class UpgradeDrop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && canPickup)
         {
-            EventManager.Invoke("HideUpgradeTextEvent", "");
+            SFXManager.PlayMusic("pickUpgrade");
+            string jsonValue = JsonUtility.ToJson(new UpgradeArgs(upgrade.upgradeData));
+            EventManager.Invoke("PickUpgradeEvent", jsonValue);
             upgrade.OnUpgrade();
             if(UpgradeDropGroup != null) {
                 UpgradeDropGroup.OnPickUp(); // This will destroy this upgrade drop along with others in the same group 
@@ -48,7 +50,7 @@ public class UpgradeDrop : MonoBehaviour
     if (other.gameObject.CompareTag("Player"))
     {
         canPickup = false;
-        EventManager.Invoke("HideUpgradeTextEvent", "");
+        EventManager.Invoke("HideUpgradeEvent", "");
     }
 }
 }

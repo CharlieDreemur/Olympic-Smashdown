@@ -217,6 +217,7 @@ public class WaveManager : MonoBehaviour
 
     private void SpawnEliteMobs()
     {
+        SFXManager.PlayMusic("eliteSpawn");
         SpawnInfo spawnInfo = _currentWaveData.GetRandomEliteSpawnInfo();
         _eliteMobsSpawned = true;
         _eliteMobsAlive += spawnInfo.Count;
@@ -275,7 +276,6 @@ public class WaveManager : MonoBehaviour
         _warningObjects.Add(warning); // Add the warning object to the list of warning objects so we can destroy it when the wave ends
 
         yield return new WaitForSeconds(_spawnDelay);
-
         _warningObjects.Remove(warning);
         Destroy(warning);
 

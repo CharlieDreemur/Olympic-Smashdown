@@ -17,7 +17,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
 
     // private fields
 
-    private BuffList buff_list;
+    private UpgradeList buff_list;
     private UpgradePanel upgrade_panel;
     public UpgradeData demobuff; // TODO: only for demo use
 
@@ -30,7 +30,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
     void Start()
     {
         Init();
-        buff_list = GameObject.FindObjectOfType<BuffList>();
+        buff_list = GameObject.FindObjectOfType<UpgradeList>();
         upgrade_panel = GameObject.FindObjectOfType<UpgradePanel>();
     }
 
