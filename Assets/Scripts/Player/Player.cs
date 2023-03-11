@@ -99,6 +99,7 @@ public class Player : Entity
     }
     public void Hurt(int damage)
     {
+        SFXManager.PlayMusic("playerHurt");
         if(onHurt.count>0){
             onHurt.Invoke();
         }

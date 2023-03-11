@@ -101,6 +101,7 @@ public class Racket : MonoBehaviour
 
     private void Swing(Vector2 direction)
     {
+        SFXManager.PlayMusic("playerSwing");
         swung.Invoke();
 
         foreach (var enemy in _enemiesInRange)

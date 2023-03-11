@@ -30,6 +30,7 @@ public class UpgradePanel : MonoBehaviour
         EventManager.AddListener("ShowUpgradeTextEvent", SetUpgradeData);
         EventManager.AddListener("ShowUpgradeTextEvent", Show);
         EventManager.AddListener("PickUpgradeEvent", Hide);
+        EventManager.AddListener("HideUpgradeEvent", Hide);
     }
     // Start is called before the first frame update
     void Start()

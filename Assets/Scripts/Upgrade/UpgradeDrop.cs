@@ -23,6 +23,7 @@ public class UpgradeDrop : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && canPickup)
         {
+            SFXManager.PlayMusic("pickUpgrade");
             string jsonValue = JsonUtility.ToJson(new UpgradeArgs(upgrade.upgradeData));
             EventManager.Invoke("PickUpgradeEvent", jsonValue);
             upgrade.OnUpgrade();
@@ -49,7 +50,7 @@ public class UpgradeDrop : MonoBehaviour
     if (other.gameObject.CompareTag("Player"))
     {
         canPickup = false;
-        EventManager.Invoke("HideUpgradeTextEvent", "");
+        EventManager.Invoke("HideUpgradeEvent", "");
     }
 }
 }

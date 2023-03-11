@@ -84,10 +84,10 @@ public class Enemy : Entity
     public void Kill(Vector3 direction = default)
     {
         if(dead) return;
-        
         dead = true;
         died.Invoke();
         behaviorTree.enabled = false;
+        SFXManager.PlayMusic("enemyDeath");
         Player.Instance.OnKillEnemy();
         _animator.Play("Die");
         //Death Effect
@@ -127,7 +127,6 @@ public class Enemy : Entity
 
     IEnumerator Death(float time)
     {
-        Debug.Log("Death coroutine started");
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
