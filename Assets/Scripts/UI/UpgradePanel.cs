@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -12,19 +13,24 @@ public class UpgradePanel : MonoBehaviour
     public Image icon;
     public new TextMeshProUGUI name;
     public TextMeshProUGUI desc;
-    public TextMeshProUGUI fun_fact;
+    public TextMeshProUGUI funFact;
 
     [Header("upgrade data")]
-    public UpgradeData upgrade_data;
+    public UpgradeData upgradeData;
 
     [Header("hooks")]
-    public GameObject start_pos;
-    public GameObject end_pos;
-    public float moving_time;
+    public GameObject startPos;
+    public GameObject endPos;
+    public float movingTime;
 
-    public UpgradeData test_data;
-    
+    public UpgradeData testData;
 
+    void Awake()
+    {
+        EventManager.AddListener("ShowUpgradeTextEvent", SetUpgradeData);
+        EventManager.AddListener("ShowUpgradeTextEvent", Show);
+        EventManager.AddListener("HideUpgradeTextEvent", Hide);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -35,25 +41,38 @@ public class UpgradePanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    public void SetUpgradeData(string jsonValue)
+    {
+        UpgradeArgs args = JsonUtility.FromJson<UpgradeArgs>(jsonValue);
+        Debug.Log(args.upgradeData);
+        if (args.upgradeData == null) return;
+        SetUpgradeData(args.upgradeData);
+    }
+    public void SetUpgradeData(UpgradeData _upgrade_data)
+    {
+        upgradeData = _upgrade_data;
+        icon.sprite = upgradeData.icon;
+        desc.text = upgradeData.description;
+        funFact.text = upgradeData.funFact;
+        name.text = upgradeData.name;
     }
 
-    public void SetUpgradeData(UpgradeData _upgrade_data) {
-        upgrade_data = _upgrade_data;
-
-        icon.sprite = upgrade_data.icon;
-        desc.text = upgrade_data.description;
-        fun_fact.text = upgrade_data.funFact;
-        name.text = upgrade_data.name;
-    }
-
-    public void Show() {
+    public void Show(string jsonValue = "")
+    {
         var seq = DOTween.Sequence();
-        seq.Append(transform.DOMove(end_pos.transform.position, moving_time));
+        seq.Append(transform.DOMove(endPos.transform.position, movingTime));
     }
 
-    public void Hide() {
+    public void Hide(string jsonValue = "")
+    {
         var seq = DOTween.Sequence();
-        seq.Append(transform.DOMove(start_pos.transform.position, moving_time));
+        seq.Append(transform.DOMove(startPos.transform.position, movingTime));
     }
+}
+
+public class UpgradeArgs : EventArgs
+{
+    public UpgradeData upgradeData;
 }
