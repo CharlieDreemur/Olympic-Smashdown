@@ -148,27 +148,20 @@ MonoBehaviour:
   curtain: {fileID: 0}
   spriteRenderer: {fileID: 0}
   playerStats:
+    currentHealth: 0
+    maxHealth: 0
     moveSpeed: 0
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0
     reflectDamage: 0
     reflectDamageMultiplier: 0
-    reflectMoveSpeed: 0
     reflectMoveSpeedMultiplier: 0
     reflectScaleMultiplier: 0
     racketDamage: 0
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
-  onStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  onHurt:
-    m_PersistentCalls:
-      m_Calls: []
+  enemyKilled: 0
   onHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -184,12 +177,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDash:
-    m_PersistentCalls:
-      m_Calls: []
-  onReflect:
-    m_PersistentCalls:
-      m_Calls: []
   _firstSceneName: MainScene
 --- !u!114 &7698973864883003338
 MonoBehaviour:
