@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Racket : MonoBehaviour
 {
     private HashSet<Projectile> _objectsInRange;
+    private HashSet<Enemy> _enemiesInRange;
 
     [Required]
     [Tooltip("The trigger collider of the racket.")]
@@ -34,6 +36,7 @@ public class Racket : MonoBehaviour
     private void Awake()
     {
         _objectsInRange = new HashSet<Projectile>();
+        _enemiesInRange = new HashSet<Enemy>();
         _triggerColliderRadius = _triggerCollider.bounds.extents.x;
         defaultScale = transform.localScale;
         EventManager.AddListener("UpgradeEvent", new UnityAction<string>(OnUpgrade));
@@ -74,6 +77,12 @@ public class Racket : MonoBehaviour
         {
             _objectsInRange.Add(proj);
         }
+
+        var enemy = col.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            _enemiesInRange.Add(enemy);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -83,11 +92,30 @@ public class Racket : MonoBehaviour
         {
             _objectsInRange.Remove(proj);
         }
+
+        var enemy = other.GetComponent<Enemy>();
+        if (enemy != null && _objectsInRange.Contains(proj))
+        {
+            _enemiesInRange.Remove(enemy);
+        }
     }
 
     private void Swing(Vector2 direction)
     {
         swung.Invoke();
+
+        foreach (var enemy in _enemiesInRange)
+        {
+            if (enemy == null) continue;
+            
+            var enemyDir3 = enemy.gameObject.transform.position - transform.position;
+            var enemyDir2 = new Vector2(enemyDir3.x, enemyDir3.y).normalized;
+            if (Vector2.Dot(direction.normalized, enemyDir2) > 0.707f)
+            {
+                enemy.Hurt(Player.Instance.data.stats.racketDamage);
+            }
+        }
+
         foreach (var proj in _objectsInRange)
         {
             if (!proj.args.Data.canBeReflected)
