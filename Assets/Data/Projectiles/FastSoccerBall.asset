@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6ee17c1fd346ef4db5e46b9dc7f8121, type: 3}
-  m_Name: TennisBall
+  m_Name: FastSoccerBall
   m_EditorClassIdentifier: 
-  Name: TennisBall
-  prefab: {fileID: 7069734107908870345, guid: dc6e86dce7565184aa71cfb578aac840, type: 3}
-  lifeCycle: 30
+  Name: FastSoccerBall
+  prefab: {fileID: 7069734107908870345, guid: 438d5c8c67b3c974eaa94a29cfe206c6, type: 3}
+  lifeCycle: 15
   maxDistance: 2000
   damage: 1
   knockback: 0
@@ -44,27 +44,36 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMultipler: 6
+  speedMultipler: 15
   speedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 1
+      time: 0
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: -0.03859755
+      outSlope: -0.03859755
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: 0.49624324
+      value: 0.9808462
+      inSlope: -0.028761372
+      outSlope: -0.028761372
+      tangentMode: 136
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0175577
+      value: 0.97073364
+      inSlope: -0.01939824
+      outSlope: -0.01939824
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

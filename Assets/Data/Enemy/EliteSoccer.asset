@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1003472db73043d48a544118ff4f95e0, type: 3}
-  m_Name: GolfEnemy3
+  m_Name: EliteSoccer
   m_EditorClassIdentifier: 
-  health: 8
-  enemyType: 0
-  moveSpeed: 3
+  health: 40
+  enemyType: 1
+  moveSpeed: 5
   dashCurve:
     serializedVersion: 2
     m_Curve:
@@ -43,8 +43,8 @@ MonoBehaviour:
   dashTime: 2
   dashWindupTime: 0.5
   dashCooldown: 5
-  attackRange: 12
+  attackRange: 7
   attackPrepareTime: 1
   attackWindupTime: 0.2
-  attackCooldown: 3
-  projectileData: {fileID: 11400000, guid: 5486c89b30617804dae768b565dfb979, type: 2}
+  attackCooldown: 2
+  projectileData: {fileID: 11400000, guid: 3bdb5afd46ec7634cbc404f90c9f2240, type: 2}
