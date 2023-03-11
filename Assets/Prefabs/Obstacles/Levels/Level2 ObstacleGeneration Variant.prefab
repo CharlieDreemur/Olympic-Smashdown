@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: safeMinBounds.y
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 5271120983741976364, guid: 09244799dfd416643ae812f2cab511a5, type: 3}
+      propertyPath: shouldReflectObstacles
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5271120983741976365, guid: 09244799dfd416643ae812f2cab511a5, type: 3}
       propertyPath: m_Name
       value: Level2 ObstacleGeneration Variant

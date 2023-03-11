@@ -7,9 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2093173097588154929, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
+      propertyPath: cameraBackgroundColor.b
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093173097588154929, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
+      propertyPath: cameraBackgroundColor.g
+      value: 0.8117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093173097588154929, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
+      propertyPath: cameraBackgroundColor.r
+      value: 0.8705883
+      objectReference: {fileID: 0}
     - target: {fileID: 7673364456270386426, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_Name
-      value: Level3 Background
+      value: Level3 Background Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7673364456270386427, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_Sprite

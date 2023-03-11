@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7673364456270386426, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_Name
-      value: Level2 Background
+      value: Level2 Background Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7673364456270386427, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_Sprite
@@ -20,12 +20,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7673364456270386428, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 33.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673364456270386428, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 33.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673364456270386428, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7673364456270386428, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 7673364456270386428, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_LocalPosition.z

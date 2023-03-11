@@ -1273,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1 ObstacleGeneration Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1784153807005109483, guid: e44c22d495c2aca44ad268e3b2e9d1b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1784153807005109493, guid: e44c22d495c2aca44ad268e3b2e9d1b0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1575,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 7673364456270386426, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_Name
       value: Level1 Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673364456270386426, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7673364456270386428, guid: bc93bcda43a54394282044abd3d153bc, type: 3}
       propertyPath: m_RootOrder
