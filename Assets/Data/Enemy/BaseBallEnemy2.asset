@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1003472db73043d48a544118ff4f95e0, type: 3}
   m_Name: BaseBallEnemy2
   m_EditorClassIdentifier: 
-  health: 8
+  health: 15
   enemyType: 0
-  moveSpeed: 3
+  moveSpeed: 4
   dashCurve:
     serializedVersion: 2
     m_Curve:
