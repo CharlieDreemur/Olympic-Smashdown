@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: bb338988cf138d14c876900afa258ad1, type: 3}
   name: Reaper Scythe
-  description: Damage up every 20 kills
+  description: Damage up every 15 kills
   funFact: Last owner has already died
   statsBonus:
+    currentHealth: 0
+    maxHealth: 0
     moveSpeed: 0
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0
