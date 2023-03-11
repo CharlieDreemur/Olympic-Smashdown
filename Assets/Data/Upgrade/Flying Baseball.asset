@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
-  m_Name: Bushido
+  m_Name: Flying Baseball
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: d6866ad0f71e1d841b8b1a94557964ec, type: 3}
-  name: 
-  description: Increase 1 hit damage
-  funFact: Come... Sekiro!
+  icon: {fileID: 21300000, guid: 9199f7e568be1d948875ef3fd74a9b9f, type: 3}
+  name: Flying Baseball
+  description: Incrase reflect damage
+  funFact: 
   statsBonus:
     currentHealth: 0
     maxHealth: 0
     moveSpeed: 0
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0
-    reflectDamage: 0
+    reflectDamage: 2
     reflectDamageMultiplier: 0
     reflectMoveSpeedMultiplier: 0
     reflectScaleMultiplier: 0
-    racketDamage: 1
+    racketDamage: 0
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
