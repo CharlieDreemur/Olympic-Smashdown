@@ -864,6 +864,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6454175579470090325, guid: a6417ac7398a3bc49b5f4675836e6d16, type: 3}
   m_PrefabInstance: {fileID: 1890811894}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1031033796 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2264458278943792557, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+  m_PrefabInstance: {fileID: 2264458279071628573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1561727541 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1829363004776218621, guid: f1fd9ec2b3a732a4ea4a2ad7c395a7fa, type: 3}
@@ -1659,9 +1664,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: audioSources.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+    - target: {fileID: 2264458278943792562, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
+      propertyPath: audioSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 1031033796}
     - target: {fileID: 2264458278943792563, guid: 88c8bd25d2cb97f48ac79a386803d166, type: 3}
       propertyPath: m_Name
       value: SFXManager
