@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2355879992007875020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f84243d32eedf2449b5fc73e5255c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: f3e58cc88dbd98b45bd3ad69f84fe50d, type: 2}
+  enemyData: {fileID: 11400000, guid: b0073e19548de764f9785c0c6f98b595, type: 2}
   behaviorTree: {fileID: 736174770}
   died:
     m_PersistentCalls:
