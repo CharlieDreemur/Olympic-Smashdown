@@ -91,6 +91,12 @@ public class Player : Entity
             onUpdate.Invoke();
         }
     }
+    private void Heal(int healAmount)
+    {
+        playerStats.CurrentHealth += healAmount;
+    }
+
+
     private void AddUpgrade(string jsonValue){
         UpgradeArgs args = JsonUtility.FromJson<UpgradeArgs>(jsonValue);
         upgrades.Add(args.upgradeData);

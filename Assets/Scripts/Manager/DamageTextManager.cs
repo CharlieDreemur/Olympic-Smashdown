@@ -19,7 +19,7 @@ public class DamageTextManager : Singleton<DamageTextManager>
     [Required]
     public Transform canvas;
     void Awake(){  
-        EventManager.AddListener("CreateDamageText", new UnityAction<string>(Create));
+        EventManager.AddListener("CreateDamageText", Create);
     }
 
     
