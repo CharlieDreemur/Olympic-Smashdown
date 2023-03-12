@@ -156,6 +156,7 @@ public class WaveManager : MonoBehaviour
         _eliteMobsAlive = 0;
         _totalMobsAlive = 0;
 
+
         while (!IsWaveOver())
         {
             // Wait for some units to die before spawning more
@@ -201,6 +202,7 @@ public class WaveManager : MonoBehaviour
 
     private void EndWave()
     {
+        Debug.Log("End wave");
         StopAllCoroutines(); // Stop any running waves and enemy spawn coroutines
         CleanUpWarningSigns();
         CleanUpEnemies();
@@ -310,6 +312,10 @@ public class WaveManager : MonoBehaviour
         if (isElite)
         {
             _eliteMobsAlive--;
+            if (_eliteMobsAlive <= 0)
+            {
+                _eliteMobsAlive = 0;
+            }
         }
     }
 
