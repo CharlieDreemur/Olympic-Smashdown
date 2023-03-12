@@ -50,5 +50,5 @@ public class ProjectileData : ScriptableObject
     public float gravityScale;
     public bool isGreaterAngle;
     public float indicatorRadius;
-
+    public string SFXName;
 }

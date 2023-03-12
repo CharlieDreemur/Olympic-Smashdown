@@ -88,3 +88,4 @@ MonoBehaviour:
   gravityScale: 0
   isGreaterAngle: 0
   indicatorRadius: 0
+  SFXName: soccerAttack
