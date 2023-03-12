@@ -59,8 +59,8 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
 
     public void UpdateHealth(int cur_health, int max_health)
     {
-        Debug.Log("Updating health: " + cur_health + "/" + max_health);
-        Debug.Log("Fill amount: " + (float)cur_health / (float)max_health);
+        //Debug.Log("Updating health: " + cur_health + "/" + max_health);
+        //Debug.Log("Fill amount: " + (float)cur_health / (float)max_health);
         health_slider.GetComponent<Image>().fillAmount = (float)cur_health / (float)max_health;
         health_num.text = cur_health.ToString();
     }
