@@ -23,7 +23,7 @@ public class DamageText : MonoBehaviour
     
     public void OnSpawn(){
         textMesh_.SetText(args_.damageAmount.ToString());
-        switch(damageType_){
+        switch(args_.damageType){
             case DamageType.Normal:
                 textMesh_.fontSize = data.noramlFontSize;
                 textMesh_.color = data.normalColor;

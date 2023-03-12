@@ -20,7 +20,7 @@ public struct PlayerStats
         get => currentHealth;
         set
         {
-            int oldValue = value;
+            int oldValue = currentHealth;
             currentHealth = value;
             if (currentHealth > maxHealth)
             {
@@ -32,11 +32,14 @@ public struct PlayerStats
             }
             if (Player.Instance == null) return;
             Player.Instance.onHealthChange?.Invoke(CurrentHealth, MaxHealth);
-            if (oldValue > currentHealth)
+            if (oldValue < currentHealth)
             {
                 Player.Instance.onHeal?.Invoke();
+                CreateDamageTextEventArgs args = new CreateDamageTextEventArgs(Player.Instance.transform.position, currentHealth - oldValue, DamageType.Heal);
+                string jsonValue = JsonUtility.ToJson(args);
+                EventManager.Invoke("CreateDamageText", jsonValue);
             }
-            if (oldValue < currentHealth)
+            if (oldValue > currentHealth)
             {
                 Player.Instance.onHurt?.Invoke();
             }
