@@ -19,7 +19,6 @@ public class Racket : MonoBehaviour
     [Range(0, 90)]
     [Tooltip("The angle of the hitbox of the racket.")]
     [SerializeField] private float _arcAngle = 45f;
-    [SerializeField] private float _swingCooldown;
     private Vector3 defaultScale;
     public Collider2D TriggerCollider { get => _triggerCollider; private set { } }
     public float ArcAngle { get => _arcAngle; private set { } }
@@ -42,7 +41,6 @@ public class Racket : MonoBehaviour
     }
 
     private void Start(){
-        _swingCooldown = Player.Instance.playerStats.racketSwingCooldown;
         OnUpgrade();
     }
     private void OnUpgrade(string jsonValue =""){
@@ -65,7 +63,7 @@ public class Racket : MonoBehaviour
     public IEnumerator StartSwingCooldown()
     {
         _canSwing = false;
-        yield return new WaitForSeconds(_swingCooldown);
+        yield return new WaitForSeconds(Player.Instance.playerStats.racketSwingCooldown);
         _canSwing = true;
     }
 
