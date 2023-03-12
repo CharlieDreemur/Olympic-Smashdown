@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using Sirenix.OdinInspector;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class SFXManager : Singleton<SFXManager>
@@ -11,6 +12,8 @@ public class SFXManager : Singleton<SFXManager>
     public Dictionary<string, AudioClip> sfxClips = new Dictionary<string, AudioClip>();
     private AudioSource _audioSource;
     private float _volume = 1;
+
+    [SerializeField] Slider _slider;
 
     void Awake()
     {
@@ -21,6 +24,12 @@ public class SFXManager : Singleton<SFXManager>
     {
         _volume = num;
         _audioSource.volume = _volume;
+    }
+
+    public void SetVolumeToSlider()
+    {
+        if (_slider == null) { return; }
+        SetVolume(_slider.value);
     }
 
     public void Mute()
