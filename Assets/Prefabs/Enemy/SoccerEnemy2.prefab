@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 70576162}
   - component: {fileID: 4146959337502952732}
   m_Layer: 0
-  m_Name: BaseBallEnemy2
+  m_Name: SoccerEnemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f84243d32eedf2449b5fc73e5255c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 819cb8887c7e3cf45b58ab444979ce1e, type: 2}
+  enemyData: {fileID: 11400000, guid: 2b3c9ec6a024eec4c90b06ef127503cc, type: 2}
   behaviorTree: {fileID: 736174770}
   died:
     m_PersistentCalls:

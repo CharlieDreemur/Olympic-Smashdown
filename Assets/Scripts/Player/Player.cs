@@ -93,7 +93,7 @@ public class Player : Entity
 
     private void OnUpgrade(string jsonValue = "")
     {
-        transform.localScale = new Vector3(transform.localScale.x * playerStats.playerSizeMultiplier, transform.localScale.y * playerStats.playerSizeMultiplier, 1);
+        transform.localScale = new Vector3(1 * playerStats.playerSizeMultiplier, 1 * playerStats.playerSizeMultiplier, 1);
     }
     private void Update()
     {
