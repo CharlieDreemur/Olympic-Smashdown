@@ -10,11 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acff215240d85df4cbe3dcf7a570fe42, type: 3}
-  m_Name: TestItemPoolData
+  m_Name: TestItemPoolDataNormal
   m_EditorClassIdentifier: 
   Item: {fileID: 3821659924054881384, guid: e4648a2d99970124ca41fc9452447a50, type: 3}
   _items:
+  - UpgradeData: {fileID: 11400000, guid: 06dd2915f98007f4f9d4e66f35f72694, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 2309feec2a278f743bc4a0f40cb3d1b7, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 5c928109db2f07e45b5d86e92d9334f9, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: d8f04c6bd0a13c44b9306c80e8c3492f, type: 2}
+    Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 5d3f62760b51abc43a5f5126eb710107, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 138dc6137fa61eb49849c714161f8335, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 210cc8f4a99ac784b9d956c8806619d0, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: a277b760eb654c54b8de107f483f50dc, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 020503eaeaf36ac48afeebe900256aa0, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 63342af23335bce44a3fffbe031765c7, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: cabc76c13cc6b154f9aa85c434416c18, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: f26ba09913e52d6419b8436a25d31241, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 792ab5efb67971f42b8894e2d8c35899, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: b4750113b4a19974d85972b6aef22f13, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: c3686ddeff23d31408d56d4f9ab9d431, type: 2}
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 2bce5963744441b498d315dc681010ff, type: 2}
     Weight: 1
@@ -28,6 +56,10 @@ MonoBehaviour:
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: bea200f0dbe72184f8a10c1f06c3a759, type: 2}
     Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: e1be23dc689536640b4a4b0ca00baa35, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 75ee3cf3719696c40b3c6a6b9b4c5277, type: 2}
+    Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 4df2351520a818846af0f41d7dc342f6, type: 2}
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 7dbf817e70848ce42a262135b27c11c4, type: 2}
@@ -38,3 +70,4 @@ MonoBehaviour:
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 2adb3340671fe1f4d819635d77fd3140, type: 2}
     Weight: 1
+  spawnProb: 0.1

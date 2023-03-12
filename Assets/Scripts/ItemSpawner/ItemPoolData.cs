@@ -6,6 +6,7 @@ public class ItemPoolData : ScriptableObject
 {
     public GameObject Item;
     [SerializeField] List<ItemPoolElement> _items = new();
+    [SerializeField] public float spawnProb;
 
     public List<GameObject> GetRandomItems(int count)
     {

@@ -22,6 +22,7 @@ public class WaveManager : MonoBehaviour
     public List<WaveData> _waveData;
     // [SerializeField] WaveData _dummyWaveData; 
     public ItemPoolData itemPoolData;
+    public ItemPoolData itemPoolDataNormal;
     [Space(10)]
 
     [Header("Prefabs")]
@@ -57,6 +58,7 @@ public class WaveManager : MonoBehaviour
 
     private string nextLevel = "";
     public ItemPoolData ItemPoolData { get; private set; }
+    public ItemPoolData ItemPoolDataNormal { get; private set; }
     private GameObject _player;
     private List<WaveData>.Enumerator _currentWaveEnumerator;
     private List<Enemy> _enemies = new List<Enemy>(); // TODO: Replace with Enemy script
@@ -74,6 +76,9 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         ItemPoolData = itemPoolData; // Make this data accessible for ItemSpawner scripts
+        
+        ItemPoolDataNormal = itemPoolDataNormal;
+        
         _player = Player.Instance.gameObject;
         if (_player == null)
         {
@@ -324,10 +329,6 @@ public class WaveManager : MonoBehaviour
     {
         return _eliteMobsSpawned && _eliteMobsAlive == 0;
     }
-
-    // [Button]
-    // public void AddWave() {
-    //     _waveData.Add(_dummyWaveData);
-    // }
+    
 
 }

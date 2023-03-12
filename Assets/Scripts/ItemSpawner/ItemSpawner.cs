@@ -10,10 +10,12 @@ public class ItemSpawner : MonoBehaviour
     [ShowInInspector]
     private int _itemCount = 0;
     [SerializeField] private List<Vector2> _spawnOffsets = new List<Vector2>(); // Stores local positions of the spawn anchors
-
+    
     private WaveManager _waveManager;
 
+    public ItemPoolData itemPoolData;
 
+    
     private void OnValidate() // Called when a value is changed in the inspector
     {
         _itemCount = _spawnOffsets.Count;
@@ -35,7 +37,13 @@ public class ItemSpawner : MonoBehaviour
     {
         GameObject upgradeGroupObj = Instantiate(new GameObject("UpgradeDropGroup", typeof(UpgradeDropGroup)), gameObject.transform.position, Quaternion.identity);
         UpgradeDropGroup upgradeDropGroup = upgradeGroupObj.GetComponent<UpgradeDropGroup>();
-        List<GameObject> items = _waveManager.ItemPoolData.GetRandomItems(_itemCount);
+        var testnum = Random.Range(0f, 1f);
+        if (testnum > itemPoolData.spawnProb)
+        {
+            return;
+        }
+        
+        List<GameObject> items = itemPoolData.GetRandomItems(_itemCount);
         for (int i = 0; i < _itemCount; i++)
         {
             upgradeDropGroup.InstantiateUpgradeDrop(items[i], _spawnOffsets[i]);

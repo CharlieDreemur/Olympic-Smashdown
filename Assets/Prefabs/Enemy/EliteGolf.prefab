@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnOffsets:
   - {x: 0, y: 0}
+  itemPoolData: {fileID: 11400000, guid: 987481b260203bb4bad44b4987b7b3f0, type: 2}
 --- !u!95 &4146959337502952732
 Animator:
   serializedVersion: 5
