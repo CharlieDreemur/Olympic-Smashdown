@@ -36,21 +36,7 @@ public class CanvasManager : MonoBehaviour, ICanvasManager
         upgrade_panel = GameObject.FindObjectOfType<UpgradePanel>();
     }
 
-    void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.Q))
-        {
-            // ShowUpgradePanel(demobuff);
-            // UpdateHealth(3f, 6f);
-            AddBuff(demobuff);
-        }
-
-        if (Input.GetKey(KeyCode.E))
-        {
-            // HideUpgradePanel();
-            RemoveBuff(demobuff);
-        }
-    }
+ 
 
     private void Init()
     {

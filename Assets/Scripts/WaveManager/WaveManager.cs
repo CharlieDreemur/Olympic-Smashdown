@@ -208,6 +208,7 @@ public class WaveManager : MonoBehaviour
     private void EndWave()
     {
         Debug.Log("End wave");
+        _eliteMobsSpawned = false;
         StopAllCoroutines(); // Stop any running waves and enemy spawn coroutines
         CleanUpWarningSigns();
         CleanUpEnemies();
@@ -240,17 +241,17 @@ public class WaveManager : MonoBehaviour
         _eliteMobsSpawned = true;
         _eliteMobsAlive += spawnInfo.Count;
         _totalMobsAlive += spawnInfo.Count;
-        SpawnEnemies(spawnInfo);
+        SpawnEnemies(spawnInfo, true);
     }
 
     void SpawnNormalMobs()
     {
         SpawnInfo spawnInfo = _currentWaveData.GetRandomSpawnInfo();
         _totalMobsAlive += spawnInfo.Count;
-        SpawnEnemies(spawnInfo);
+        SpawnEnemies(spawnInfo, false);
     }
 
-    private void SpawnEnemies(SpawnInfo spawnInfo)
+    private void SpawnEnemies(SpawnInfo spawnInfo, bool isElite)
     {
         Vector3 playerPosition = _player.transform.position;
         if (spawnInfo.IsGrouped) // Spawn enemies close by a random center point
@@ -266,7 +267,7 @@ public class WaveManager : MonoBehaviour
                     randomPosition.y = Mathf.Clamp(randomPosition.y, obstacleGeneration.mapMinBounds.y, obstacleGeneration.mapMaxBounds.y);
                     Debug.Log("random position: " + randomPosition);
                 } while (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));
-                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab));
+                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, isElite));
             }
         }
         else
@@ -282,7 +283,7 @@ public class WaveManager : MonoBehaviour
                     randomPosition.y = Mathf.Clamp(randomPosition.y, obstacleGeneration.mapMinBounds.y, obstacleGeneration.mapMaxBounds.y);
                     Debug.Log("random position: " + randomPosition);
                 } while (Physics2D.OverlapCircle(randomPosition, 0.3f, _obstacleLayerMask));  // Check if there is obstacle at random position
-                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, true));
+                StartCoroutine(EnemySpawnCoroutine(randomPosition, spawnInfo.EnemyPrefab, isElite));
             }
         }
     }
@@ -312,6 +313,7 @@ public class WaveManager : MonoBehaviour
 
     private void OnEnemyDied(Enemy enemyAI, bool isElite)
     {
+        Debug.Log("Is Elite:" + isElite);
         _enemies.Remove(enemyAI);
         _totalMobsAlive--;
         if (isElite)
@@ -327,7 +329,8 @@ public class WaveManager : MonoBehaviour
 
     private bool IsWaveOver()
     {
-        return _eliteMobsSpawned && _eliteMobsAlive == 0;
+        Debug.Log("Wave Over:" + _eliteMobsSpawned + " " + _eliteMobsAlive);
+        return _eliteMobsSpawned && _eliteMobsAlive <= 0;
     }
     
 
