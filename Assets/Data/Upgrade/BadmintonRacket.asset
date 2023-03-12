@@ -10,23 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
-  m_Name: BetterFasterStronger
+  m_Name: BadmintonRacket
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 54af60d343d3e3b458ad7e97dd60dd04, type: 3}
-  name: Better, Faster, Stronger
-  description: Make your stronger
+  icon: {fileID: 21300000, guid: 63a0b162f50eb65488e9db33aa87d7fc, type: 3}
+  name: BadmintonRacket???
+  description: Get a badminton racket that swing faster
   funFact: 
   statsBonus:
+    currentHealth: 0
+    maxHealth: 0
     moveSpeed: 0
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0
     reflectDamage: 0
     reflectDamageMultiplier: 0
-    reflectMoveSpeed: 0
     reflectMoveSpeedMultiplier: 0
     reflectScaleMultiplier: 0
     racketDamage: 0
     racketDamageMultipler: 0
-    racketSwingCooldown: 0
+    racketSwingCooldown: -0.1
     racketSizeMultiper: 0
+    swingLength: 0
   specialUpgrade: {fileID: 0}

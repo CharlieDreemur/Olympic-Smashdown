@@ -1892,6 +1892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1571039879, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
+      propertyPath: swingMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5709327166501083034, guid: f0e115be8f8edc14287e0c3f68a18148, type: 3}
       propertyPath: m_Size.x
       value: 0.4
