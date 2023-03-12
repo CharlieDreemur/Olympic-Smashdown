@@ -18,9 +18,9 @@ MonoBehaviour:
     Weight: 1
     IsGrouped: 0
   - EnemyPrefab: {fileID: 2355879992007875020, guid: 82d8e1cc81239d1409e98d2c39a63052, type: 3}
-    Count: 1
+    Count: 2
     Weight: 1
-    IsGrouped: 0
+    IsGrouped: 1
   - EnemyPrefab: {fileID: 2355879992007875020, guid: dc600628ed5ac7a4aa245f893c7c0524, type: 3}
     Count: 1
     Weight: 1
