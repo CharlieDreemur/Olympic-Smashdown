@@ -148,6 +148,7 @@ public class Projectile : MonoBehaviour
 
     private void DataInit()
     {
+        if(args.Data.SFXName != "") SFXManager.PlayMusic(args.Data.SFXName);
         switch (args.Data.trackType)
         {
             case ProjectileTrackType.straight:
@@ -230,6 +231,7 @@ public class Projectile : MonoBehaviour
         {
             if (args.Data.destroysObstacles)
             {
+                SFXManager.PlayMusic("destoryObstacle");
                 Destroy(other.gameObject);
                 return;
             }

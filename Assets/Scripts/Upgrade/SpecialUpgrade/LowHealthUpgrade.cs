@@ -22,7 +22,7 @@ public class LowHealthUpgrade : SpecialUpgrade, IUpgrade
     {
         if (Player.Instance.playerStats.CurrentHealth < ((float)Player.Instance.playerStats.MaxHealth * healthPercentage))
         {
-            Debug.Log("isAdd"+isAdd);
+            //Debug.Log("isAdd"+isAdd);
             if (isAdd) return;
             Player.Instance.playerStats.Add(Stats);
             isAdd = true;
@@ -35,7 +35,7 @@ public class LowHealthUpgrade : SpecialUpgrade, IUpgrade
     {
         if(Player.Instance.playerStats.CurrentHealth > ((float) Player.Instance.playerStats.MaxHealth * healthPercentage))
         {
-            Debug.Log("isAdd"+isAdd);
+            //Debug.Log("isAdd"+isAdd);
             if (!isAdd) return;
             Player.Instance.playerStats.Minus(Stats);
             isAdd = false;

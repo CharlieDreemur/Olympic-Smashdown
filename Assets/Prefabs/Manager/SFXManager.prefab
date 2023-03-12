@@ -152,6 +152,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 9448cb8d7b74e1243892b74cc939621a, type: 3}
     - {fileID: 8300000, guid: f7c64958d9712724d8c46d8707633d22, type: 3}
     - {fileID: 8300000, guid: 9c9a35bfc2c6e0542821bf26ccbd2d42, type: 3}
+    - {fileID: 8300000, guid: cfe5e0737302edd46af0af894f5f7de3, type: 3}
+    - {fileID: 8300000, guid: 5b53655f165b083459b78575d751fd9a, type: 3}
+    - {fileID: 8300000, guid: b9e5d8994fa7fec42891e1ba982385a1, type: 3}
+    - {fileID: 8300000, guid: c7ce9259d627f7d4a92a65d3aaee4d3e, type: 3}
+    - {fileID: 8300000, guid: ba89c48d08cd2f644be72d85f412007a, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -170,7 +175,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 12
     - Name: 
       Entry: 7
       Data: 
@@ -256,11 +261,68 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: eliteDashing
+    - Name: $v
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: soccerAttack
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: golfAttack
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: bowlingAttack
+    - Name: $v
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: destroyObstacle
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-  audioSources:
-  - {fileID: 2264458278943792557}
-  - {fileID: 0}
