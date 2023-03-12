@@ -10,22 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7d12127c31086743bb54246a37b68c1, type: 3}
-  m_Name: WaveData1
+  m_Name: WaveData0
   m_EditorClassIdentifier: 
   SpawnInfos:
   - EnemyPrefab: {fileID: 2355879992007875020, guid: 82d8e1cc81239d1409e98d2c39a63052, type: 3}
     Count: 1
-    Weight: 2
-    IsGrouped: 0
-  - EnemyPrefab: {fileID: 2355879992007875020, guid: 18fefa05c8b6d464db36c57a8d9f6ce2, type: 3}
-    Count: 1
     Weight: 1
     IsGrouped: 0
   EliteSpawnInfos:
-  - EnemyPrefab: {fileID: 2355879992007875020, guid: 3bc7f58b5102e2649b5c69966784b867, type: 3}
+  - EnemyPrefab: {fileID: 2355879992007875020, guid: 48577f88882036b49b1d2d10efe09245, type: 3}
     Count: 1
     Weight: 1
     IsGrouped: 0
   SpawnInterval: 8
   EliteSpawnTime: 15
-  MaxUnitsAlive: 3
+  MaxUnitsAlive: 2
