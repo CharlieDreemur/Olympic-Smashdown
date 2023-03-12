@@ -122,6 +122,11 @@ public class WaveManager : MonoBehaviour
             Debug.LogError("No wave data found");
             return;
         }
+        if (IsFinalWave())
+        {
+            StartCoroutine(WaveCoroutine());
+            return;
+        }
         if (_currentWaveIndex == -1) // First wave
         {
             _currentWaveIndex = 0;
@@ -180,14 +185,7 @@ public class WaveManager : MonoBehaviour
                 SpawnEliteMobs();
                 if (isEndless && IsFinalWave())
                 {
-                    if (_endlessTimer >= _spawnCurveEndTime)
-                    {
-                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(1);
-                    }
-                    else
-                    {
-                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_endlessTimer / _spawnCurveEndTime, 1));
-                    }
+                    _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_endlessTimer / _spawnCurveEndTime, 1));
                 }
                 else
                 {
@@ -199,14 +197,7 @@ public class WaveManager : MonoBehaviour
                 SpawnNormalMobs();
                 if (isEndless && IsFinalWave())
                 {
-                    if (_endlessTimer >= _spawnCurveEndTime)
-                    {
-                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(1);
-                    }
-                    else
-                    {
-                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_endlessTimer / _spawnCurveEndTime, 1));
-                    }
+                    _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_endlessTimer / _spawnCurveEndTime, 1));
                 }
                 else
                 {
