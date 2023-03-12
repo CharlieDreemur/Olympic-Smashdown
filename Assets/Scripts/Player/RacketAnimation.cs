@@ -12,6 +12,7 @@ public class RacketAnimation : MonoBehaviour
     [Range(0, 2)]
     [SerializeField] private float _swingDuration = 0.5f;
 
+
     [Header("Object References")]
     [Required]
     [SceneObjectsOnly]
@@ -45,7 +46,7 @@ public class RacketAnimation : MonoBehaviour
         if (_isSwinging)
         {
             _swingTimer -= Time.deltaTime;
-            _racketObject.transform.rotation = Quaternion.Euler(0, 0, _animationCurve.Evaluate(1 - _swingTimer / _swingDuration) * _racket.ArcAngle) * _racketRotation;
+            _racketObject.transform.rotation = Quaternion.Euler(0, 0, 2 * Player.Instance.playerStats.swingLength * _animationCurve.Evaluate(1 - _swingTimer / _swingDuration) * _racket.ArcAngle) * _racketRotation;
 
             if (_swingTimer <= 0)
             {

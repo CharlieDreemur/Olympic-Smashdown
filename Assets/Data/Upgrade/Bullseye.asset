@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
+  m_Name: Bullseye
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 71210a16803e5db43bc3c071ad732dab, type: 3}
+  name: Bullseye
+  description: Reflect projectile get 20% faster
+  funFact: 
+  statsBonus:
+    currentHealth: 0
+    maxHealth: 0
+    moveSpeed: 0
+    moveSpeedMultiplier: 0
+    playerSizeMultiplier: 0
+    reflectDamage: 0
+    reflectDamageMultiplier: 0
+    reflectMoveSpeedMultiplier: 0.2
+    reflectScaleMultiplier: 0
+    racketDamage: 0
+    racketDamageMultipler: 0
+    racketSwingCooldown: 0
+    racketSizeMultiper: 0
+    swingLength: 0
+  specialUpgrade: {fileID: 0}
