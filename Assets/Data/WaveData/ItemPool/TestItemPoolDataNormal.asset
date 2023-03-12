@@ -37,7 +37,7 @@ MonoBehaviour:
   - UpgradeData: {fileID: 11400000, guid: cabc76c13cc6b154f9aa85c434416c18, type: 2}
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: f26ba09913e52d6419b8436a25d31241, type: 2}
-    Weight: 15
+    Weight: 20
   - UpgradeData: {fileID: 11400000, guid: 792ab5efb67971f42b8894e2d8c35899, type: 2}
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: b4750113b4a19974d85972b6aef22f13, type: 2}
@@ -70,4 +70,4 @@ MonoBehaviour:
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 2adb3340671fe1f4d819635d77fd3140, type: 2}
     Weight: 1
-  spawnProb: 0.4
+  spawnProb: 0.5
