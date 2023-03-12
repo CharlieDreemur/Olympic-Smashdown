@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 1f5f54aaf6946f5418f3db275e49ad3e, type: 3}
   name: Pills
-  description: Sacrifice health for speed and damage
+  description: <color=red>You will only have 1 health</color>. Sacrifice health for
+    speed and damage.
   funFact: There has to be sacrifice
   statsBonus:
     currentHealth: 0
@@ -30,4 +31,5 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
+    swingLength: 0
   specialUpgrade: {fileID: 11400000, guid: b707df9f2af133b45a02dd5de7d6414f, type: 2}
