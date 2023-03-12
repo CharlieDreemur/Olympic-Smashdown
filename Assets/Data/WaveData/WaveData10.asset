@@ -27,13 +27,9 @@ MonoBehaviour:
     IsGrouped: 0
   EliteSpawnInfos:
   - EnemyPrefab: {fileID: 4491432202499124103, guid: bfebc049f61c5ed4da81e95a36712cb5, type: 3}
-    Count: 1
+    Count: 2
     Weight: 1
-    IsGrouped: 0
-  - EnemyPrefab: {fileID: 2355879992007875020, guid: aa1f99e420b345546a31ac2f00f95fa4, type: 3}
-    Count: 1
-    Weight: 1
-    IsGrouped: 0
+    IsGrouped: 1
   SpawnInterval: 8
   EliteSpawnTime: 15
   MaxUnitsAlive: 10
