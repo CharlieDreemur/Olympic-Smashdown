@@ -32,4 +32,4 @@ MonoBehaviour:
     IsGrouped: 0
   SpawnInterval: 8
   EliteSpawnTime: 10
-  MaxUnitsAlive: 5
+  MaxUnitsAlive: 4
