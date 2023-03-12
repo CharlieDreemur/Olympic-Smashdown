@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,13 +17,15 @@ public class Player : Entity
 
     // weird dependency but it is probably fine
     public TransitionBlackout curtain;
+    public bool isKilled = false;
     public SpriteRenderer spriteRenderer;
     public List<UpgradeData> upgrades = new List<UpgradeData>();
 
     // some external manager will need to set the health on game start
     // and make it remember its health across levels
     public PlayerStats playerStats;
-    [SerializeField] [FoldoutGroup("Special Stats")]
+    [SerializeField]
+    [FoldoutGroup("Special Stats")]
     public int enemyKilled;
     [FoldoutGroup("Events")]
     public SpecialEvent onStart = new SpecialEvent();
@@ -40,18 +43,21 @@ public class Player : Entity
     public SpecialEvent onDeath = new SpecialEvent();
     [FoldoutGroup("Events")]
     public SpecialEvent onKillEnemy = new SpecialEvent();
-    [SerializeField] 
+    [SerializeField]
     private string _firstSceneName = "MainScene";
 
     private void Awake()
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if(scene.name == _firstSceneName && Instance != null) { // Make sure the player is reset on the first scene
+        if (scene.name == _firstSceneName && Instance != null)
+        { // Make sure the player is reset on the first scene
             Destroy(Instance.gameObject); // destroy the old instance
             Instance = this; // set the new instance
             DontDestroyOnLoad(this); // don't destroy this instance
-        } else {
+        }
+        else
+        {
             // If there is an instance, and it's not me, delete myself.
             if (Instance != null && Instance != this)
             {
@@ -76,18 +82,21 @@ public class Player : Entity
     private void Start()
     {
         playerStats.CurrentHealth = playerStats.MaxHealth;
-        if(onStart.count > 0){
+        if (onStart.count > 0)
+        {
             onStart.Invoke();
         }
         OnUpgrade();
     }
 
-    private void OnUpgrade(string jsonValue=""){
+    private void OnUpgrade(string jsonValue = "")
+    {
         transform.localScale = new Vector3(transform.localScale.x * playerStats.playerSizeMultiplier, transform.localScale.y * playerStats.playerSizeMultiplier, 1);
     }
     private void Update()
     {
-        if(onUpdate.count>0){
+        if (onUpdate.count > 0)
+        {
             onUpdate.Invoke();
         }
     }
@@ -97,15 +106,18 @@ public class Player : Entity
     }
 
 
-    private void AddUpgrade(string jsonValue){
+    private void AddUpgrade(string jsonValue)
+    {
         UpgradeArgs args = JsonUtility.FromJson<UpgradeArgs>(jsonValue);
         upgrades.Add(args.upgradeData);
     }
-    private void AddUpgrade(UpgradeData upgradeData){
+    private void AddUpgrade(UpgradeData upgradeData)
+    {
         upgrades.Add(upgradeData);
     }
     public void Hurt(int damage)
     {
+        if(isKilled) return;
         SFXManager.PlayMusic("playerHurt");
         playerStats.CurrentHealth -= damage;
         if (playerStats.CurrentHealth <= 0)
@@ -113,21 +125,26 @@ public class Player : Entity
             Die();
         }
     }
-    
-    public void OnKillEnemy(){
-        if(onKillEnemy.count>0){
+
+    public void OnKillEnemy()
+    {
+        if (onKillEnemy.count > 0)
+        {
             enemyKilled++;
             score++;
             onKillEnemy.Invoke();
         }
-        
+
     }
     public void Die()
     {
-        if(onDeath.count>0){
+        if (onDeath.count > 0)
+        {
             onDeath.Invoke();
         }
+
         StartCoroutine(curtain.LoadAsyncSceneWithFadeOut("GameOverScene"));
+        isKilled = true;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -139,7 +156,7 @@ public class Player : Entity
                 Destroy(col.gameObject);
                 if (_canTakeDamage)
                 {
-                    StartCoroutine(InvincibilityCoro(0.7f));
+                    StartCoroutine(InvincibilityCoro(0.6f));
                     Hurt(1);
                 }
             }
@@ -148,23 +165,32 @@ public class Player : Entity
 
     IEnumerator InvincibilityCoro(float time)
     {
-        _canTakeDamage = false;   
+        _canTakeDamage = false;
+        spriteRenderer.DOFade(0.4f, 0.1f)
+                .SetLoops(3, LoopType.Yoyo)
+                .OnComplete(() =>
+                {
+                    spriteRenderer.color = Color.white;
+                });
         yield return new WaitForSeconds(time);
         _canTakeDamage = true;
     }
-    
+
 }
 
-public class SpecialEvent:UnityEvent {
+public class SpecialEvent : UnityEvent
+{
 
     public int count { get; private set; }
 
-    public new void AddListener(UnityAction call) {
+    public new void AddListener(UnityAction call)
+    {
         base.AddListener(call);
         count++;
     }
 
-    public new void RemoveListener(UnityAction call) {
+    public new void RemoveListener(UnityAction call)
+    {
         base.RemoveListener(call);
         count--;
     }
