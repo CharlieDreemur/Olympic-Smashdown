@@ -12,12 +12,17 @@ public class LowHealthUpgrade : SpecialUpgrade, IUpgrade
     [InfoBox("Don't change current health here, or it will cause infite loop")]
     public float healthPercentage;
     private bool isAdd = false;
+    public override void Upgrade()
+    {
+        isAdd = false;
+        OnHurt();
+        OnHeal();
+    }
     public override void OnHurt()
     {
-        Debug.Log("113413: "+((float)Player.Instance.playerStats.MaxHealth * healthPercentage));
         if (Player.Instance.playerStats.CurrentHealth < ((float)Player.Instance.playerStats.MaxHealth * healthPercentage))
         {
-            Debug.Log("LowHealthUpgrade: OnHurt");
+            Debug.Log("isAdd"+isAdd);
             if (isAdd) return;
             Player.Instance.playerStats.Add(Stats);
             isAdd = true;
@@ -30,7 +35,7 @@ public class LowHealthUpgrade : SpecialUpgrade, IUpgrade
     {
         if(Player.Instance.playerStats.CurrentHealth > ((float) Player.Instance.playerStats.MaxHealth * healthPercentage))
         {
-            Debug.Log("LowHealthUpgrade: OnHeal");
+            Debug.Log("isAdd"+isAdd);
             if (!isAdd) return;
             Player.Instance.playerStats.Minus(Stats);
             isAdd = false;
