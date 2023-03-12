@@ -14,7 +14,9 @@ public class Player : Entity
 
     public PlayerData data;
     public int score;
-
+    public List<GameObject> rackets = new List<GameObject>();
+    [SerializeField]
+    private int _racketCounter = 0;
     // weird dependency but it is probably fine
     public TransitionBlackout curtain;
     public bool isKilled = false;
@@ -104,7 +106,13 @@ public class Player : Entity
     {
         playerStats.CurrentHealth += healAmount;
     }
-
+    public void AddRacket(){
+        if(_racketCounter >= rackets.Count){
+            return;
+        }
+        _racketCounter++;
+        rackets[_racketCounter].SetActive(true);
+    }
 
     private void AddUpgrade(string jsonValue)
     {
