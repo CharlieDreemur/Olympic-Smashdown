@@ -35,13 +35,17 @@ public class ItemSpawner : MonoBehaviour
     }
     private void SpawnItems()
     {
-        GameObject upgradeGroupObj = Instantiate(new GameObject("UpgradeDropGroup", typeof(UpgradeDropGroup)), gameObject.transform.position, Quaternion.identity);
-        UpgradeDropGroup upgradeDropGroup = upgradeGroupObj.GetComponent<UpgradeDropGroup>();
         var testnum = Random.Range(0f, 1f);
         if (testnum > itemPoolData.spawnProb)
         {
             return;
         }
+        
+        GameObject upgradeGroupObj = new GameObject("UpgradeDropGroup", typeof(UpgradeDropGroup));
+        upgradeGroupObj.transform.position = transform.position;
+        upgradeGroupObj.transform.rotation = Quaternion.identity;
+        UpgradeDropGroup upgradeDropGroup = upgradeGroupObj.GetComponent<UpgradeDropGroup>();
+        
         
         List<GameObject> items = itemPoolData.GetRandomItems(_itemCount);
         for (int i = 0; i < _itemCount; i++)
