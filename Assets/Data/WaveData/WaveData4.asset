@@ -22,6 +22,6 @@ MonoBehaviour:
     Count: 2
     Weight: 1
     IsGrouped: 1
-  SpawnInterval: 8
+  SpawnInterval: 4
   EliteSpawnTime: 15
   MaxUnitsAlive: 5
