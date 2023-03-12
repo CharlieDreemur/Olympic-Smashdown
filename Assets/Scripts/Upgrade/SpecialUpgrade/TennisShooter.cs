@@ -73,7 +73,9 @@ public class TennisShooter : MonoBehaviour
             {
                 var target = nonNullList[0].gameObject.transform;
                 var direction= new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y).normalized;
-                Projectile.InstantiateProjectile(projectileData, this.transform.position + (Vector3) direction * 1.4f, ProjectileOwnerType.player, direction, target.gameObject.GetComponent<Entity>());
+                GameObject projGO = Projectile.InstantiateProjectile(projectileData, this.transform.position + (Vector3) direction * 1.4f, ProjectileOwnerType.player, direction, target.gameObject.GetComponent<Entity>());
+                Projectile proj = projGO.GetComponent<Projectile>();
+                proj.SetEnemyProjectileHighlightGOActive(false);
                 Debug.Log("Shot");
             }
         }
