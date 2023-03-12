@@ -26,6 +26,6 @@ MonoBehaviour:
     Count: 1
     Weight: 1
     IsGrouped: 0
-  SpawnInterval: 2
+  SpawnInterval: 10
   EliteSpawnTime: 5
-  MaxUnitsAlive: 1
+  MaxUnitsAlive: 2
