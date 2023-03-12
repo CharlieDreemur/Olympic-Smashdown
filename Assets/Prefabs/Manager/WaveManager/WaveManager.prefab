@@ -44,10 +44,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe475eef0c17684f850d87b17b8df7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleGeneration: {fileID: 0}
+  isEndless: 0
+  _spawnCooldownMultiplierCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.07369614
+      value: 1.0103493
+      inSlope: -0.075569935
+      outSlope: -0.075569935
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.36704418
+      value: 0.97704256
+      inSlope: -0.15940207
+      outSlope: -0.15940207
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6110927
+    - serializedVersion: 3
+      time: 0.8124897
+      value: 0.6092758
+      inSlope: -1.6102372
+      outSlope: -1.6102372
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.7439148
+    - serializedVersion: 3
+      time: 0.99945474
+      value: 0.00090286136
+      inSlope: -3.2539394
+      outSlope: -3.2539394
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _spawnCurveEndTime: 600
   _waveData:
   - {fileID: 11400000, guid: b9c9f2124176e894083527ccb56bea32, type: 2}
-  _dummyWaveData: {fileID: 11400000, guid: b9c9f2124176e894083527ccb56bea32, type: 2}
   itemPoolData: {fileID: 11400000, guid: b51c39399c2e82f4eb0e27a54f85eac8, type: 2}
+  itemPoolDataNormal: {fileID: 0}
   _warningPrefab: {fileID: 5026762404992528570, guid: 0557602ac03b6be4ebe7e8af5dc3d9cb, type: 3}
   _eliteWarningPrefab: {fileID: 7668302405429155688, guid: 36d7fa5e7f311aa4fac5b6bddc59d391, type: 3}
   _spawnDelay: 2

@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
-  m_Name: WoodenRacket
+  m_Name: GodMode
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 4f05feb5d44432f49805667c18b3dfc7, type: 3}
-  name: Reaper Scythe
-  description: Damage up every 20 kills
-  funFact: Last owner has already died
+  icon: {fileID: 21300000, guid: d4af392feb90238499e6e0ade2fee82c, type: 3}
+  name: God Mode
+  description: Congratulations! You have found the true ending.
+  funFact: up up down down left right left right b a start
   statsBonus:
-    currentHealth: 0
-    maxHealth: 0
+    currentHealth: 999
+    maxHealth: 999
     moveSpeed: 0
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0
-    reflectDamage: 0
+    reflectDamage: 999
     reflectDamageMultiplier: 0
     reflectMoveSpeedMultiplier: 0
     reflectScaleMultiplier: 0
-    racketDamage: 0
+    racketDamage: 999
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
     swingLength: 0
-  specialUpgrade: {fileID: 11400000, guid: 66c9b4814d4456a40b194eec5bb58755, type: 2}
+  specialUpgrade: {fileID: 0}

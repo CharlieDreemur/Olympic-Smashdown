@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff215240d85df4cbe3dcf7a570fe42, type: 3}
+  m_Name: EmptyPool
+  m_EditorClassIdentifier: 
+  Item: {fileID: 3821659924054881384, guid: e4648a2d99970124ca41fc9452447a50, type: 3}
+  _items:
+  - UpgradeData: {fileID: 11400000, guid: f26ba09913e52d6419b8436a25d31241, type: 2}
+    Weight: 1
+  spawnProb: 0.01

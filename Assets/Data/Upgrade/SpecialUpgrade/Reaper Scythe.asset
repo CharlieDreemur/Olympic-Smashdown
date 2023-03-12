@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ddfdea585e3c4797ae94f24ca7912, type: 3}
   m_Name: Reaper Scythe
   m_EditorClassIdentifier: 
-  killCount: 15
+  killCount: 20
   Stats:
     currentHealth: 0
     maxHealth: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
+    swingLength: 0

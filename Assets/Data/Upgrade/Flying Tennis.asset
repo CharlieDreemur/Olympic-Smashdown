@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 27ae55575e0f6c846b01edd1f8928b9e, type: 3}
   name: Flying Tennis
-  description: 'Increase 20% reflect damage '
+  description: 'Increase 10% reflect damage '
   funFact: Let's Fly!
   statsBonus:
     currentHealth: 0
@@ -23,11 +23,12 @@ MonoBehaviour:
     moveSpeedMultiplier: 0
     playerSizeMultiplier: 0
     reflectDamage: 0
-    reflectDamageMultiplier: 0.2
+    reflectDamageMultiplier: 0.1
     reflectMoveSpeedMultiplier: 0
     reflectScaleMultiplier: 0
     racketDamage: 0
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
+    swingLength: 0
   specialUpgrade: {fileID: 0}

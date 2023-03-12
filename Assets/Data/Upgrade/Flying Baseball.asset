@@ -30,4 +30,5 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
+    swingLength: 0
   specialUpgrade: {fileID: 0}

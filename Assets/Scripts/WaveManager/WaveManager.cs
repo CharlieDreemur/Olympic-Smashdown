@@ -68,7 +68,7 @@ public class WaveManager : MonoBehaviour
     public int CurrentWaveIndex => _currentWaveIndex;
     private float _spawnCooldown = 0f;
     private float _currentWaveTime = 0f;
-    private float _totalTime = 0f;
+    private float _endlessTimer = 0f;
     private bool _eliteMobsSpawned = false;
     private uint _eliteMobsAlive = 0;
     private uint _totalMobsAlive = 0;
@@ -92,7 +92,10 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        _totalTime += Time.deltaTime;
+        if (isEndless && IsFinalWave())
+        {
+            _endlessTimer += Time.deltaTime;
+        }
     }
 
     public void StartStage()
@@ -175,9 +178,16 @@ public class WaveManager : MonoBehaviour
             if (_spawnCooldown <= 0 && _currentWaveTime >= _currentWaveData.EliteSpawnTime && !_eliteMobsSpawned)
             {
                 SpawnEliteMobs();
-                if (isEndless)
+                if (isEndless && IsFinalWave())
                 {
-                    _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
+                    if (_endlessTimer >= _spawnCurveEndTime)
+                    {
+                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(1);
+                    }
+                    else
+                    {
+                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_endlessTimer / _spawnCurveEndTime, 1));
+                    }
                 }
                 else
                 {
@@ -187,9 +197,16 @@ public class WaveManager : MonoBehaviour
             else if (_spawnCooldown <= 0) // Spawn normal mobs if the cooldown is up, and elite mobs aren't spawning in this loop iteration
             {
                 SpawnNormalMobs();
-                if (isEndless)
+                if (isEndless && IsFinalWave())
                 {
-                    _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_totalTime / _spawnCurveEndTime, 1));
+                    if (_endlessTimer >= _spawnCurveEndTime)
+                    {
+                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(1);
+                    }
+                    else
+                    {
+                        _spawnCooldown = _currentWaveData.SpawnInterval * _spawnCooldownMultiplierCurve.Evaluate(Mathf.Min(_endlessTimer / _spawnCurveEndTime, 1));
+                    }
                 }
                 else
                 {
@@ -332,6 +349,9 @@ public class WaveManager : MonoBehaviour
         Debug.Log("Wave Over:" + _eliteMobsSpawned + " " + _eliteMobsAlive);
         return _eliteMobsSpawned && _eliteMobsAlive <= 0;
     }
-    
 
+    private bool IsFinalWave()
+    {
+        return _currentWaveIndex == _waveData.Count - 1;
+    }
 }
