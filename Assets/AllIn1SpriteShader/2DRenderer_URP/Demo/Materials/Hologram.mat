@@ -256,7 +256,7 @@ Material:
     - _GradTopRightCol: {r: 1, g: 0, b: 0, a: 1}
     - _GreyscaleTintColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     - _HitEffectColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HologramStripeColor: {r: 0.8509804, g: 0, b: 0, a: 1}
+    - _HologramStripeColor: {r: 0, g: 0.8509804, b: 0.8509804, a: 1}
     - _InnerOutlineColor: {r: 1, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0.43268147, b: 0.67058825, a: 1}
     - _OverlayColor: {r: 1, g: 1, b: 1, a: 1}
