@@ -112,12 +112,13 @@ public class Racket : MonoBehaviour
             var enemyDir2 = new Vector2(enemyDir3.x, enemyDir3.y).normalized;
             if (Vector2.Dot(direction.normalized, enemyDir2) > 0.707f)
             {
-                enemy.Hurt(Player.Instance.data.stats.racketDamage);
+                enemy.Hurt(Player.Instance.stats.racketDamage);
             }
         }
 
         foreach (var proj in _objectsInRange)
         {
+            if (proj == null) continue;
             if (!proj.args.Data.canBeReflected)
             {
                 continue;

@@ -731,6 +731,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 68430245}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: isEndless
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: itemPoolData
       value: 
       objectReference: {fileID: 11400000, guid: 05ac8d06c21d1b24ca14d7160d5e8e29, type: 2}
