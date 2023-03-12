@@ -17,7 +17,7 @@ public interface IUpgrade
     /// <summary>
     /// Invoke when the player dash
     /// </summary>
-    void OnDash(){}
+
     /// <summary>
     /// Invoke when the player reflect a projectile
     /// </summary>
@@ -34,6 +34,10 @@ public interface IUpgrade
     /// Invoke when the player is killed
     /// </summary>
     void OnDeath(){}
+    /// <summary>
+    /// Invoke when the player heal
+    /// </summary>
+    void OnHeal(){}
 }
 
 public class Upgrade : MonoBehaviour, IUpgrade

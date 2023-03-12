@@ -33,7 +33,7 @@ public class Player : Entity
     [FoldoutGroup("Events")]
     public UnityEvent<int, int> onHealthChange;
     [FoldoutGroup("Events")]
-    public SpecialEvent onDash = new SpecialEvent();
+    public SpecialEvent onHeal = new SpecialEvent();
     [FoldoutGroup("Events")]
     public SpecialEvent onReflect = new SpecialEvent();
     [FoldoutGroup("Events")]
@@ -101,9 +101,6 @@ public class Player : Entity
     public void Hurt(int damage)
     {
         SFXManager.PlayMusic("playerHurt");
-        if(onHurt.count>0){
-            onHurt.Invoke();
-        }
         playerStats.CurrentHealth -= damage;
         if (playerStats.CurrentHealth <= 0)
         {

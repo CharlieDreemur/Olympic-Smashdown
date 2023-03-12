@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterProperty
   stats:
-    currentHealth: 15
-    maxHealth: 15
+    currentHealth: 10
+    maxHealth: 10
     moveSpeed: 5
     moveSpeedMultiplier: 1
     playerSizeMultiplier: 1

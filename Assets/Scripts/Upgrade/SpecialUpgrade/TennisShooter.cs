@@ -30,7 +30,7 @@ public class TennisShooter : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(RepeatCoro(1f));
+        StartCoroutine(RepeatCoro(5f));
     }
 
     private void OnTriggerEnter2D(Collider2D col)
