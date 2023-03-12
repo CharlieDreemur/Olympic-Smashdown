@@ -21,14 +21,14 @@ MonoBehaviour:
     maxHealth: 0
     moveSpeed: 0
     moveSpeedMultiplier: 0
-    playerSizeMultiplier: 0.2
+    playerSizeMultiplier: 0.1
     reflectDamage: 0
     reflectDamageMultiplier: 0
     reflectMoveSpeedMultiplier: 0
-    reflectScaleMultiplier: 0.2
+    reflectScaleMultiplier: 0.1
     racketDamage: 0
     racketDamageMultipler: 0
     racketSwingCooldown: 0
-    racketSizeMultiper: 0.2
+    racketSizeMultiper: -0.1
     swingLength: 0
   specialUpgrade: {fileID: 0}
