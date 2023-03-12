@@ -26,4 +26,4 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
-  healthPercentage: 0.5
+  healthPercentage: 0.3

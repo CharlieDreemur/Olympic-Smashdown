@@ -18,8 +18,6 @@ MonoBehaviour:
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 792ab5efb67971f42b8894e2d8c35899, type: 2}
     Weight: 1
-  - UpgradeData: {fileID: 11400000, guid: f26ba09913e52d6419b8436a25d31241, type: 2}
-    Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 4df2351520a818846af0f41d7dc342f6, type: 2}
     Weight: 1
   - UpgradeData: {fileID: 11400000, guid: 06dd2915f98007f4f9d4e66f35f72694, type: 2}

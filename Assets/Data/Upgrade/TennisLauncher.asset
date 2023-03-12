@@ -26,8 +26,8 @@ MonoBehaviour:
     reflectDamageMultiplier: 0
     reflectMoveSpeedMultiplier: 0
     reflectScaleMultiplier: 0
-    racketDamage: 1
-    racketDamageMultipler: 1
+    racketDamage: 0
+    racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
   specialUpgrade: {fileID: 11400000, guid: 9810ad392bf3fdc418cd8d199e984fa6, type: 2}
