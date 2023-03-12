@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acff215240d85df4cbe3dcf7a570fe42, type: 3}
+  m_Name: TestItemPoolData2
+  m_EditorClassIdentifier: 
+  Item: {fileID: 3821659924054881384, guid: e4648a2d99970124ca41fc9452447a50, type: 3}
+  _items:
+  - UpgradeData: {fileID: 11400000, guid: 75ee3cf3719696c40b3c6a6b9b4c5277, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 792ab5efb67971f42b8894e2d8c35899, type: 2}
+    Weight: 4
+  - UpgradeData: {fileID: 11400000, guid: c3686ddeff23d31408d56d4f9ab9d431, type: 2}
+    Weight: 8.29
+  - UpgradeData: {fileID: 11400000, guid: 06dd2915f98007f4f9d4e66f35f72694, type: 2}
+    Weight: 1
+  - UpgradeData: {fileID: 11400000, guid: 5d3f62760b51abc43a5f5126eb710107, type: 2}
+    Weight: 1

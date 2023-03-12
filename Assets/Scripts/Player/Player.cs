@@ -106,12 +106,14 @@ public class Player : Entity
     {
         playerStats.CurrentHealth += healAmount;
     }
-    public void AddRacket(){
-        if(_racketCounter >= rackets.Count){
+    public void AddRacket()
+    {
+        if (_racketCounter >= rackets.Count)
+        {
             return;
         }
-        _racketCounter++;
         rackets[_racketCounter].SetActive(true);
+        _racketCounter++;
     }
 
     private void AddUpgrade(string jsonValue)
@@ -125,7 +127,7 @@ public class Player : Entity
     }
     public void Hurt(int damage)
     {
-        if(isKilled) return;
+        if (isKilled) return;
         SFXManager.PlayMusic("playerHurt");
         playerStats.CurrentHealth -= damage;
         if (playerStats.CurrentHealth <= 0)
