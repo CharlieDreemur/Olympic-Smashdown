@@ -13,15 +13,19 @@ MonoBehaviour:
   m_Name: WaveData8
   m_EditorClassIdentifier: 
   SpawnInfos:
-  - EnemyPrefab: {fileID: 2355879992007875020, guid: 3bc7f58b5102e2649b5c69966784b867, type: 3}
+  - EnemyPrefab: {fileID: 2355879992007875020, guid: 53653eadaae1d0641875641790a8bdaa, type: 3}
+    Count: 1
+    Weight: 1
+    IsGrouped: 0
+  - EnemyPrefab: {fileID: 2355879992007875020, guid: d5e49ba72a9beaa4f8302f56f0aad278, type: 3}
     Count: 1
     Weight: 1
     IsGrouped: 0
   EliteSpawnInfos:
-  - EnemyPrefab: {fileID: 2355879992007875020, guid: 3bc7f58b5102e2649b5c69966784b867, type: 3}
-    Count: 5
+  - EnemyPrefab: {fileID: 4491432202499124103, guid: bfebc049f61c5ed4da81e95a36712cb5, type: 3}
+    Count: 1
     Weight: 1
-    IsGrouped: 1
+    IsGrouped: 0
   SpawnInterval: 2
-  EliteSpawnTime: 15
-  MaxUnitsAlive: 8
+  EliteSpawnTime: 5
+  MaxUnitsAlive: 1
