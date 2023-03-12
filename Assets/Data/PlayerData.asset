@@ -24,5 +24,6 @@ MonoBehaviour:
     reflectScaleMultiplier: 1
     racketDamage: 1
     racketDamageMultipler: 1
-    racketSwingCooldown: 0.25
+    racketSwingCooldown: 0.5
     racketSizeMultiper: 1
+    swingLength: 1

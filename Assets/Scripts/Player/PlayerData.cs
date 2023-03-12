@@ -87,6 +87,8 @@ public struct PlayerStats
     public float racketSwingCooldown;
     [FoldoutGroup("Racket")]
     public float racketSizeMultiper;
+    [FoldoutGroup("Racket")]
+    public float swingLength;
     public void Init(PlayerData data)
     {
         MaxHealth = data.stats.MaxHealth;
@@ -102,6 +104,7 @@ public struct PlayerStats
         racketDamageMultipler = data.stats.racketDamageMultipler;
         racketSwingCooldown = data.stats.racketSwingCooldown;
         racketSizeMultiper = data.stats.racketSizeMultiper;
+        swingLength = data.stats.swingLength;
     }
     public void Add(PlayerStats stats)
     {
@@ -118,6 +121,7 @@ public struct PlayerStats
         racketDamageMultipler += stats.racketDamageMultipler;
         racketSwingCooldown += stats.racketSwingCooldown;
         racketSizeMultiper += stats.racketSizeMultiper;
+        swingLength += stats.swingLength;
 
     }
     public void Minus(PlayerStats stats)
@@ -135,6 +139,7 @@ public struct PlayerStats
         racketDamageMultipler -= stats.racketDamageMultipler;
         racketSwingCooldown -= stats.racketSwingCooldown;
         racketSizeMultiper -= stats.racketSizeMultiper;
+        swingLength -= stats.swingLength;
     }
 
 }
