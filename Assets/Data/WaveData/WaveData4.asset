@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnInfos:
   - EnemyPrefab: {fileID: 2355879992007875020, guid: 82d8e1cc81239d1409e98d2c39a63052, type: 3}
-    Count: 2
+    Count: 3
     Weight: 1
     IsGrouped: 1
   EliteSpawnInfos:
@@ -24,4 +24,4 @@ MonoBehaviour:
     IsGrouped: 1
   SpawnInterval: 8
   EliteSpawnTime: 15
-  MaxUnitsAlive: 8
+  MaxUnitsAlive: 5
