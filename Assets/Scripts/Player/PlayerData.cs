@@ -20,16 +20,7 @@ public struct PlayerStats
         get => currentHealth;
         set
         {
-            if (Player.Instance != null)
-            {
-                Player.Instance.onHealthChange?.Invoke(CurrentHealth, MaxHealth);
-                if(value>currentHealth){
-                    Player.Instance.onHeal?.Invoke();
-                }
-                if(value<currentHealth){
-                    Player.Instance.onHurt?.Invoke();
-                }
-            }
+            int oldValue = value;
             currentHealth = value;
             if (currentHealth > maxHealth)
             {
@@ -38,6 +29,16 @@ public struct PlayerStats
             if (currentHealth < 0)
             {
                 currentHealth = 0;
+            }
+            if (Player.Instance == null) return;
+            Player.Instance.onHealthChange?.Invoke(CurrentHealth, MaxHealth);
+            if (oldValue > currentHealth)
+            {
+                Player.Instance.onHeal?.Invoke();
+            }
+            if (oldValue < currentHealth)
+            {
+                Player.Instance.onHurt?.Invoke();
             }
         }
     }

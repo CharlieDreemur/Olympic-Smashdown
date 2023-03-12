@@ -14,7 +14,7 @@ public class LowHealthUpgrade : SpecialUpgrade, IUpgrade
     private bool isAdd = false;
     public override void OnHurt()
     {
-        if (Player.Instance.playerStats.CurrentHealth < Player.Instance.playerStats.MaxHealth * healthPercentage)
+        if (Player.Instance.playerStats.CurrentHealth < ((float)Player.Instance.playerStats.MaxHealth * healthPercentage))
         {
             if (isAdd) return;
             Player.Instance.playerStats.Add(Stats);
@@ -26,7 +26,7 @@ public class LowHealthUpgrade : SpecialUpgrade, IUpgrade
 
     public override void OnHeal()
     {
-        if(Player.Instance.playerStats.CurrentHealth > Player.Instance.playerStats.MaxHealth * healthPercentage)
+        if(Player.Instance.playerStats.CurrentHealth > ((float) Player.Instance.playerStats.MaxHealth * healthPercentage))
         {
             if (!isAdd) return;
             Player.Instance.playerStats.Minus(Stats);
