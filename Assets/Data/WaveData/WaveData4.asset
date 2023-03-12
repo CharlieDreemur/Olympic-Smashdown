@@ -28,4 +28,4 @@ MonoBehaviour:
     IsGrouped: 1
   SpawnInterval: 8
   EliteSpawnTime: 15
-  MaxUnitsAlive: 4
+  MaxUnitsAlive: 2

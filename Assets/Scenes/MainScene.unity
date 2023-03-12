@@ -743,6 +743,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: _spawnCurveEndTime
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: obstacleGeneration
       value: 
       objectReference: {fileID: 1430787243}
@@ -816,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[2].time
-      value: 0.6914773
+      value: 0.74811286
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[3].time
@@ -836,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[2].value
-      value: 0.8467487
+      value: 0.82055664
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[3].value
@@ -856,11 +860,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[2].inSlope
-      value: -0.25797534
+      value: -0.4143733
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[3].inSlope
-      value: -2.7464538
+      value: -3.261111
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[4].inSlope
@@ -888,7 +892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[2].outSlope
-      value: -0.25797534
+      value: -0.4143733
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[3].inWeight
@@ -896,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[3].outSlope
-      value: -2.7464538
+      value: -3.261111
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[4].inWeight
@@ -916,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[2].outWeight
-      value: 0.33333334
+      value: 0.4269636
       objectReference: {fileID: 0}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _spawnCooldownMultiplierCurve.m_Curve.Array.data[3].outWeight
