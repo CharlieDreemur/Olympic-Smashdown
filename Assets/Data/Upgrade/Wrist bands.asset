@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f759d71f75b5b4d91de41d5d76ff8e, type: 3}
   m_Name: Wrist bands
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 15dc5c1ab4177e940910ab6a241776a6, type: 3}
   name: Wrist bands
   description: Shorter swing cooldown
   funFact: 
@@ -30,4 +30,5 @@ MonoBehaviour:
     racketDamageMultipler: 0
     racketSwingCooldown: 0
     racketSizeMultiper: 0
+    swingLength: 0
   specialUpgrade: {fileID: 0}

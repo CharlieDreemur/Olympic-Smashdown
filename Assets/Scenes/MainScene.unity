@@ -747,6 +747,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1430787243}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: _waveData.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: _waveData.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b426eda8743862a4bb8df4afbb0d894b, type: 2}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: _waveData.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 34afe642daa29444fb045b8cb9f05e55, type: 2}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: _waveData.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: a5b7e0f93edfedc4281baf1e0f2a764b, type: 2}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: _waveData.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: d48f77afed425d94c9f39273ad3e1cf1, type: 2}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
+      propertyPath: _waveData.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: ee9e335813d431e489114718030252b7, type: 2}
+    - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _obstacleLayerMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
