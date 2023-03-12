@@ -133,7 +133,7 @@ public class Racket : MonoBehaviour
                 // var projRb = proj.GetComponent<Rigidbody2D>();
                 // projRb.velocity = direction.normalized * projRb.velocity.magnitude;
             }
-            proj.args.Data.speedMultipler *= Player.Instance.playerStats.reflectMoveSpeedMultiplier;
+            proj.track.moveSpeed *= Player.Instance.playerStats.reflectMoveSpeedMultiplier;
             proj.track.SetProjectileScale(defaultScale.x * Player.Instance.playerStats.reflectScaleMultiplier);
             if (isChangingProjectileSpriteColor)
             {

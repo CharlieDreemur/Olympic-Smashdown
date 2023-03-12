@@ -10,7 +10,7 @@ public abstract class ProjectileTrack
     protected ProjectileData _data;
     protected Projectile projectile;
     protected Entity target;
-    protected float moveSpeed;
+    public float moveSpeed;
     protected AnimationCurve speedCurve;
     protected Rigidbody2D rb
     {
