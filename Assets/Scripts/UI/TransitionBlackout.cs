@@ -80,4 +80,8 @@ public class TransitionBlackout : MonoBehaviour
             yield return null;
         }
     }
+
+    void OnDestroy() {
+        Destroy(Player.Instance.gameObject);
+    }
 }

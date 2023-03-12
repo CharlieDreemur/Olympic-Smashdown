@@ -46,8 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a9564e5d438beb4b90bbac50b5535f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  racketGraphics: {fileID: 5546937352615866294}
-  racketRadius: 1.2
+  _triggerCollider: {fileID: 0}
+  _arcAngle: 45
+  swung:
+    m_PersistentCalls:
+      m_Calls: []
+  isChangingProjectileSpriteColor: 1
 --- !u!58 &5546937352112817263
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -63,7 +67,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.7
 --- !u!1 &5546937352615866294
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +92,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5546937352615866294}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.19509031, w: 0.98078537}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.10839281, y: 0.10839281, z: 0.10839281}
   m_ConstrainProportionsScale: 0

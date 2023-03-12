@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class MusicManager : Singleton<MusicManager>
@@ -17,6 +18,8 @@ public class MusicManager : Singleton<MusicManager>
 
     private float _volume = 0.5f; // TODO: Only for testing purpose
     private string _playName;
+
+    [SerializeField] Slider _slider;
 
     void Awake()
     {
@@ -38,6 +41,12 @@ public class MusicManager : Singleton<MusicManager>
         _volume = num;
         _audioSource1.volume = _volume;
         _audioSource2.volume = _volume;
+    }
+
+    public void SetVolumeToSlider()
+    {
+        if (_slider == null) { return; }
+        SetVolume(_slider.value);
     }
 
     public void Mute()
