@@ -171,6 +171,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   _fadeTime: 2
+  _slider: {fileID: 0}
 --- !u!82 &631952937173276373
 AudioSource:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

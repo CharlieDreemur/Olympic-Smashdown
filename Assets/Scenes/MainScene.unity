@@ -434,6 +434,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 631952937173276370, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
     - target: {fileID: 631952937173276375, guid: 9fa75e5522b04a842aa3fda049c40c89, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -765,11 +769,11 @@ PrefabInstance:
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _waveData.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: a5b7e0f93edfedc4281baf1e0f2a764b, type: 2}
+      objectReference: {fileID: 11400000, guid: 34afe642daa29444fb045b8cb9f05e55, type: 2}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _waveData.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 34afe642daa29444fb045b8cb9f05e55, type: 2}
+      objectReference: {fileID: 11400000, guid: a5b7e0f93edfedc4281baf1e0f2a764b, type: 2}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _waveData.Array.data[4]
       value: 
@@ -781,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _waveData.Array.data[6]
       value: 
-      objectReference: {fileID: 11400000, guid: c5495db0d75c08246aa12569659a9456, type: 2}
+      objectReference: {fileID: 11400000, guid: c62b8e0968d7c6741a9ab5d27a071fa2, type: 2}
     - target: {fileID: 1657336343732504004, guid: 1a41c454a0159054c849fa9a4eba05f2, type: 3}
       propertyPath: _waveData.Array.data[7]
       value: 
